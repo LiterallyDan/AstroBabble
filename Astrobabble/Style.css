@@ -18,37 +18,39 @@
 /* Floating character div on homescreen */
 .characterHome
 {
-	width: 20%;
-	height: 50%;
-	position: absolute;
-	margin: auto;
+	width: 400px;
+	position: relative;
 	text-align: center;
 	animation: upDown 5s infinite ease-in-out;
-	left: 40%;
+	margin: auto;
 }
 
 /* Animation for Character */ 
 @keyframes upDown
 {
-	0% {top: 20%;}
-	25% {top: 25%;}
-	50% {top: 20%;}
-	75% {top: 25%;}
-	100% {top: 20%;}
+	0% {top: 17%;}
+	25% {top: 22%;}
+	50% {top: 17%;}
+	75% {top: 22%;}
+	100% {top: 17%;}
 }
 
 /* Start Button */
 .buttonStart
 {
 	position: relative;
-	font-family: 'Bungee', cursive;
-	background-color: white;
-	outline: 10px solid #7c40ff;
-	width: 20%;
-	top: 68%;
 	margin: auto;
-	text-align: center;
-	font-size: 2vw;
+	font-family: 'Bungee', cursive;
+	width: 100%;
+	top: 15%;
+	font-size: 4vw;
+	color: white;
+}
+
+/* Hover State for start button */
+.buttonStart:hover
+{
+	color: #7c40ff;
 }
 
 /* Home "Astro Babble" title text*/
@@ -63,11 +65,59 @@
 /* Div for title */
 .titleDiv
 {
-	width: 50%;
+	text-align: center;
+	width: 100%;
 	position: relative;
 	margin: auto;
+	top: -15px;
 	z-index: 3;
 }
+
+/* Settings Cog */
+.settings
+{
+	position: fixed;
+	width: 70px;
+	top: 92%;
+	left: 1%;
+}
+
+.flex-container
+{
+	display: flex; 
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+/* Button Styles */
+.p1
+{
+	text-decoration: none;
+}
+
+/* Fixes for smaller screen sizes */
+@media screen and (max-width: 900px)
+{
+	.buttonStart
+	{
+		width: 100%;
+		font-size: 10vw;
+		top: 25%;
+	}
+
+	.settings
+	{
+		left: 1%;
+		width: 50px;
+	}
+
+	.characterHome
+	{
+	width: 350px;
+	}
+}
+
 
 
 /* ------------------------------
