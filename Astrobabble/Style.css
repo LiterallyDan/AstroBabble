@@ -40,17 +40,23 @@
 {
 	position: relative;
 	margin: auto;
-	font-family: 'Bungee', cursive;
 	width: 100%;
-	top: 15%;
+	top: 10%;
 	font-size: 4vw;
-	color: white;
+	color: #f2f2f2;
+	text-align: center;
+}
+
+/* Gets rid of underline */
+.buttonStart, a:link
+{
+	text-decoration: none!important;
 }
 
 /* Hover State for start button */
 .buttonStart:hover
 {
-	color: #7c40ff;
+	color: #025E73;
 }
 
 /* Home "Astro Babble" title text*/
@@ -58,7 +64,7 @@
 {
 	font-size: 6vw;
 	font-family: 'Bungee', cursive;
-	color: #7c40ff;
+	color: #025E73;
 	margin: 0;
 }
 
@@ -82,18 +88,21 @@
 	left: 1%;
 }
 
+/* Container for the buttons */
 .flex-container
 {
 	display: flex; 
 	flex-wrap: wrap;
 	width: 100%;
+	height: 100%;
 	justify-content: center;
 }
 
 /* Button Styles */
 .p1
 {
-	text-decoration: none;
+	font-family: 'Bungee', cursive;
+	color: #025E73;
 }
 
 /* Fixes for smaller screen sizes */
@@ -103,7 +112,6 @@
 	{
 		width: 100%;
 		font-size: 10vw;
-		top: 25%;
 	}
 
 	.settings
@@ -114,7 +122,12 @@
 
 	.characterHome
 	{
-	width: 350px;
+		width: 350px;
+	}
+
+	.titleHome
+	{
+		font-size: 10vw;
 	}
 }
 
