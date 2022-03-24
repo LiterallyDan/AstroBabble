@@ -1,0 +1,94 @@
+/* Style Sheet */
+
+/* ------------------------------
+			Home Page
+-------------------------------*/
+
+/* Background Image */
+.backgroundHome
+{
+	width: 100%;
+	height: 100%;
+	background-image: url(Images/filler.jpg);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/* Floating character div on homescreen */
+.characterHome
+{
+	width: 20%;
+	height: 50%;
+	position: absolute;
+	margin: auto;
+	text-align: center;
+	animation: upDown 5s infinite ease-in-out;
+	left: 40%;
+}
+
+/* Animation for Character */ 
+@keyframes upDown
+{
+	0% {top: 20%;}
+	25% {top: 25%;}
+	50% {top: 20%;}
+	75% {top: 25%;}
+	100% {top: 20%;}
+}
+
+/* Start Button */
+.buttonStart
+{
+	position: relative;
+	font-family: 'Bungee', cursive;
+	background-color: white;
+	outline: 10px solid #7c40ff;
+	width: 20%;
+	top: 68%;
+	margin: auto;
+	text-align: center;
+	font-size: 2vw;
+}
+
+/* Home "Astro Babble" title text*/
+.titleHome
+{
+	font-size: 6vw;
+	font-family: 'Bungee', cursive;
+	color: #7c40ff;
+	margin: 0;
+}
+
+/* Div for title */
+.titleDiv
+{
+	width: 50%;
+	position: relative;
+	margin: auto;
+	z-index: 3;
+}
+
+
+/* ------------------------------
+			Game Page
+-------------------------------*/
+
+.health{
+    background-color: rgb(0, 0, 0);
+    padding:2%;
+    width: 96%;
+    border-radius: 20%;
+}
+.lifebackground{
+    background-color: rgb(68, 68, 68);
+    width: 100%;
+    overflow: hidden;
+}
+#life {
+    background-color:green;
+    padding-top: 2%;
+    padding-left: 0%;
+    padding-right: 0%;
+    width: 100%;
+}
