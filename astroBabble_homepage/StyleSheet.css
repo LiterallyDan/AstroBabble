@@ -14,20 +14,32 @@
 /* Floating character div on homescreen */
 .characterHome
 {
-	width: 30%;
-	height: 80%;
+	width: 20%;
+	height: 50%;
 	position: absolute;
-	top: 10%;
-	right: 10%;
+	margin: auto;
 	text-align: center;
 	animation: upDown 5s infinite ease-in-out;
 }
 
 @keyframes upDown
 {
-	0% {top: 10%;}
-	25% {top: 20%;}
-	50% {top: 10%;}
-	75% {top: 20%;}
-	100% {top: 10%;}
+	0% {top: 20%;}
+	25% {top: 25%;}
+	50% {top: 20%;}
+	75% {top: 25%;}
+	100% {top: 20%;}
+}
+
+.button
+{
+	position: relative;
+	font-family: 'Bungee', cursive;
+	background-color: white;
+	outline: 15px solid #7c40ff;
+	width: 30%;
+	top: 60%;
+	margin: auto;
+	text-align: center;
+	font-size: 3vw;
 }
