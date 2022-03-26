@@ -41,6 +41,16 @@
 	margin-right:auto;
 }
 
+/* Animation for Character */ 
+@keyframes upDown
+{
+	0% {top: 25%;}
+	25% {top: 30%;}
+	50% {top: 25%;}
+	75% {top: 30%;}
+	100% {top: 25%;}
+}
+
 /* Start Button */
 .startButton
 {
@@ -70,20 +80,14 @@
 	border-style: inset;
 	color: white;
 }
+
+/* To remove underscore from link */
 .startButton, a:link
 {
 	text-decoration: none;
 }
 
-/* Animation for Character */ 
-@keyframes upDown
-{
-	0% {top: 25%;}
-	25% {top: 30%;}
-	50% {top: 25%;}
-	75% {top: 30%;}
-	100% {top: 25%;}
-}
+
 
 /* Home "Astro Babble" title text*/
 .titleHome
@@ -99,18 +103,27 @@
 	line-height: 1.4;
 }
 
+/* Main font */
 .p1
 {
 	font-family: 'Bungee', cursive;
 	font-size: 100%;
 }
 
+/* Settings button */
 .settingsIcon
 {
-	background-image: url(Images/settingsCog.png);
 	position: fixed;
 	bottom: 0;
 	left: 0;
+	width: 3%;
+}
+
+.charactersIcon
+{
+	position: fixed;
+	bottom: 0;
+	right: 0;
 	width: 3%;
 }
 
