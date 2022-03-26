@@ -361,9 +361,9 @@ function newword () {
     document.getElementById("nextlvl").disabled = true;
 }
 
-    
 
-    
+
+
 
 
 
