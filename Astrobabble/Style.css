@@ -124,7 +124,12 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	width: 3%;
+	width: 10%;
+	padding-right:2%;
+	transition: ease-in-out 0.5s;
+}
+.charactersIcon:hover{
+	transform:scale(1.1,1.1);
 }
 #characterimage {
 	width: 90%;
