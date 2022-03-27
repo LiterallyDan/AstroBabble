@@ -109,7 +109,7 @@ function CharFinal(){
     // this combines all the above variables to create the image file location so that it can load the correct images. 
     characterchoice = "Images/" + avatar + colourchoice +".png"
     //this sets the image source to the above mentioned variable
-    document.getElementById("avatarimage").src = characterchoice
+    document.getElementById("avatarImage").src = characterchoice
     //can be removed, good for testing purposes
     console.log (characterchoice)
     console.log (avatarchoice)

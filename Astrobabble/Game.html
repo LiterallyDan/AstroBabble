@@ -1,78 +1,74 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!--matches physical pixels to digital ones-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--references the css style sheet and javascript script file.-->
-        <link rel="stylesheet" href="style.css">
-        <script defer src="Script.js"></script>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Buttons</title>
+    <link rel="stylesheet" href="stylesGame.css">
+    <script defer src="scriptGame.js"></script>
 
-    <body>
-        <div class="screen">
-            <input type="text" id="newword" placeholder = "Write your word here..."><br>
-            <div class="word">
-                <div id="letter0"></div>
-                <div id="letter1"></div>
-                <div id="letter2"></div>
-                <div id="letter3"></div>
-                <div id="letter4"></div>
-                <div id="letter5"></div>
-                <div id="letter6"></div>
-                <div id="letter7"></div>
-                <div id="letter8"></div>
-                <div id="letter9"></div>
-            <button onclick="words();">Lock In word</button>
-            </div>
-        <div class = "character">
-            
-        </div>
-        <div class="keyboard"></div>
-        <input type="text" id="guess" placeholder = "Write your letter here..."><br>
-        <button onclick="keycheck();">Lock In letter</button>
-        
-            <!--<button onclick="keycheck();" class="keybrd" id= a>a</button>
-            <button onclick="keycheck();" class="keybrd" id= b>b</button>
-            <button onclick="keycheck();" class="keybrd" id= c>c</button>
-            <button onclick="keycheck();" class="keybrd" id= d>d</button>
-            <button onclick="keycheck();" class="keybrd" id= e>e</button>
-            <button onclick="keycheck();" class="keybrd" id= f>f</button>
-            <button onclick="keycheck();" class="keybrd" id= g>g</button>
-            <button onclick="keycheck();" class="keybrd" id= h>0</button>
-            <button onclick="keycheck();" class="keybrd" id= i>i</button>
-            <button onclick="keycheck();" class="keybrd" id= j>j</button>
-            <button onclick="keycheck();" class="keybrd" id= k>k</button>
-            <button onclick="keycheck();" class="keybrd" id= l>l</button>
-            <button onclick="keycheck();" class="keybrd" id= m>m</button>
-            <button onclick="keycheck();" class="keybrd" id= n>n</button>
-            <button onclick="keycheck();" class="keybrd" id= o>o</button>
-            <button onclick="keycheck();" class="keybrd" id= p>p</button>
-            <button onclick="keycheck();" class="keybrd" id= q>q</button>
-            <button onclick="keycheck();" class="keybrd" id= r>r</button>
-            <button onclick="keycheck();" class="keybrd" id= s>s</button>
-            <button onclick="keycheck();" class="keybrd" id= t>t</button>
-            <button onclick="keycheck();" class="keybrd" id= u>u</button>
-            <button onclick="keycheck();" class="keybrd" id= v>v</button>
-            <button onclick="keycheck();" class="keybrd" id= w>w</button>
-            <button onclick="keycheck();" class="keybrd" id= x>x</button>
-            <button onclick="keycheck();" class="keybrd" id= y>y</button>
-            <button onclick="keycheck();" class="keybrd" id= z>z</button>
-            -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = "score">
+        <p id = "score">Score: 0</p>
+    </div>
 
-        </div>
-            <p id="timer"></p>
-            <p>Hello look at how much health we have!</p>
-            <p id="message"></p>
-            <button onclick="hurt();" id="btn">Hurt</button>
-            <button onclick="heal();" id="btn">Heal</button>
-            <div class="health">
-                <div class="lifebackground">  
-                    <div id="life">
-                </div>
+    <div class="oxygenBar">
+        <div class="oxygenBG">
+            <div id="oxygen">
+                <p></p>
             </div>
         </div>
-        <button onclick="newword();" id="nextlvl">Next Level</button>
-        <button onclick="newword();" id="freetry">New Word</button>
-        <p id="freeword">Free Tries Remaining: 3</p>
-    </body>
-<html>
+    </div>
+
+    <div>
+        <p id = "timer"></p>
+    </div>
+    <div class="character">
+        <img src="" id = "characterimage">
+    </div>
+
+    <div class = "container">                               <!-- Flexible container holding the entire block -->
+        <div id = "screen" class = "word">
+            <p></p>
+        </div>
+        <div id = "characters" class="btn-grid">            <!-- Div containing the buttons themselves, arranged in a grid -->
+            <button id="btn-q" class="btn">Q</button>
+            <button id="btn-w" class="btn">W</button>
+            <button id="btn-e" class="btn">E</button>
+            <button id="btn-r" class="btn">R</button>
+            <button id="btn-t" class="btn">T</button>
+            <button id="btn-y" class="btn">Y</button>
+            <button id="btn-u" class="btn">U</button>
+            <button id="btn-i" class="btn">I</button>
+            <button id="btn-o" class="btn">O</button>
+            <button id="btn-p" class="btn">P</button>
+            <button id="btn-a" class="btn">A</button>
+            <button id="btn-s" class="btn">S</button>
+            <button id="btn-d" class="btn">D</button>
+            <button id="btn-f" class="btn">F</button>
+            <button id="btn-g" class="btn">G</button>
+            <button id="btn-h" class="btn">H</button>
+            <button id="btn-j" class="btn">J</button>
+            <button id="btn-k" class="btn">K</button>
+            <button id="btn-l" class="btn">L</button>
+            <button id="btn-z" class="btn">Z</button>
+            <button id="btn-x" class="btn">X</button>
+            <button id="btn-c" class="btn">C</button>
+            <button id="btn-v" class="btn">V</button>
+            <button id="btn-b" class="btn">B</button>
+            <button id="btn-n" class="btn">N</button>
+            <button id="btn-m" class="btn">M</button>
+        </div>
+
+        <div class ="bottom-btns">                                <!-- Placeholder for options during / after gameplay (can be hidden) -->
+            <button id="newWord-btn" class="btn">New Word 3 / 3</button>
+            <a href="Home.html" class="link"><button class="btn" id="menu-btn">Main Menu</button></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -34,11 +34,20 @@ let word = null;
 let score = 0;
 let key = [];
 let wordScore = [0, 0];
+let characterchoice
 
 window.onload = function() {
     getWord();
     updateBar();
     timeID.innerHTML = "Time remaining: " + time;
+
+    characterchoice = localStorage.getItem("characterchoice")
+    //if you've never played sets values to default
+    if (characterchoice == undefined){
+        characterchoice = "Images/DefaultBasic.png"
+        console.log("hello")
+    }
+    document.getElementById("characterimage").src = characterchoice
 } 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

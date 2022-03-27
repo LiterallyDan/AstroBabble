@@ -9,7 +9,7 @@
 {
 	width: 100%;
 	height: 100%;
-	background-image: url(Images/filler.jpg);
+	background-image: url('https://i.redd.it/pxpytv66mrb71.jpg');
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -126,6 +126,9 @@
 	right: 0;
 	width: 3%;
 }
+#characterimage {
+	width: 90%;
+}
 
 /* Fixes for smaller screen sizes */
 @media screen and (max-width: 900px)
@@ -167,9 +170,9 @@
 }
 
 /* The actual images of characters */
-.characterChange
-{
-
+#avatarImage {
+    width: 20%;
+    height: auto;
 }
 
 /* Title at top of Customize Character page */
@@ -177,6 +180,7 @@
 {
 
 }
+
 
 /* ------------------------------
 			Game Page
@@ -199,9 +203,4 @@
     padding-left: 0%;
     padding-right: 0%;
     width: 100%;
-}
-/*all for the character customization page*/
-#avatarimage {
-    width: 20%;
-    height: auto;
 }
