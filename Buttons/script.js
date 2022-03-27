@@ -24,11 +24,99 @@ const vbtn = document.getElementById('btn-v');
 const bbtn = document.getElementById('btn-b');
 const nbtn = document.getElementById('btn-n');
 const mbtn = document.getElementById('btn-m');
+const wordBox = document.getElementById('screen');
+const newbtn = document.getElementById('newWord-btn');
+const timeID = document.getElementById('timer');
+const oxygen = document.getElementById('oxygen');
 let currentChar = null;                                 // Variable *that can change* containing the most recent button selection
-let word = [];
-/*  Can have a variable equivalent to number of unique characters that increments for every correct letter pressed, thus 
-    when it reaches the correct value then the word is "correct".
-*/
+let progress;
+let word = null;
+let score = 0;
+let key = [];
+let wordScore = [0, 0];
+
+window.onload = function() {
+    getWord();
+    updateBar();
+    timeID.innerHTML = "Time remaining: " + time;
+} 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                  Oxygen Bar Code
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let time = 120;
+let health = 100;
+let increment = 100/time;
+
+setInterval (function timer () {
+    time--;
+    if (!(time <= 0)) timeID.innerHTML = "Time remaining: " + (time);
+}, 1000);
+
+setInterval (function damage() {
+    health = health - increment;
+    oxygen.style.width = health + "%";
+
+    updateBar();
+}, 1000);
+
+function heal (){
+    health = health + 10*increment;
+    oxygen.style.width = health + "%";
+    time = time + 10;
+
+    updateBar();
+}
+
+function hurt () {
+    health = health - 10*increment;
+    oxygen.style.width = health + "%";
+    time = time - 10;
+
+    updateBar();
+}
+
+function updateBar() {
+    if (health <= 0) {
+        oxygen.style.width="0%";
+        timeID.innerHTML = "Time remaining: 0";
+    }
+
+    if (health > 100) {
+        oxygen.style.background="var(--hpaqua)";
+    } else if (health >= 60) {
+        oxygen.style.background="var(--green)";
+    } else if (health >= 30){
+        oxygen.style.background="var(--hpylw)";
+    } else {
+        oxygen.style.background="var(--hpred)";
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                             "Keyboard" Code
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+async function getWord () {
+    const response = await fetch("https://random-word-api.herokuapp.com/word?number=1");
+    const data = await response.json();
+    word = await data[0].toUpperCase();
+    console.log(word);
+    progress = "";
+    progress = word.split("");
+    for (let i = 0; i < progress.length; i++) progress[i] = "_";
+    strArray(word);
+    clearBtns();
+}
+
+function updateWord (character) {
+    for (let i = 0; i < word.length; i++) {
+        if (word[i].toUpperCase() == character) {
+            progress[i] = character;
+        }
+    }
+    wordBox.innerText = progress.join(" ");
+}
 
 /*
     Universal function for when each character button is pressed to allow for swift editing,
@@ -36,13 +124,10 @@ let word = [];
     > 
 */
 function charPressed (button) {
-    if (!button.classList.contains("used")) {           // If button has not already been used
+    if (!button.classList.contains("used") && wordScore[0] != wordScore [1]) { 
         currentChar = button.innerText;
         console.log(currentChar + " pressed");
         button.classList.add("used");
-        /*  Can put a for loop here to iterate through legal characters,
-            and if it isn't any of them then it can call "incorrectBtn".
-        */
         isValid(button);
     }
 }
@@ -52,25 +137,37 @@ function charPressed (button) {
 */
 function isValid (button) {
     let valid = false;
-    for (let i = 0; i < word.length; i++) {             // Iterates through all unique characters
-        if (button.innerText == word[i]) {              // If there is a match:
+    for (let i = 0; i < key.length; i++) {             // Iterates through all unique characters
+        if (button.innerText == key[i]) {              // If there is a match:
             valid = true;                               // ^ The current character is valid.
         } 
     }
     if (valid) {
         button.classList.add("correct");               // Set the button's appearance to "correct"
+        updateWord(currentChar);
+        wordScore[0]++;
+        score++;
+        document.getElementById("score").innerHTML = "Score: " + score;
+
+        if (wordScore[0] == wordScore[1]) {
+            console.log("All correct letters enetered.");
+            for (let i = 0; i < wordScore[1]; i++) {
+                heal();
+            }
+        }
+
     } else {
         button.classList.add("incorrect");             // Set the button's appearance to "incorrect"
+        hurt();
     }
 }
 
 /*
-    Resizes the "word" array to potentially fit *any* combo of characters.
+    Resizes the "key" array to potentially fit *any* combo of characters.
 */
 function resizeArray (array, size) {
-    while (size > array.length) {
-        array.push(null);
-    }
+    while (size > array.length) array.push(null);
+    for (let i = 0; i < array.length; i++) array[i] = null;
     array.length=size;
 }
 
@@ -78,29 +175,56 @@ function resizeArray (array, size) {
     Iterates through a string twice, adding all the unique characters to an array, serving as the answer key.
 */
 function strArray (string) {
+    wordScore = [0, 0];
     let input = string.toUpperCase();
 
-    resizeArray (word, [input.length]);
-    for (let i = 0; i < word.length; i++) {             // Iterate through word
+    resizeArray (key, [input.length]);
+    for (let i = 0; i < key.length; i++) {             // Iterate through key
 
-        for (let j = 0; j < word.length; j++) {         // Iterate through array
-            if (word[j] == input[i]) {                  // If current character is in array, break
+        for (let j = 0; j < key.length; j++) {         // Iterate through array
+            if (key[j] == input[i]) {                  // If current character is in array, break
                 break;
-            } else if (j == word.length-1 && word[j] != input[i] && input[i].match(/[a-z]/i)) {
-                word[i] = input[i];                     // If current character not in array, add it
+            } else if (j == key.length-1 && key[j] != input[i] && input[i].match(/[a-z]/i)) {
+                key[i] = input[i];                     // If current character not in array, add it
+                wordScore[1]++;
             }
         }
     }
-    console.log(word);
+    console.log(key);
+    console.log("Word is worth "+wordScore[1]+" points.")
+    updateWord(' ');
 }
 
 /*
-    Clear all button "statuses" for when a new word is loaded.
+    Clear all button "statuses" for when a new key is loaded.
 */
-function clearBtn (button) {
-    button.classList.remove("used");
-    button.classList.remove("incorrect");
-    button.classList.remove("correct");
+function clearBtns () {
+    qbtn.classList.remove("used", "incorrect", "correct");
+    wbtn.classList.remove("used", "incorrect", "correct");
+    ebtn.classList.remove("used", "incorrect", "correct");
+    rbtn.classList.remove("used", "incorrect", "correct");
+    tbtn.classList.remove("used", "incorrect", "correct");
+    ybtn.classList.remove("used", "incorrect", "correct");
+    ubtn.classList.remove("used", "incorrect", "correct");
+    ibtn.classList.remove("used", "incorrect", "correct");
+    obtn.classList.remove("used", "incorrect", "correct");
+    pbtn.classList.remove("used", "incorrect", "correct");
+    abtn.classList.remove("used", "incorrect", "correct");
+    sbtn.classList.remove("used", "incorrect", "correct");
+    dbtn.classList.remove("used", "incorrect", "correct");
+    fbtn.classList.remove("used", "incorrect", "correct");
+    gbtn.classList.remove("used", "incorrect", "correct");
+    hbtn.classList.remove("used", "incorrect", "correct");
+    jbtn.classList.remove("used", "incorrect", "correct");
+    kbtn.classList.remove("used", "incorrect", "correct");
+    lbtn.classList.remove("used", "incorrect", "correct");
+    zbtn.classList.remove("used", "incorrect", "correct");
+    xbtn.classList.remove("used", "incorrect", "correct");
+    cbtn.classList.remove("used", "incorrect", "correct");
+    vbtn.classList.remove("used", "incorrect", "correct");
+    bbtn.classList.remove("used", "incorrect", "correct");
+    nbtn.classList.remove("used", "incorrect", "correct");
+    mbtn.classList.remove("used", "incorrect", "correct");
 }
 
 qbtn.addEventListener('click', () => { charPressed(qbtn);} )
@@ -129,5 +253,4 @@ vbtn.addEventListener('click', () => { charPressed(vbtn);} )
 bbtn.addEventListener('click', () => { charPressed(bbtn);} )
 nbtn.addEventListener('click', () => { charPressed(nbtn);} )
 mbtn.addEventListener('click', () => { charPressed(mbtn);} )
-
-
+newbtn.addEventListener('click', () => { getWord() } );

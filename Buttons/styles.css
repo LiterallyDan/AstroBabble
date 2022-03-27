@@ -11,32 +11,83 @@ html {
     --grey: #F2F2F2;
     --drkgrey: #969EAB;
     --red: #F26A4B;
+
+    /* Health Colours */
+    --hpred:#f55840;
+    --hpylw:#f2f542;
+    --hpaqua:#40ddf5;
     --green: #50ca68;   /*  Note that this colour is a placeholder  */
 }
 
 /*  Body Formatting - "Shapes" the Flex Box    */
 body {
+    background-image: url('https://i.redd.it/pxpytv66mrb71.jpg');
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
+    text-align:center;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    color: var(--dark);
+    color: var(--bg);
 }
 
-/*  Formatting for Main Question Box - Claymorphic Aesthetic    */
+.score {
+    font-family: 'Bungee', cursive;
+    line-height:0%;
+    font-size: 36px;
+}
+
+.oxygenBar{
+    display: flex;
+    width: 70vw;
+    border-radius: 30px;
+    align-items: center;
+}
+.oxygenBG{
+    background-color: var(--drkgrey);
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+#oxygen{
+    background-color: var(--green);
+    padding-right: 0%;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    overflow: hidden;
+    text-align: center;
+}
+
+#timer {
+    font-family: 'Orbitron', sans-serif;
+    padding-bottom: 18vh;
+}
+
 .container {
-    width: 400px;
+    width: 600px;
     max-width: 80%;
-    background-color: var(--bg);
-    padding: 30px;
+    background-color: var(--blue);
+    padding: 15px;
     text-align: center;
     border-radius: 30px;
 }
 
+
+#screen {
+    display:flex;
+    font-family: 'Bungee', cursive;
+    color: var(--dark);
+    background-color: var(--red);
+    padding: 15px;
+    justify-content: center;
+    border-radius: 20px;
+}
+
 .btn-grid {
+    padding-top: 15px;
     display:flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -47,6 +98,7 @@ body {
     transition-duration: 0.2s;
     background-color: var(--dark);
     color:var(--bg);
+    font-family: 'Bungee', cursive;
     padding: 10px 15px;
     margin: 2px;
     border: none;
@@ -56,6 +108,7 @@ body {
 /*  Hover effects for the buttons    */
 .btn:hover {
     background-color: var(--blue);
+    outline: 2px solid var(--dark);
 }
 
 /*  Allow for hidden divs   */
@@ -77,4 +130,8 @@ body {
 .btn.correct {
     background-color: var(--green);
     color: var(--bg);
+}
+
+.bottom-btns {
+    padding-top: 30px;
 }
