@@ -133,7 +133,9 @@ function updateWord (character) {
     > 
 */
 function charPressed (button) {
-    if (!button.classList.contains("used") && wordScore[0] != wordScore [1]) { 
+    if (!button.classList.contains("used") 
+    && wordScore[0] != wordScore [1] 
+    && time > 0) { 
         currentChar = button.innerText;
         console.log(currentChar + " pressed");
         button.classList.add("used");

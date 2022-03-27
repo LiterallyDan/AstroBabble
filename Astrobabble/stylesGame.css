@@ -21,7 +21,7 @@ html {
 
 /*  Body Formatting - "Shapes" the Flex Box    */
 body {
-    background-image: url('https://i.redd.it/pxpytv66mrb71.jpg');
+    background-image: url('images/Background.png');
     padding: 0;
     margin: 0;
     display: flex;
@@ -32,12 +32,18 @@ body {
     justify-content: center;
     align-items: center;
     color: var(--bg);
+    overflow: hidden;
 }
 
 .score {
     font-family: 'Bungee', cursive;
     line-height:0%;
     font-size: 36px;
+}
+
+.bar-score {
+    position: absolute;
+    margin-bottom: 70vh;
 }
 
 .oxygenBar{
@@ -67,14 +73,20 @@ body {
 }
 
 .container {
+    position: absolute;
+    margin-top: 30vh;
     width: 600px;
     max-width: 80%;
-    background-color: var(--blue);
     padding: 15px;
     text-align: center;
     border-radius: 30px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-
 
 #screen {
     display:flex;
@@ -87,9 +99,20 @@ body {
 }
 
 #characterimage {
-	width: 15%;
-    height: auto;
-    padding-bottom: 3%;
+    animation: upDown 5s infinite ease-in-out;
+    position:relative;
+    min-width: 200px;
+	max-width: 30%;
+    margin-bottom: 90vh;
+}
+
+@keyframes upDown
+{
+	0% {top: 25%;}
+	25% {top: 30%;}
+	50% {top: 25%;}
+	75% {top: 30%;}
+	100% {top: 25%;}
 }
 
 .btn-grid {
