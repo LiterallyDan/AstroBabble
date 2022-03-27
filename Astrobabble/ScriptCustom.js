@@ -67,6 +67,7 @@ function CharFinal(){
     //if the variable is 0 then load this character, and set the button colours to the following options
     if(avatarchoice == 0){
         avatar = "Default"
+        document.getElementById("charName").innerHTML = "Space Cadet"
         document.getElementById("basic").style.background = "whitesmoke"
         document.getElementById("alt1").style.background = "darkorchid"
         document.getElementById("alt2").style.background = "orangered"
@@ -75,6 +76,7 @@ function CharFinal(){
     //if the variable is 0 then load this character, and set the button colours to the following options
     if(avatarchoice == 1){
         avatar = "Cat"
+        document.getElementById("charName").innerHTML = "Captain Cuddle"
         document.getElementById("basic").style.background = "darkcyan"
         document.getElementById("alt1").style.background = "seagreen"
         document.getElementById("alt2").style.background = "plum"
@@ -83,6 +85,7 @@ function CharFinal(){
     //if the variable is 0 then load this character, and set the button colours to the following options
     if(avatarchoice == 2){
         avatar = "Fish"
+        document.getElementById("charName").innerHTML = "Gillian Gobb"
         document.getElementById("basic").style.background = "darkcyan"
         document.getElementById("alt1").style.background = "seagreen"
         document.getElementById("alt2").style.background = "plum"
@@ -91,6 +94,7 @@ function CharFinal(){
     //if the variable is 0 then load this character, and set the button colours to the following options
     if(avatarchoice == 3){
         avatar = "Skull"
+        document.getElementById("charName").innerHTML = "Spooks"
         document.getElementById("basic").style.background = "darkcyan"
         document.getElementById("alt1").style.background = "aqua"
         document.getElementById("alt2").style.background = "purple"

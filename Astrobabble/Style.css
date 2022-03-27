@@ -5,7 +5,11 @@
 -------------------------------*/
 
 /* Background Image */
-
+body{
+	background-image: url("Images/Background.png");
+	width: 100%;
+	height: 100%;
+}
 .backgroundHome
 {
 	width: 100%;
@@ -162,7 +166,45 @@
 /* ------------------------------
 	 Change Character Page
 -------------------------------*/
-
+.avatarRotation {
+	padding: 5%;
+	display: flex;
+	width: 30%;
+	background-color: rgb(54, 77, 97);
+	justify-content: center;
+	align-items: center;
+}
+.screen {
+	display: flex;
+	justify-content: center;
+	
+}
+.colourSelect {
+	width: 20%;
+    float: right;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+}
+.name{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+#charName {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.clrbtn {
+	width: 50%;
+	padding: 10%;
+	display: flexbox;
+}
 /* Arrow to scroll left through characters */
 .arrowLeft
 {
@@ -177,8 +219,8 @@
 
 /* The actual images of characters */
 #avatarImage {
-    width: 20%;
-    height: auto;
+    width: 70%;
+    height:auto;
 }
 
 /* Title at top of Customize Character page */
