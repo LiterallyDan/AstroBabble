@@ -92,8 +92,8 @@ function CharFinal(){
     if(avatarchoice == 3){
         avatar = "Skull"
         document.getElementById("basic").style.background = "darkcyan"
-        document.getElementById("alt1").style.background = "seagreen"
-        document.getElementById("alt2").style.background = "plum"
+        document.getElementById("alt1").style.background = "aqua"
+        document.getElementById("alt2").style.background = "purple"
         document.getElementById("alt3").style.background = "lightgrey"
     }
     //if you've reached level 10 this will be set to true and you will unlock the gold style for the default space explorer
