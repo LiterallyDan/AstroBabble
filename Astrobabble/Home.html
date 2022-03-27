@@ -7,6 +7,10 @@
          <!-- Style sheet -->
          <link rel="stylesheet" href="Style.css">
 
+         <!-- JS -->
+
+         <script defer src="ScriptHome.js"></script>
+
          <!-- Fonts Links -->
          <link rel="preconnect" href="https://fonts.googleapis.com">
          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,24 +24,41 @@
 
     <body>
 
-       <!-- Title -->
-        <div class="titleDiv">
-             <h1 class="titleHome"> Astro Babble </h1>
-        </div>
-
+        <!-- Home -->
         <div class="backgroundHome">
+             <!-- Floating Character -->
+              <div class="characterHome">
+                 <img src="Images/Character1.png" style="width: 90%;">
+              </div>
+        </div>
 
-            <!-- Floating Character -->
-            <div class="characterHome">
-                <img src="Images/fillerChar.png" style="width: 90%;">
-            </div>
+        <!-- Holding everything -->
+        <div class="holder">
 
-            <!-- Start Button -->
-            <div class="buttonStart">
-                <p> Start </p>
-            </div>
+            <!-- Astro Babble Title -->
+            <h1 class="titleHome"> Astro Babble </h1>
+
+            <!-- Start Button --> 
+            <a href="Game.html"> <div class="startButton">Start</div> </a>
+
+            <!-- Settings Button -->
+            <a href="Settings.html"> 
+                <div class="settingsIcon"> 
+                    <img id="myImage" onmouseover="changeSettings()" onmouseout="resetSettings()" src="Images/settingsCog.png" style="width: 100%;">
+                </div> 
+            </a>
+
+
+            <!-- Change Characters Button -->
+            <a href="CharacterChange.html"> 
+                <div class="charactersIcon"> 
+                    <img id="myCharacter" src="Images/characterIcon.png" style="width: 100%;">
+                </div> 
+            </a>
 
         </div>
+
+
     </body>
 
 
