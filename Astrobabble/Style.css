@@ -200,3 +200,8 @@
     padding-right: 0%;
     width: 100%;
 }
+/*all for the character customization page*/
+#avatarimage {
+    width: 20%;
+    height: auto;
+}
