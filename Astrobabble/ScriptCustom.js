@@ -102,7 +102,7 @@ function CharFinal(){
         document.getElementById("alt3").style.opacity = "100%"
     }
     //if you are yet to beat level 10 then you will not be able to use the gold style. 
-    else {
+    if (awesome == null){
         document.getElementById("alt3").disabled = true
         document.getElementById("alt3").style.opacity = "0%"
     }
