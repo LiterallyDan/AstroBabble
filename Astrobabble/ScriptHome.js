@@ -23,7 +23,6 @@ window.onload = function (begin){
     //if you've never played sets values to default
     if (characterchoice == undefined){
         characterchoice = "Images/DefaultBasic.png"
-        console.log("hello")
     }
     document.getElementById("characterimage").src = characterchoice
     console.log (characterchoice)
