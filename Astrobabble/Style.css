@@ -187,15 +187,14 @@ body{
 	padding: 5%;
 	display: flex;
 	width: 30%;
-	background-color: rgb(54, 77, 97);
 	justify-content: center;
 	align-items: center;
 }
 .screen {
 	display: flex;
 	justify-content: center;
-	
 }
+
 .colourSelect {
 	width: 20%;
     float: right;
@@ -268,4 +267,73 @@ body{
     padding-left: 0%;
     padding-right: 0%;
     width: 100%;
+}
+
+/* ------------------------------
+			Help Page
+-------------------------------*/
+
+/* General Div for all of help pop-up */
+.helpDiv
+{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 70%;
+	height: 70%;
+	background-color: grey;
+	outline: 3vw solid black;
+	opacity: 1;
+	z-index: 3;
+	border-radius: 50px;
+	text-align: center;
+	font-family: 'Bungee', cursive;
+	font-size: 8vw;
+	line-height: 1.2;
+	display: block;
+}
+
+.fullInstruct
+{
+	position: relative;
+	margin: auto;
+	font-size: 20px;
+	line-height: 1;
+	font-family: 'Bungee', cursive;
+	width: 95%;
+}
+
+/* Check box for not showing help again */
+.notAgain
+{
+	position: relative;
+	width: 50px;
+	margin: auto;
+	background-color: white;
+	outline: 0.3vw solid black;
+}
+
+.checkmark
+{
+	width: 100%;
+}
+
+/* No help text */
+.notAgainText
+{
+	position: relative;
+	font-size: 1vw;
+	
+}
+
+.exitInstruct
+{
+	position: relative;
+	margin: auto;
+	width: 5vw;
+	background-image: url("Images/exit.png");
+	float: left;
 }
