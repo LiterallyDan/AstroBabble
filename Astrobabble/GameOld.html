@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--matches physical pixels to digital ones-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--references the css style sheet and javascript script file.-->
+        <link rel="stylesheet" href="style.css">
+        <script defer src="Script.js"></script>
+    </head>
+
+    <body>
+        <div class="screen">
+            <input type="text" id="newword" placeholder = "Write your word here..."><br>
+            <div class="word">
+                <div id="letter0"></div>
+                <div id="letter1"></div>
+                <div id="letter2"></div>
+                <div id="letter3"></div>
+                <div id="letter4"></div>
+                <div id="letter5"></div>
+                <div id="letter6"></div>
+                <div id="letter7"></div>
+                <div id="letter8"></div>
+                <div id="letter9"></div>
+            <button onclick="words();">Lock In word</button>
+            </div>
+        <div class = "character">
+            
+        </div>
+        <div class="keyboard"></div>
+        <input type="text" id="guess" placeholder = "Write your letter here..."><br>
+        <button onclick="keycheck();">Lock In letter</button>
+        
+            <!--<button onclick="keycheck();" class="keybrd" id= a>a</button>
+            <button onclick="keycheck();" class="keybrd" id= b>b</button>
+            <button onclick="keycheck();" class="keybrd" id= c>c</button>
+            <button onclick="keycheck();" class="keybrd" id= d>d</button>
+            <button onclick="keycheck();" class="keybrd" id= e>e</button>
+            <button onclick="keycheck();" class="keybrd" id= f>f</button>
+            <button onclick="keycheck();" class="keybrd" id= g>g</button>
+            <button onclick="keycheck();" class="keybrd" id= h>0</button>
+            <button onclick="keycheck();" class="keybrd" id= i>i</button>
+            <button onclick="keycheck();" class="keybrd" id= j>j</button>
+            <button onclick="keycheck();" class="keybrd" id= k>k</button>
+            <button onclick="keycheck();" class="keybrd" id= l>l</button>
+            <button onclick="keycheck();" class="keybrd" id= m>m</button>
+            <button onclick="keycheck();" class="keybrd" id= n>n</button>
+            <button onclick="keycheck();" class="keybrd" id= o>o</button>
+            <button onclick="keycheck();" class="keybrd" id= p>p</button>
+            <button onclick="keycheck();" class="keybrd" id= q>q</button>
+            <button onclick="keycheck();" class="keybrd" id= r>r</button>
+            <button onclick="keycheck();" class="keybrd" id= s>s</button>
+            <button onclick="keycheck();" class="keybrd" id= t>t</button>
+            <button onclick="keycheck();" class="keybrd" id= u>u</button>
+            <button onclick="keycheck();" class="keybrd" id= v>v</button>
+            <button onclick="keycheck();" class="keybrd" id= w>w</button>
+            <button onclick="keycheck();" class="keybrd" id= x>x</button>
+            <button onclick="keycheck();" class="keybrd" id= y>y</button>
+            <button onclick="keycheck();" class="keybrd" id= z>z</button>
+            -->
+
+        </div>
+            <p id="timer"></p>
+            <p>Hello look at how much health we have!</p>
+            <p id="message"></p>
+            <button onclick="hurt();" id="btn">Hurt</button>
+            <button onclick="heal();" id="btn">Heal</button>
+            <div class="health">
+                <div class="lifebackground">  
+                    <div id="life">
+                </div>
+            </div>
+        </div>
+        <button onclick="newword();" id="nextlvl">Next Level</button>
+        <button onclick="newword();" id="freetry">New Word</button>
+        <p id="freeword">Free Tries Remaining: 3</p>
+    </body>
+<html>
