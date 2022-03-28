@@ -58,10 +58,10 @@ function Alt3(){
 function CharFinal(){
     //if the variable is less than 0 cycle back up to 3
     if(avatarchoice < 0){
-        avatarchoice = 3
+        avatarchoice = 4
     }
     //if the variable is more than 3 cycle back down ot 0
-    if(avatarchoice > 3){
+    if(avatarchoice > 4){
         avatarchoice = 0
     }
     //if the variable is 0 then load this character, and set the button colours to the following options
@@ -100,6 +100,15 @@ function CharFinal(){
         document.getElementById("alt2").style.background = "purple"
         document.getElementById("alt3").style.background = "lightgrey"
     }
+    if(avatarchoice == 4){
+        avatar = "Sparkle"
+        document.getElementById("charName").innerHTML = "McSparkles"
+        document.getElementById("basic").style.background = "darkcyan"
+        document.getElementById("alt1").style.background = "aqua"
+        document.getElementById("alt2").style.background = "purple"
+        document.getElementById("alt3").style.background = "lightgrey"
+    }
+
     //if you've reached level 10 this will be set to true and you will unlock the gold style for the default space explorer
     if (awesome == true){
         document.getElementById("alt3").disabled = false
