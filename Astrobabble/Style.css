@@ -129,7 +129,7 @@ body{
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	width: 10%;
+	width: 150px;
 	padding-right:2%;
 	transition: ease-in-out 0.5s;
 }
@@ -141,7 +141,7 @@ body{
 }
 
 /* Fixes for smaller screen sizes */
-@media screen and (max-width: 900px)
+@media screen and (max-width: 950px)
 {
 	.characterHome
 	{
@@ -157,6 +157,23 @@ body{
 	.settingsIcon
 	{
 		width: 10%;
+	}
+	.characterHome
+	{
+	width: 400px;
+	
+	}
+}
+@media screen and (max-width: 450px)
+{
+	.characterHome
+	{
+	width: 300px;
+	
+	}
+	.charactersIcon
+	{
+	width: 100px;
 	}
 }
 
