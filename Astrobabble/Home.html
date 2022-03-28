@@ -9,7 +9,9 @@
 
          <!-- JS -->
 
-         <script defer src="ScriptHome.js"></script>
+         <script defer src="ScriptHome.js">
+         
+         </script>
 
          <!-- Fonts Links -->
          <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +44,7 @@
             <a href="Game.html"> <div class="startButton">Start</div> </a>
 
             <!-- Settings Button -->
-            <a href="Settings.html"> 
+            <a href="homepage_settings.html"> 
                 <div class="settingsIcon"> 
                     <img id="myImage" onmouseover="changeSettings()" onmouseout="resetSettings()" src="Images/settingsCog.png" style="width: 100%;">
                 </div> 
@@ -58,6 +60,40 @@
 
         </div>
 
+
+        <!-- Initial "Help" pop up -->
+        <!-- Can be disabled -->
+        <div id="generalInstruct" class="helpDiv">
+
+                <!-- Title -->
+               <h> Instructions </h>
+
+               <!-- Insctructions -->
+               <div class="fullInstruct"> 
+                    <p> Here are the full instructions. We can type these up later, I'm just filling this in a little
+                    bit for my own sanity, but if someone comes up with an actual set of instructions and guidance, 
+                    you may erase my sanity text and fill it in :)
+                    </p>
+
+                    <!-- When clicked, instructions don't pop up ever again -->
+                    <a href="#" onclick="checkChange()">
+                      <div class="notAgain" style="min-height: 50px;">
+                        <div id="showHide" class="checkmark">
+                            <img src="Images/check.png" style="width: 100%;">
+                        </div>
+                      </div>
+                    </a>
+                    <!-- Closes instructions div -->
+                     <a href="#" onclick="exitInstruct()">
+                         <div id="generalInstruct" class="exitInstruct">
+                             <img src="Images/exit.png" style="width: 100%;">
+                         </div>
+                    </a>
+
+               </div>
+
+        </div>
+        
 
     </body>
 
