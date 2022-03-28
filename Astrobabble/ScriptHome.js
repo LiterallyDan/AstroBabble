@@ -5,6 +5,9 @@
 localStorage.setItem("Disable", Disable);
 var Disable = localStorage.setItem("Disable", Disable);
 
+
+
+
 //Changes setting cog to darker color
 function changeSettings()
 {
@@ -16,6 +19,10 @@ function resetSettings()
 {
     document.getElementById("myImage").src = "Images/settingsCog.png";
 }
+
+
+
+
 var characterchoice
 // loads the variable of the character image to this page from the customization page. this is just a test piece of code to be inserted on other pages. 
 window.onload = function (begin){
@@ -25,8 +32,16 @@ window.onload = function (begin){
         characterchoice = "Images/DefaultBasic.png"
     }
     document.getElementById("characterimage").src = characterchoice
-    console.log (characterchoice)
+    console.log(characterchoice)
+
+    if ()
+    {
+        console.log("Instructions Are Disabled");
+        document.getElementById("generalInstruct").style.display = "none";
+    }
 }
+
+
 
 //closes the instructions/help page 
 function exitInstruct ()
@@ -44,30 +59,19 @@ function checkChange()
       var v = document.getElementById("showHide");
       if (v.style.display === "none") 
       {
+          //When checkmark is on, page won't load again
+         console.log("Instructions won't load ever again");
          v.style.display = "block";
-         Disable = 1;
+          localStorage.setItem('Disable', 'DISABLED');
       } 
       else 
       {
+         // when checkmark is off, page will load again next time Home is opened
+         console.log("Instructions re-enabled");
          v.style.display = "none";
-         Disable = 0;
+          localStorage.setItem('Disable', 'ENABLED');
       }
 }
 
-/* window.onload = function()
-{
-    console.log("Disabled Check");
-    var v = document.getElementById("showHide");
-    v.style.display = "none";
-}
 
-window.onload = function()
-{
-    if(Disable === 1)
-        {
-            var w = document.getElementById("generalInstruct");
-            w.style.display = "none";
-        }
-}
 
-*/
