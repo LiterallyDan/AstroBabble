@@ -34,7 +34,8 @@ let word = null;
 let score = 0;
 let key = [];
 let wordScore = [0, 0];
-let characterchoice
+let newWordCounter = 3;
+let characterchoice;
 
 window.onload = function() {
     getWord();
@@ -78,9 +79,9 @@ function heal (){
 }
 
 function hurt () {
-    health = health - 10*increment;
+    health = health - 5*increment;
     oxygen.style.width = health + "%";
-    time = time - 10;
+    time = time - 5;
 
     updateBar();
 }
@@ -116,6 +117,7 @@ async function getWord () {
     for (let i = 0; i < progress.length; i++) progress[i] = "_";
     strArray(word);
     clearBtns();
+    document.getElementById("screen").style.backgroundColor = "var(--red)";
 }
 
 function updateWord (character) {
@@ -127,13 +129,32 @@ function updateWord (character) {
     wordBox.innerText = progress.join(" ");
 }
 
+function nextWord () {
+    var delayInMs = 1000;
+    document.getElementById("screen").style.backgroundColor = "var(--green)";
+    setTimeout(function() {
+        getWord();
+        newWordCounter = 3;
+
+    }, delayInMs);
+}
+
+function newWord () {
+    if (newWordCounter != 0) {
+        getWord();
+        newWordCounter--;
+        newbtn.innerHTML = "New word " + newWordCounter + " / 3";
+    } 
+
+    if (newWordCounter == 0) newbtn.classList.add("hide");
+}
+
 /*
     Universal function for when each character button is pressed to allow for swift editing,
     > Logs the button pressed
-    > 
 */
 function charPressed (button) {
-    if (!button.classList.contains("used") 
+    if (!button.classList.contains("unusable") 
     && wordScore[0] != wordScore [1] 
     && time > 0) { 
         currentChar = button.innerText;
@@ -165,6 +186,8 @@ function isValid (button) {
             for (let i = 0; i < wordScore[1]; i++) {
                 heal();
             }
+            nextWord();
+            newbtn.classList.remove("unusable", "hide");
         }
 
     } else {
@@ -210,32 +233,32 @@ function strArray (string) {
     Clear all button "statuses" for when a new key is loaded.
 */
 function clearBtns () {
-    qbtn.classList.remove("used", "incorrect", "correct");
-    wbtn.classList.remove("used", "incorrect", "correct");
-    ebtn.classList.remove("used", "incorrect", "correct");
-    rbtn.classList.remove("used", "incorrect", "correct");
-    tbtn.classList.remove("used", "incorrect", "correct");
-    ybtn.classList.remove("used", "incorrect", "correct");
-    ubtn.classList.remove("used", "incorrect", "correct");
-    ibtn.classList.remove("used", "incorrect", "correct");
-    obtn.classList.remove("used", "incorrect", "correct");
-    pbtn.classList.remove("used", "incorrect", "correct");
-    abtn.classList.remove("used", "incorrect", "correct");
-    sbtn.classList.remove("used", "incorrect", "correct");
-    dbtn.classList.remove("used", "incorrect", "correct");
-    fbtn.classList.remove("used", "incorrect", "correct");
-    gbtn.classList.remove("used", "incorrect", "correct");
-    hbtn.classList.remove("used", "incorrect", "correct");
-    jbtn.classList.remove("used", "incorrect", "correct");
-    kbtn.classList.remove("used", "incorrect", "correct");
-    lbtn.classList.remove("used", "incorrect", "correct");
-    zbtn.classList.remove("used", "incorrect", "correct");
-    xbtn.classList.remove("used", "incorrect", "correct");
-    cbtn.classList.remove("used", "incorrect", "correct");
-    vbtn.classList.remove("used", "incorrect", "correct");
-    bbtn.classList.remove("used", "incorrect", "correct");
-    nbtn.classList.remove("used", "incorrect", "correct");
-    mbtn.classList.remove("used", "incorrect", "correct");
+    qbtn.classList.remove("unusable", "incorrect", "correct");
+    wbtn.classList.remove("unusable", "incorrect", "correct");
+    ebtn.classList.remove("unusable", "incorrect", "correct");
+    rbtn.classList.remove("unusable", "incorrect", "correct");
+    tbtn.classList.remove("unusable", "incorrect", "correct");
+    ybtn.classList.remove("unusable", "incorrect", "correct");
+    ubtn.classList.remove("unusable", "incorrect", "correct");
+    ibtn.classList.remove("unusable", "incorrect", "correct");
+    obtn.classList.remove("unusable", "incorrect", "correct");
+    pbtn.classList.remove("unusable", "incorrect", "correct");
+    abtn.classList.remove("unusable", "incorrect", "correct");
+    sbtn.classList.remove("unusable", "incorrect", "correct");
+    dbtn.classList.remove("unusable", "incorrect", "correct");
+    fbtn.classList.remove("unusable", "incorrect", "correct");
+    gbtn.classList.remove("unusable", "incorrect", "correct");
+    hbtn.classList.remove("unusable", "incorrect", "correct");
+    jbtn.classList.remove("unusable", "incorrect", "correct");
+    kbtn.classList.remove("unusable", "incorrect", "correct");
+    lbtn.classList.remove("unusable", "incorrect", "correct");
+    zbtn.classList.remove("unusable", "incorrect", "correct");
+    xbtn.classList.remove("unusable", "incorrect", "correct");
+    cbtn.classList.remove("unusable", "incorrect", "correct");
+    vbtn.classList.remove("unusable", "incorrect", "correct");
+    bbtn.classList.remove("unusable", "incorrect", "correct");
+    nbtn.classList.remove("unusable", "incorrect", "correct");
+    mbtn.classList.remove("unusable", "incorrect", "correct");
 }
 
 qbtn.addEventListener('click', () => { charPressed(qbtn);} )
@@ -264,4 +287,4 @@ vbtn.addEventListener('click', () => { charPressed(vbtn);} )
 bbtn.addEventListener('click', () => { charPressed(bbtn);} )
 nbtn.addEventListener('click', () => { charPressed(nbtn);} )
 mbtn.addEventListener('click', () => { charPressed(mbtn);} )
-newbtn.addEventListener('click', () => { getWord() } );
+newbtn.addEventListener('click', () => { newWord() } );
