@@ -159,7 +159,7 @@ function charPressed (button) {
     && time > 0) { 
         currentChar = button.innerText;
         console.log(currentChar + " pressed");
-        button.classList.add("used");
+        button.classList.add("unusable");
         isValid(button);
     }
 }
