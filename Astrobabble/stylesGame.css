@@ -103,7 +103,7 @@ body {
     position:relative;
     min-width: 200px;
 	max-width: 30%;
-    margin-bottom: 90vh;
+    margin-bottom: 95vh;
 }
 
 @keyframes upDown
@@ -146,7 +146,7 @@ body {
 }
 
 /*  Appearance after a button has been used */
-.btn.used {
+.btn.unusable {
     background-color: var(--grey);
     color: var(--drkgrey);
 }
