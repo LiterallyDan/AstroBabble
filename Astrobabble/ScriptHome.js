@@ -2,9 +2,9 @@
            Home Page JS
 ------------------------------------*/
 //Disable and enable variable
-localStorage.setItem("Disable", Disable);
-var Disable = localStorage.setItem("Disable", Disable);
 
+var Disable = localStorage.getItem("Disable");
+localStorage.setItem("Disable", false);
 
 
 
@@ -34,7 +34,8 @@ window.onload = function (begin){
     document.getElementById("characterimage").src = characterchoice
     console.log(characterchoice)
 
-    if ()
+    //Disables instructions if they chose that it is never seen again
+    if (Disable === true)
     {
         console.log("Instructions Are Disabled");
         document.getElementById("generalInstruct").style.display = "none";
@@ -62,14 +63,14 @@ function checkChange()
           //When checkmark is on, page won't load again
          console.log("Instructions won't load ever again");
          v.style.display = "block";
-          localStorage.setItem('Disable', 'DISABLED');
+         localStorage.setItem('Disable', true);
       } 
       else 
       {
          // when checkmark is off, page will load again next time Home is opened
          console.log("Instructions re-enabled");
          v.style.display = "none";
-          localStorage.setItem('Disable', 'ENABLED');
+         localStorage.setItem('Disable', false);
       }
 }
 
