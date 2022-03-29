@@ -322,6 +322,7 @@ body{
 .checkmark
 {
 	width: 100%;
+	display: none;
 }
 
 /* Do Not Show Again text */
