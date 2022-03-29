@@ -60,7 +60,7 @@ function exitInstruct ()
 function checkChange()
 {
       document.getElementById("showHide");
-      if (document.getElementById("showHide").style.display == "none") 
+      if (document.getElementById("showHide").style.display == "none")
       {
           //When checkmark is on, page won't load again
          console.log("Instructions disabled");
