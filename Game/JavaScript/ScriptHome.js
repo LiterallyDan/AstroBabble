@@ -1,6 +1,11 @@
+
 /* ----------------------------------
            Home Page JS
 ------------------------------------*/
+
+//set variable for editing 
+////////////////// <<<<<DELETE LATER>>>>>>> ////////////////////
+localStorage.getItem("Disable");
 
 //Changes setting cog to darker color
 function changeSettings()
@@ -26,30 +31,22 @@ window.onload = function (begin){
     characterchoice = localStorage.getItem("characterchoice")
     Disable = localStorage.getItem("Disable");
 
+    //loads the correct button setup for the tutorial page, doesn't matter if the tutorial page is off for the user.
     document.getElementById("tutorialScrollRight").disabled = true;
     document.getElementById("tutorialScrollLeft").disabled = true;
     document.getElementById("tutorialScrollLeft").style.display = "none";
     document.getElementById("tutorialScrollRight").style.display = "none";
-    
-    
-    
-    
-    //set variable for editing 
-////////////////// <<<<<DELETE LATER>>>>>>> ///////////////////
-localStorage.setItem('Disable', 'null');
-///////////////////////////////////////////////////////////////
 
     //if you've never played sets values to default
-    if (characterchoice == null)
+    if (characterchoice == null){
         characterchoice = "Images/Characters/DefaultBasic.png";
     }
-
     document.getElementById("characterimage").src = characterchoice;
     console.log(characterchoice);
 
     //Enables instructions if they haven't disabled them
     console.log (Disable)
-    if (Disable != "off"){
+    if (Disable == null)
     { 
         console.log ("Enabled");
         console.log("Instructions still load");
@@ -70,6 +67,7 @@ function exitInstruct ()
 function checkChange()
 {
       document.getElementById("showHide");
+      if (document.getElementById("showHide").style.display == "none") 
       if (document.getElementById("showHide").style.display == "none")
       {
           //When checkmark is on, page won't load again
@@ -82,58 +80,75 @@ function checkChange()
          // when checkmark is off, page will load again next time Home is opened
          console.log("Instructions re-enabled");
          document.getElementById("showHide").style.display = "none";
-         localStorage.setItem('Disable', 'null');
       }
 }
+
+
+
+
 //the right arrow button tells the avatar choice variable to go up by one
+//lineNum is 0 from the beginning this means it will start at the first slide each time!
 let lineNum = 0
 var voiceAudio = document.getElementById("voiceLines");
 let voiceSource
 let voiceLines
 function tutorialRight (){
+    //adds one to lineNum
     lineNum++
+    //pauses the current sound in preperation for the new one.
     voiceAudio.pause();
+    //loads the function below
     voiceLoad();
     
 
     }
     //the left arrow button tells the avatar choice variable to go down by one
 function tutorialLeft (){
+    //removes one from lineNum
     lineNum--
+    //pauses the current sound in preperation for the new one.
     voiceAudio.pause();
+    //loads the function below
     voiceLoad();
     
     }
-    function voiceLoad(){
-        console.log ("hello")
-        //if the variable is less than 0 cycle back up to 3
-        if(lineNum < 0){
-            lineNum = 17
-        }
-        //if the variable is more than 3 cycle back down ot 0
-        if(lineNum > 17){
-            lineNum = 0
-        }
-        if(lineNum == 0){
-            document.getElementById("tutorialScrollRight").disabled = true;
-            document.getElementById("tutorialScrollLeft").disabled = true;
-            document.getElementById("tutorialScrollLeft").style.display = "none";
-            document.getElementById("tutorialScrollRight").style.display = "none";
-            document.getElementById("tutorialStart").style.display="block";
-            document.getElementById("tutorialStart").disabled = false;
-        }
-        else {
-            document.getElementById("tutorialScrollRight").disabled = false;
-            document.getElementById("tutorialScrollLeft").disabled = false;
-            document.getElementById("tutorialScrollLeft").style.display = "inline";
-            document.getElementById("tutorialScrollRight").style.display = "inline";
-            document.getElementById("tutorialStart").style.display="none";
-            document.getElementById("tutorialStart").disabled = true;
-        }
-        console.log (lineNum)
-        let voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
-        document.getElementById ("voiceLines").src = voiceSource;
-        voiceAudio.play();
+    //this is the function the plays the sound and decides what buttons to use
+function voiceLoad(){
+    
+    //if the variable is less than 0 cycle back up to 17
+    if(lineNum < 0){
+        lineNum = 17
+    }
+    //if the variable is more than 17 cycle back down ot 0, pretty much once you've gone through all the tutorial slides go to back to the start tutorial screen.
+    if(lineNum > 17){
+        lineNum = 0
+    }
+    //If you are a a default starting position (0) then display a start button rather than the arrow ones
+    if(lineNum == 0){
+        document.getElementById("tutorialScrollRight").disabled = true;
+        document.getElementById("tutorialScrollLeft").disabled = true;
+        document.getElementById("tutorialScrollLeft").style.display = "none";
+        document.getElementById("tutorialScrollRight").style.display = "none";
+        document.getElementById("tutorialStart").style.display="block";
+        document.getElementById("tutorialStart").disabled = false;
+    }
+    // for every other case show the arrow buttons and not the start button.
+    else {
+        document.getElementById("tutorialScrollRight").disabled = false;
+        document.getElementById("tutorialScrollLeft").disabled = false;
+        document.getElementById("tutorialScrollLeft").style.display = "inline";
+        document.getElementById("tutorialScrollRight").style.display = "inline";
+        document.getElementById("tutorialStart").style.display="none";
+        document.getElementById("tutorialStart").disabled = true;
+    }
+    //sets the variable voiceSource so that it's the sound file location
+    let voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
+    //let SlideSource = "Images/Slides/Slide"+ slideNum + ".png";
+    //document.getElementById ("Slide").src = slideSource;
+    //sets the audio source to the correct file
+    document.getElementById ("voiceLines").src = voiceSource;
+    //plays sound. 
+    voiceAudio.play();
     
     }    
 
