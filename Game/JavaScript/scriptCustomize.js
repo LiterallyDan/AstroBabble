@@ -120,13 +120,8 @@ function CharFinal(){
     }
 
     //if you've reached level 10 this will be set to true and you will unlock the gold style for the default space explorer
-    if (awesome == "you're awesome"){
-        
-        document.getElementById("alt3").disabled = false;
-        document.getElementById("alt3").style.opacity = "100%";
-    }
     //if you are yet to beat level 10 then you will not be able to use the gold style. 
-    if (avatarchoice != 0){
+    if (awesome != true || avatarchoice != 0){
         console.log("hello")
         document.getElementById("alt3").disabled = true;
         document.getElementById("alt3").style.opacity = "0%";
