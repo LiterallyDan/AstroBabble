@@ -14,14 +14,15 @@ function resetSettings()
     document.getElementById("myImage").src = "Images/settingsCog.png";
 }
 
-
+//Variables
 var Disable;
 var characterchoice;
+
+
 // loads the variable of the character image to this page from the customization page. this is just a test piece of code to be inserted on other pages. 
 window.onload = function (begin){
 
     //disables checkmark on page load
-    //document.getElementById("showHide").style.display = "none";
 
     //local storage
     characterchoice = localStorage.getItem("characterchoice")
