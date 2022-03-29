@@ -21,7 +21,7 @@ html {
 
 /*  Body Formatting - "Shapes" the Flex Box    */
 body {
-    background-image: url('images/Background.png');
+    background-image: url("../Images/Other/Background.png");
     padding: 0;
     margin: 0;
     display: flex;

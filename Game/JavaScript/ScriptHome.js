@@ -2,19 +2,15 @@
            Home Page JS
 ------------------------------------*/
 
-//set variable for editing 
-////////////////// <<<<<DELETE LATER>>>>>>> ////////////////////
-localStorage.setItem("Disable", null);
-
 //Changes setting cog to darker color
 function changeSettings()
 {
-    document.getElementById("myImage").src = "Images/settingsCog2.png";
+    document.getElementById("myImage").src = "Images/Icons/settingsCog2.png";
 }
 //Resets settings cog to original color
 function resetSettings()
 {
-    document.getElementById("myImage").src = "Images/settingsCog.png";
+    document.getElementById("myImage").src = "Images/Icons/settingsCog.png";
 }
 
 //Variables
@@ -30,16 +26,21 @@ window.onload = function (begin){
     characterchoice = localStorage.getItem("characterchoice")
     Disable = localStorage.getItem("Disable");
 
+    //set variable for editing 
+////////////////// <<<<<DELETE LATER>>>>>>> ///////////////////
+
+///////////////////////////////////////////////////////////////
+
     //if you've never played sets values to default
-    if (characterchoice == undefined){
-        characterchoice = "Images/DefaultBasic.png";
+    if (characterchoice == null){
+        characterchoice = "Images/Characters/DefaultBasic.png";
     }
     document.getElementById("characterimage").src = characterchoice;
     console.log(characterchoice);
-
+    localStorage.setItem('Disable', 'null');
     //Enables instructions if they haven't disabled them
     console.log (Disable)
-    if (Disable == "null")
+    if (Disable != "off")
     { 
         console.log ("Enabled");
         console.log("Instructions still load");
@@ -60,7 +61,7 @@ function exitInstruct ()
 function checkChange()
 {
       document.getElementById("showHide");
-      if (document.getElementById("showHide").style.display == "none") 
+      if (document.getElementById("showHide").style.display == "none")
       {
           //When checkmark is on, page won't load again
          console.log("Instructions disabled");
@@ -72,6 +73,7 @@ function checkChange()
          // when checkmark is off, page will load again next time Home is opened
          console.log("Instructions re-enabled");
          document.getElementById("showHide").style.display = "none";
+         localStorage.setItem('Disable', 'null');
       }
 }
 
