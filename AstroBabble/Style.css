@@ -122,6 +122,8 @@ body{
 	bottom: 0;
 	left: 0;
 	width: 3%;
+	padding-left:1%;
+	padding-bottom:1%;
 }
 
 .charactersIcon
@@ -130,7 +132,7 @@ body{
 	bottom: 0;
 	right: 0;
 	width: 150px;
-	padding-right:2%;
+	padding-right:1%;
 	transition: ease-in-out 0.5s;
 }
 .charactersIcon:hover{
@@ -285,23 +287,24 @@ body{
 	width: 70%;
 	height: 70%;
 	background-color: grey;
-	outline: 3vw solid black;
+	outline: 1vw solid black;
 	opacity: 1;
 	z-index: 3;
 	border-radius: 50px;
 	text-align: center;
 	font-family: 'Bungee', cursive;
-	font-size: 8vw;
+	font-size: 6vw;
 	line-height: 1.2;
-	display: block;
+	display: none;
 }
 
+/* Full typed instrutions */
 .fullInstruct
 {
 	position: relative;
 	margin: auto;
 	font-size: 20px;
-	line-height: 1;
+	line-height: 1.5;
 	font-family: 'Bungee', cursive;
 	width: 95%;
 }
@@ -309,17 +312,24 @@ body{
 /* Check box for not showing help again */
 .notAgain
 {
-	position: relative;
-	width: 50px;
-	margin: auto;
 	background-color: white;
 	outline: 0.3vw solid black;
+	width: 100%;
+    padding-bottom: 20%;
+}
+
+/* Position the link for checkmark */
+.positionA
+{
+	position: relative;
 }
 
 /* Checkmark for show/don't show box */
 .checkmark
 {
 	width: 100%;
+	display: none;
+	line-height: 0;
 }
 
 /* Do Not Show Again text */
@@ -327,14 +337,24 @@ body{
 {
 	position: relative;
 	font-size: 1vw;
-	
+	left: 0;
 }
 
+/* Exit "X" from instructions page */
 .exitInstruct
 {
-	position: relative;
-	margin: auto;
-	width: 5vw;
+	position: absolute;
+	width: 3vw;
 	background-image: url("Images/exit.png");
-	float: left;
+	right: 5%;
+	bottom: 0;
+}
+
+/* Container for help div */
+.containHelp
+{
+	position: relative;
+	bottom: 0;
+	width: 5%;
+	margin: auto;
 }
