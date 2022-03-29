@@ -4,17 +4,17 @@
 
 //set variable for editing 
 ////////////////// <<<<<DELETE LATER>>>>>>> ////////////////////
-localStorage.setItem("Disable", null);
+localStorage.getItem("Disable");
 
 //Changes setting cog to darker color
 function changeSettings()
 {
-    document.getElementById("myImage").src = "Images/settingsCog2.png";
+    document.getElementById("myImage").src = "Images/Icons/settingsCog2.png";
 }
 //Resets settings cog to original color
 function resetSettings()
 {
-    document.getElementById("myImage").src = "Images/settingsCog.png";
+    document.getElementById("myImage").src = "Images/Icons/settingsCog.png";
 }
 
 //Variables
@@ -31,15 +31,15 @@ window.onload = function (begin){
     Disable = localStorage.getItem("Disable");
 
     //if you've never played sets values to default
-    if (characterchoice == undefined){
-        characterchoice = "Images/DefaultBasic.png";
+    if (characterchoice == null){
+        characterchoice = "Images/Characters/DefaultBasic.png";
     }
     document.getElementById("characterimage").src = characterchoice;
     console.log(characterchoice);
 
     //Enables instructions if they haven't disabled them
     console.log (Disable)
-    if (Disable == "null")
+    if (Disable == null)
     { 
         console.log ("Enabled");
         console.log("Instructions still load");
