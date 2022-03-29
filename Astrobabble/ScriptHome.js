@@ -4,8 +4,6 @@
 
 //set variable for editing 
 ////////////////// <<<<<DELETE LATER>>>>>>> ////////////////////
-localStorage.setItem('Disable', undefined);
-
 
 //Changes setting cog to darker color
 function changeSettings()
