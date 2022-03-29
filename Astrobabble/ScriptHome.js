@@ -10,7 +10,6 @@ function changeSettings()
 {
     document.getElementById("myImage").src = "Images/settingsCog2.png";
 }
-
 //Resets settings cog to original color
 function resetSettings()
 {
