@@ -17,6 +17,7 @@ function resetSettings()
 
 var Disable;
 var characterchoice;
+var audio;
 // loads the variable of the character image to this page from the customization page. this is just a test piece of code to be inserted on other pages. 
 window.onload = function (begin){
 
@@ -24,6 +25,7 @@ window.onload = function (begin){
     //document.getElementById("showHide").style.display = "none";
 
     //local storage
+    document.getElementById("showHide").style.display = "none";
     characterchoice = localStorage.getItem("characterchoice")
     Disable = localStorage.getItem("Disable");
 
@@ -35,8 +37,10 @@ window.onload = function (begin){
     console.log(characterchoice);
 
     //Enables instructions if they haven't disabled them
-    if (Disable == 'undefined')
-    {
+    console.log (Disable)
+    if (Disable == null)
+    { 
+    console.log (Disable)
         console.log("Instructions still load");
         document.getElementById("generalInstruct").style.display = "block";
     }
@@ -67,7 +71,6 @@ function checkChange()
          // when checkmark is off, page will load again next time Home is opened
          console.log("Instructions re-enabled");
          document.getElementById("showHide").style.display = "none";
-         localStorage.setItem('Disable', undefined);
       }
 }
 
