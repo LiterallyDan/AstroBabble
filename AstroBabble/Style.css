@@ -298,6 +298,7 @@ body{
 	display: none;
 }
 
+/* Full typed instrutions */
 .fullInstruct
 {
 	position: relative;
@@ -311,11 +312,16 @@ body{
 /* Check box for not showing help again */
 .notAgain
 {
-	position: relative;
-	width: 50px;
-	margin: auto;
 	background-color: white;
 	outline: 0.3vw solid black;
+	width: 100%;
+    padding-bottom: 20%;
+}
+
+/* Position the link for checkmark */
+.positionA
+{
+	position: relative;
 }
 
 /* Checkmark for show/don't show box */
@@ -323,6 +329,7 @@ body{
 {
 	width: 100%;
 	display: none;
+	line-height: 0;
 }
 
 /* Do Not Show Again text */
@@ -330,14 +337,24 @@ body{
 {
 	position: relative;
 	font-size: 1vw;
+	left: 0;
 }
 
+/* Exit "X" from instructions page */
 .exitInstruct
 {
-	position: relative;
-	margin: auto;
-	width: 5vw;
+	position: absolute;
+	width: 3vw;
 	background-image: url("Images/exit.png");
-	float: left;
-	float: bottom;
+	right: 5%;
+	bottom: 0;
+}
+
+/* Container for help div */
+.containHelp
+{
+	position: relative;
+	bottom: 0;
+	width: 5%;
+	margin: auto;
 }
