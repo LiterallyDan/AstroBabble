@@ -45,7 +45,7 @@ window.onload = function() {
     characterchoice = localStorage.getItem("characterchoice")
     //if you've never played sets values to default
     if (characterchoice == undefined){
-        characterchoice = "../Images/Characters/DefaultBasic.png"
+        characterchoice = "Images/Characters/DefaultBasic.png"
     }
     document.getElementById("characterimage").src = characterchoice
 } 
