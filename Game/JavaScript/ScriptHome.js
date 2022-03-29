@@ -28,16 +28,17 @@ window.onload = function (begin){
 
     //set variable for editing 
 ////////////////// <<<<<DELETE LATER>>>>>>> ///////////////////
-
+localStorage.setItem('Disable', 'null');
 ///////////////////////////////////////////////////////////////
 
     //if you've never played sets values to default
     if (characterchoice == null){
         characterchoice = "Images/Characters/DefaultBasic.png";
     }
+
     document.getElementById("characterimage").src = characterchoice;
     console.log(characterchoice);
-    localStorage.setItem('Disable', 'null');
+
     //Enables instructions if they haven't disabled them
     console.log (Disable)
     if (Disable != "off")
