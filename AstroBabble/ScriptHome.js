@@ -4,6 +4,7 @@
 
 //set variable for editing 
 ////////////////// <<<<<DELETE LATER>>>>>>> ////////////////////
+localStorage.setItem("Disable", null);
 
 //Changes setting cog to darker color
 function changeSettings()
@@ -38,9 +39,9 @@ window.onload = function (begin){
 
     //Enables instructions if they haven't disabled them
     console.log (Disable)
-    if (Disable == null)
+    if (Disable == "null")
     { 
-    console.log (Disable)
+        console.log ("Enabled");
         console.log("Instructions still load");
         document.getElementById("generalInstruct").style.display = "block";
     }
@@ -62,7 +63,7 @@ function checkChange()
       if (document.getElementById("showHide").style.display == "none") 
       {
           //When checkmark is on, page won't load again
-         console.log("Instructions won't load ever again");
+         console.log("Instructions disabled");
          document.getElementById("showHide").style.display = "block";
          localStorage.setItem('Disable', 'off');
       } 
