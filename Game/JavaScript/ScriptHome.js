@@ -26,13 +26,21 @@ window.onload = function (begin){
     characterchoice = localStorage.getItem("characterchoice")
     Disable = localStorage.getItem("Disable");
 
+    document.getElementById("tutorialScrollRight").disabled = true;
+    document.getElementById("tutorialScrollLeft").disabled = true;
+    document.getElementById("tutorialScrollLeft").style.display = "none";
+    document.getElementById("tutorialScrollRight").style.display = "none";
+    
+    
+    
+    
     //set variable for editing 
 ////////////////// <<<<<DELETE LATER>>>>>>> ///////////////////
 
 ///////////////////////////////////////////////////////////////
 
     //if you've never played sets values to default
-    if (characterchoice == null){
+    if (characterchoice == null)
         characterchoice = "Images/Characters/DefaultBasic.png";
     }
     document.getElementById("characterimage").src = characterchoice;
@@ -40,7 +48,7 @@ window.onload = function (begin){
     localStorage.setItem('Disable', 'null');
     //Enables instructions if they haven't disabled them
     console.log (Disable)
-    if (Disable != "off")
+    if (Disable != "off"){
     { 
         console.log ("Enabled");
         console.log("Instructions still load");
@@ -104,6 +112,22 @@ function tutorialLeft (){
         //if the variable is more than 3 cycle back down ot 0
         if(lineNum > 17){
             lineNum = 0
+        }
+        if(lineNum == 0){
+            document.getElementById("tutorialScrollRight").disabled = true;
+            document.getElementById("tutorialScrollLeft").disabled = true;
+            document.getElementById("tutorialScrollLeft").style.display = "none";
+            document.getElementById("tutorialScrollRight").style.display = "none";
+            document.getElementById("tutorialStart").style.display="block";
+            document.getElementById("tutorialStart").disabled = false;
+        }
+        else {
+            document.getElementById("tutorialScrollRight").disabled = false;
+            document.getElementById("tutorialScrollLeft").disabled = false;
+            document.getElementById("tutorialScrollLeft").style.display = "inline";
+            document.getElementById("tutorialScrollRight").style.display = "inline";
+            document.getElementById("tutorialStart").style.display="none";
+            document.getElementById("tutorialStart").disabled = true;
         }
         console.log (lineNum)
         let voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
