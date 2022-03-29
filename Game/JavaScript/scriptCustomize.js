@@ -73,7 +73,7 @@ function CharFinal(){
         document.getElementById("alt2").style.background = "orangered";
         document.getElementById("alt3").style.background = "goldenrod";
     }
-    //if the variable is 0 then load this character, and set the button colours to the following options
+    //if the variable is 1 then load this character, and set the button colours to the following options
     if(avatarchoice == 1){
         avatar = "Cat";
         document.getElementById("charName").innerHTML = "Captain Cuddles";
@@ -82,7 +82,7 @@ function CharFinal(){
         document.getElementById("alt2").style.background = "plum";
         document.getElementById("alt3").style.background = "lightgrey";
     }
-    //if the variable is 0 then load this character, and set the button colours to the following options
+    //if the variable is 2 then load this character, and set the button colours to the following options
     if(avatarchoice == 2){
         avatar = "Fish";
         document.getElementById("charName").innerHTML = "Gillian Gobb";
@@ -91,7 +91,7 @@ function CharFinal(){
         document.getElementById("alt2").style.background = "plum";
         document.getElementById("alt3").style.background = "lightgrey";
     }
-    //if the variable is 0 then load this character, and set the button colours to the following options
+    //if the variable is 3 then load this character, and set the button colours to the following options
     if(avatarchoice == 3){
         avatar = "Skull";
         document.getElementById("charName").innerHTML = "Spooks";
@@ -100,6 +100,7 @@ function CharFinal(){
         document.getElementById("alt2").style.background = "purple";
         document.getElementById("alt3").style.background = "lightgrey";
     }
+    //if the variable is 4 then load this character, and set the button colours to the following options
     if(avatarchoice == 4){
         avatar = "Sparkle";
         document.getElementById("charName").innerHTML = "McSparkles";
@@ -108,6 +109,7 @@ function CharFinal(){
         document.getElementById("alt2").style.background = "purple";
         document.getElementById("alt3").style.background = "lightgrey";
     }
+    //if the variable is 5 then load this character, and set the button colours to the following options
     if(avatarchoice == 5){
         avatar = "Trooper";
         document.getElementById("charName").innerHTML = "Stormtrooper";

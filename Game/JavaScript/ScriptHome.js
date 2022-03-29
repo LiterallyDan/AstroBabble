@@ -76,6 +76,41 @@ function checkChange()
          localStorage.setItem('Disable', 'null');
       }
 }
+//the right arrow button tells the avatar choice variable to go up by one
+let lineNum = 0
+var voiceAudio = document.getElementById("voiceLines");
+let voiceSource
+let voiceLines
+function tutorialRight (){
+    lineNum++
+    voiceAudio.pause();
+    voiceLoad();
+    
+
+    }
+    //the left arrow button tells the avatar choice variable to go down by one
+function tutorialLeft (){
+    lineNum--
+    voiceAudio.pause();
+    voiceLoad();
+    
+    }
+    function voiceLoad(){
+        console.log ("hello")
+        //if the variable is less than 0 cycle back up to 3
+        if(lineNum < 0){
+            lineNum = 17
+        }
+        //if the variable is more than 3 cycle back down ot 0
+        if(lineNum > 17){
+            lineNum = 0
+        }
+        console.log (lineNum)
+        let voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
+        document.getElementById ("voiceLines").src = voiceSource;
+        voiceAudio.play();
+    
+    }    
 
 
 
