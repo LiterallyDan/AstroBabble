@@ -380,17 +380,16 @@ height: auto;
 /* General Div for all of help pop-up */
 .helpDiv
 {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	margin: auto;
-	width: 70%;
-	height: 70%;
-	background-color: grey;
+	width: 90%;
+	height: 90%;
+	background-color: #969EAB;
 	outline: 1vw solid black;
-	opacity: 1;
 	z-index: 3;
 	border-radius: 50px;
 	text-align: center;
@@ -400,17 +399,15 @@ height: auto;
 	display: none;
 }
 
-/* Full typed instrutions */
-.fullInstruct
+/* Container for help div elements */
+.containHelp
 {
 	position: relative;
+	width: 5%;
 	margin: auto;
-	font-size: 20px;
-	line-height: 1.5;
-	font-family: 'Bungee', cursive;
-	width: 95%;
+	display: flex;
+	justify-content: center;
 }
-
 /* Check box for not showing help again */
 .notAgain
 {
@@ -418,13 +415,14 @@ height: auto;
 	outline: 0.3vw solid black;
 	width: 50px;
     height: 50px;
-	line-height: 0;
+	margin-top: 15%;
 }
 
 /* Position the link for checkmark */
 .positionA
 {
 	position: relative;
+	display: inline-block;
 }
 
 /* Checkmark for show/don't show box */
@@ -439,8 +437,7 @@ height: auto;
 .notAgainText
 {
 	position: relative;
-	font-size: 1vw;
-	left: 0;
+	font-size: 20px;
 }
 
 /* Exit "X" from instructions page */
@@ -453,11 +450,72 @@ height: auto;
 	bottom: 0;
 }
 
-/* Container for help div */
-.containHelp
+/* Start tutorial button */
+.startTutorial
 {
-	position: relative;
-	bottom: 0;
-	width: 5%;
-	margin: auto;
+	position: fixed;
+	bottom: 50%;
+	width: 20%;
+    left: 50%;
+    margin-left: -10%;
+	outline: 3px solid black;
+	background-color: #F26A4B;
+}
+
+/* Hover state for start button */
+.startTutorial:hover
+{
+	background-color: #024E73;
+}
+
+/* Right arrow button */
+.rightArrow
+{
+  position: absolute; 
+  border: solid black; 
+  background-color: transparent;
+  border-width: 0 20px 20px 0;
+  display: inline-block; 
+  padding: 20px;
+  right: 0;
+  top: 50%;
+  transform: rotate(-45deg); /* points arrow in correct direction */
+  -webkit-transform: rotate(-45deg);
+  margin-right: 3%;
+}
+
+/* changes arrow color on hover */
+.rightArrow:hover
+{
+	border: solid #024E73;
+	/* Fix shape swapping problems*/
+	border-width: 0 20px 20px 0;
+	display: inline-block;
+	padding: 20px;
+}
+
+/* Left arrow button */
+.leftArrow
+{
+  position: absolute;
+  border: solid black;
+  background-color: transparent;
+  border-width: 0 20px 20px 0;
+  display: inline-block;
+  padding: 20px;
+  left: 0;
+  top: 50%;
+  transform: rotate(135deg); /* points arrow in correct direction */
+  -webkit-transform: rotate(135deg);
+  margin-left: 3%;
+}
+
+/* changes arrow color on hover */
+.leftArrow:hover
+{
+	border: solid #024E73;
+	/* Fix shape swapping problems*/
+	border-width: 0 20px 20px 0;
+	display: inline-block;
+	padding: 20px;
 }
