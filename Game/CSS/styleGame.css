@@ -5,7 +5,7 @@ html {
 
 /*  Storage for colour variables for easy changing  */
 :root {
-    --bg: white;
+    --bg: #FAF9F6;
     --dark: #131D26;
     --blue: #024E73;
     --grey: #F2F2F2;
@@ -16,90 +16,95 @@ html {
     --hpred:#f55840;
     --hpylw:#f2f542;
     --hpaqua:#40ddf5;
-    --green: #50ca68;   /*  Note that this colour is a placeholder  */
+    --green: #50ca68;   
 }
 
 /*  Body Formatting - "Shapes" the Flex Box    */
 body {
-    background-image: url("../Images/Other/Background.png");
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    text-align:center;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    color: var(--bg);
-    overflow: hidden;
+    background-image: url("../Images/Other/Background.png"); /* Set background to Cole's art    */
+    padding: 0; /*  Remove all padding  */
+    margin: 0;  /*  Remove all margins  */
+    display: flex;  /*  Set display for page to flexbox */
+    flex-direction: column; /*  Orient flexbox as a column  */
+    text-align:center;  /*  Center-align text   */
+    width: 100vw;   /*  Maximum width is 100%   */
+    height: 100vh;  /*  Maximum height is 100%  */
+    justify-content: center;    /*  Center-align content    */
+    align-items: center;    /*  Center-align individual items  */
+    color: var(--bg);   /*  Font colour = off-white */
+    overflow: hidden;   /*  Remove pesky scrollbars */
 }
 
+/*  Formatting for the score div    */
 .score {
-    font-family: 'Bungee', cursive;
-    line-height:0%;
-    font-size: 36px;
+    font-family: 'Bungee', cursive; /*  Specified font is Bungee    */
+    line-height:0%; /*  Remove awkward vertical indentation */
+    font-size: 36px;    /*  Set font size to 36px   */
 }
 
+/*  Formatting for the score bar*/
 .bar-score {
-    position: absolute;
-    margin-bottom: 70vh;
+    position: absolute; /*  Absolute position   */
+    margin-bottom: 70vh;    /*  Orient to be place at the bottom of the top 30% of the page */
 }
 
+/*  Formatting for the oxygen / health bar  */
 .oxygenBar{
-    display: flex;
-    width: 70vw;
-    border-radius: 30px;
-    align-items: center;
+    display: flex;  /*  Set display to flex */
+    width: 70vw;    /*  Set width to 70% of screen  */
+    border-radius: 30px;    /*  Curve corners by 30px   */
+    align-items: center;    /*  Center-align contents   */
 }
 .oxygenBG{
-    background-color: var(--drkgrey);
-    width: 100%;
-    overflow: hidden;
-    border-radius: 30px;
+    background-color: var(--drkgrey);   /*  Set  background to drkgrey variable */
+    width: 100%;    /*  Contents of bar fill bar by 100%    */
+    overflow: hidden;   /*  Bar overflow (like excess oxygen points) is hidden  */
+    border-radius: 30px;    /*  Curve corners by 30px   */
 }
 #oxygen{
-    background-color: var(--green);
-    padding-right: 0%;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-    overflow: hidden;
-    text-align: center;
+    background-color: var(--green); /*  Oxygen is green by defaul   */
+    padding-right: 0%;  /*  No padding  */
+    transition-duration: 0.5s;  /*  Smooth colour change animations */
+    transition-timing-function: ease;   /*  Ease into change    */
+    overflow: hidden;   /*  Hide overflow colours (like excess oxygen)   */
 }
 
+/*  Formatting for timer ID */
 #timer {
-    font-family: 'Orbitron', sans-serif;
-    padding-bottom: 2vh;
+    font-family: 'Orbitron', sans-serif;    /*  Specify font to be our secondary font   */
+    padding-bottom: 2vh;    /*  Bottom padding set to 2% of vertical height */
 }
 
+/*  Formatting for keyboard container   */
 .container {
-    position: absolute;
-    margin-top: 30vh;
-    width: 600px;
-    max-width: 80%;
-    padding: 15px;
-    text-align: center;
-    border-radius: 30px;
+    position: absolute; /*  Absolute position   */
+    margin-top: 30vh;   /*  There will always be 30% of vertical height above the container */
+    width: 600px;   /*  Container minimum width is 600px    */
+    max-width: 80%; /*  Container maximum width is 80% of the screen    */
+    padding: 15px;  /*  15px of padding */
+    text-align: center; /*  Align text for everything in the center of the container */
+    border-radius: 30px;    /*  Curve borders by 30px   */
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    -webkit-backdrop-filter: blur( 4px );   /* ^ */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+/*  Formatting for the screen ID    */
 #screen {
-    display:flex;
-    font-family: 'Bungee', cursive;
-    color: var(--dark);
-    background-color: var(--red);
-    padding: 15px;
-    justify-content: center;
-    border-radius: 20px;
+    display:flex;   /*  Set display to flex */
+    font-family: 'Bungee', cursive; /*  Set font to Bungee  */
+    color: var(--dark); /*  Inner text assigned to our prechosen "dark" colour  */
+    background-color: var(--red);   /*  Inside of screen assigned to our prechosen "red" colour */
+    padding: 15px;  /*  Padding set to 15px */
+    justify-content: center;    /*  Center-align content    */
+    border-radius: 20px;    /*  Curve borders by 20px   */
 }
 
+/*  Formatting for character image  */
 #characterimage {
-    animation: upDown 5s infinite ease-in-out;
+    animation: upDown 5s infinite ease-in-out;  /*  */
     position:relative;
     min-width: 200px;
 	max-width: 30%;
