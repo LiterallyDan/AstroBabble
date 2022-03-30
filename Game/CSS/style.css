@@ -53,9 +53,54 @@ body{
 	75% {top: 30%;}
 	100% {top: 25%;}
 }
-a:link { 
+a:link 
+{ 
 	text-decoration: none; 
 }
+
+/* Styling for return home from character page */
+.btnBack {
+	position: fixed;
+	background-color: white;
+	bottom: 0;
+	left: 0;
+	padding: 5px;
+}
+
+/* Button to scroll left in characters*/
+.btnL {
+	/* Shapes it into arrow */
+	position: absolute;
+	border: solid white;
+	background-color: transparent;
+	border-width: 0 20px 20px 0;
+	display: inline-block;
+	padding: 20px;
+	/* ^ Shapes it into arrow ^ */
+	left: 0;
+	top: 50%;
+	transform: rotate(135deg); /* points arrow in correct direction */
+	-webkit-transform: rotate(135deg);
+	margin-left: 3%;
+}
+
+/* Button to scroll right in characters*/
+.btnR {
+	/* Shapes it into arrow */
+	position: absolute;
+	border: solid white;
+	background-color: transparent;
+	border-width: 0 20px 20px 0;
+	display: inline-block;
+	padding: 20px;
+	/* ^ Shapes it into arrow ^ */
+	right: 0;
+	top: 50%;
+	transform: rotate(-45deg); /* points arrow in correct direction */
+	-webkit-transform: rotate(-45deg);
+	margin-right: 3%;
+}
+
 .btn-group{
 	display: flex;
 }
@@ -325,17 +370,7 @@ height: auto;
 	padding: 10%;
 	display: flexbox;
 }
-/* Arrow to scroll left through characters */
-.arrowLeft
-{
 
-}
-
-/* Arrow to scroll right through characters */
-.arrowRight
-{
-
-}
 
 /* The actual images of characters */
 #avatarImage {
@@ -378,8 +413,7 @@ height: auto;
 -------------------------------*/
 
 /* General Div for all of help pop-up */
-.helpDiv
-{
+.helpDiv {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -388,7 +422,7 @@ height: auto;
 	margin: auto;
 	width: 90%;
 	height: 90%;
-	background-color: #969EAB;
+	background-color: #F26A4B;
 	outline: 1vw solid black;
 	z-index: 3;
 	border-radius: 50px;
@@ -409,13 +443,13 @@ height: auto;
 	justify-content: center;
 }
 /* Check box for not showing help again */
-.notAgain
-{
+.notAgain {
 	background-color: white;
 	outline: 0.3vw solid black;
 	width: 50px;
-    height: 50px;
+	height: 50px;
 	margin-top: 15%;
+	opacity: 1;
 }
 
 /* Position the link for checkmark */
@@ -429,22 +463,21 @@ height: auto;
 .checkmark
 {
 	width: 100%;
-	display: none;
 	line-height: 0;
 }
 
 /* Do Not Show Again text */
-.notAgainText
-{
+.notAgainText {
 	position: relative;
 	font-size: 20px;
+	opacity: 1;
 }
 
 /* Exit "X" from instructions page */
-.exitInstruct
-{
+.exitInstruct {
 	position: absolute;
-	width: 3vw;
+	width: 8vw;
+	max-width: 50px;
 	background-image: url("../Images/Icons/exit.png");
 	right: 5%;
 	bottom: 0;
@@ -455,11 +488,11 @@ height: auto;
 {
 	position: fixed;
 	bottom: 50%;
-	width: 20%;
+	width: 24%;
     left: 50%;
-    margin-left: -10%;
+    margin-left: -12%; /* centers start button */
 	outline: 3px solid black;
-	background-color: #F26A4B;
+	background-color: white;
 }
 
 /* Hover state for start button */
@@ -473,7 +506,7 @@ height: auto;
 {
   position: absolute; 
   border: solid black; 
-  background-color: transparent;
+  background-color: transparent; 
   border-width: 0 20px 20px 0;
   display: inline-block; 
   padding: 20px;
@@ -519,3 +552,4 @@ height: auto;
 	display: inline-block;
 	padding: 20px;
 }
+
