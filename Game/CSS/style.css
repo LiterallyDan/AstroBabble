@@ -260,7 +260,11 @@ height: auto;
 	}
 }
 @media screen and (max-width: 450px)
+
 {
+	body{
+		background-image: url("../Images/Other/BackgroundPhone.png");
+	}
 	.characterHome
 	{
 	width: 300px;
