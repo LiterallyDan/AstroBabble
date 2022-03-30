@@ -1,5 +1,21 @@
 /* Style Sheet */
 
+/*  Storage for colour variables for easy changing  */
+:root {
+    --bg: #FAF9F6;
+    --dark: #131D26;
+    --blue: #024E73;
+    --grey: #F2F2F2;
+    --drkgrey: #969EAB;
+    --red: #F26A4B;
+
+    /* Health Colours */
+    --hpred:#f55840;
+    --hpylw:#f2f542;
+    --hpaqua:#40ddf5;
+    --green: #50ca68;   
+}
+
 /* ------------------------------
 			Home Page
 -------------------------------*/
@@ -8,6 +24,7 @@
 
 body{
 	background-image: url("../Images/Other/Background.png");
+	overflow: hidden;   /*  Remove pesky scrollbars */
 }
 .backgroundHome
 {
@@ -84,7 +101,7 @@ nav{
 	align-items: center;
 
 }
-	ul{
+ul{
 
 	display:flex;
 	flex-direction: column;
@@ -107,7 +124,7 @@ li:hover{
 }
 
 li a:hover{
-  color: antiquewhite;
+  color: antiquevar();
 }
 .backbutton a img{
   width: 300px;
@@ -127,69 +144,41 @@ height: auto;
   margin: 0%;
 }
 
-/*Settings accessibility*/
-*{
-	font-family: 'Bungee';
-}
-
-
-.btn-group-access{
-	display: flex;
-	flex-direction: column;
-	left: 30%;
-	align-items: center;
-}
-
-
-.text-large{
-	font-size: 55px;
-	color:purple;
-}
-
-.text-medium{
-	font-size: 40px;
-	background: none;
-	color: purple;
-
-} 
-.text-small{
-	font-size: 30px;
-	color: purple;
-}
- h1{
-	color: purple;
-	font-size: 60px;
-	margin: 0%;
-}
-
 /* Start Button */
 .startButton
 {
-	position: relative;
+	font-family: 'Bungee', cursive;
+	position: absolute;
+	margin: auto;
 	max-width: 400px;
 	min-width: 200px;
 	width: 40%;
 	top: 85%;
-	text-decoration: none;
-	margin: auto;
-	text-align: center;
-	background-color: #878787; 
-	color: black;
-	border-radius: 50px;
-	border-style: outset;
-	border-color: #333333;
-	border-width: 3px;
-	font-family: 'Bungee', cursive;
+	left:50%;
+	right:50%;
+	transform: translate(-50%, -50%);
+	color: var(--bg);
 	font-size: 50px;
-	padding: 0;
-	line-height: 1.2;
+	padding: 15px;  /*  15px of padding */
+    text-align: center; /*  Align text for everything in the center of the container */
+    border-radius: 30px;    /*  Curve borders by 30px   */
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    -webkit-backdrop-filter: blur( 4px );   /* ^ */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* Hover state for start game button */
 .startButton:hover
 {
-	border-style: inset;
-	color: white;
+	transition-duration: 0.1s;  /*  Smooth colour change animations */
+    transition-timing-function: ease;   /*  Ease into change    */
+	color: var(--bg);
+	background: rgba( 47, 46, 103, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 
 /* To remove underscore from link */
@@ -198,8 +187,6 @@ height: auto;
 	text-decoration: none;
 }
 
-
-
 /* Home "Astro Babble" title text*/
 .titleHome
 {
@@ -207,7 +194,7 @@ height: auto;
 	text-align: center;
 	font-family: 'Bungee', cursive;
 	font-size: 8vw;
-	color: #dfdfd9;
+	color: var(--bg);
 	width: 100%;
 	z-index: 3;
 	margin: 0 0 0 0;
@@ -346,7 +333,7 @@ height: auto;
 /* Styling for return home from character page */
 .btnBack {
 	position: fixed;
-	background-color: white;
+	background-color: var();
 	bottom: 0;
 	left: 0;
 	padding: 5px;
@@ -356,7 +343,7 @@ height: auto;
 .btnL {
 	/* Shapes it into arrow */
 	position: absolute;
-	border: solid white;
+	border: solid var();
 	background-color: transparent;
 	border-width: 0 10px 10px 0;
 	display: inline-block;
@@ -374,7 +361,7 @@ height: auto;
 .btnR {
 	/* Shapes it into arrow */
 	position: absolute;
-	border: solid white;
+	border: solid var();
 	background-color: transparent;
 	border-width: 0 10px 10px 0;
 	display: inline-block;
@@ -407,7 +394,7 @@ height: auto;
 .changeTitle {
 	font-size: 8vw;
 	font-family: 'Bungee', cursive;
-	color: white;
+	color: var();
 	top: 0;
 	position: fixed;
 }
@@ -472,7 +459,7 @@ height: auto;
 }
 /* Check box for not showing help again */
 .notAgain {
-	background-color: white;
+	background-color: var();
 	outline: 0.3vw solid black;
 	width: 50px;
 	height: 50px;
@@ -520,7 +507,7 @@ height: auto;
     left: 50%;
     margin-left: -12%; /* centers start button */
 	outline: 3px solid black;
-	background-color: white;
+	background-color: var();
 }
 
 /* Hover state for start button */

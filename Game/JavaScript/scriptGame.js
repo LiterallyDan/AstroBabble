@@ -207,8 +207,10 @@ function gameOver () {
         if (progress[i] == '_') progress[i] = word [i];
     }
     console.log("Out of oxygen!");
-    document.getElementById("screen").style.color = "#991219";
+    document.getElementById("screen").style.backgroundColor = "#f54242";
+    document.getElementById("screen").style.color = "var(--bg)";
     wordBox.innerText = progress.join(" ");             // Updates progress on display so user can see
+    newbtn.classList.add("hide");
 
 }
 
@@ -225,6 +227,7 @@ async function getWord () {
     for (let i = 0; i < progress.length; i++) progress[i] = "_"; // Initialise every character in new word to underscores
     strArray(word);                                     // Call "strArray" function (create an answer ke for the word)
     clearBtns();                                        // Call "clearBtns" function (reset all buttons)
+    document.getElementById("screen").style.color = "var(--dark)";  // Reset the text colour to off-black
     document.getElementById("screen").style.backgroundColor = "var(--red)"; // Reset screen colour to red
 }
 
@@ -248,10 +251,10 @@ function nextWord () {
     newWordCounter = 3;                                 // Reset the newWordCounter variable
     newbtn.innerHTML = "New word " + newWordCounter + " / 3"; // Update newWord button to display correct count
     document.getElementById("screen").style.backgroundColor = "var(--green)"; // Set the screen to bright green (thus displaying "success")
+    document.getElementById("screen").style.color = "var(--bg)"; // Set the text colour to off-white
     setTimeout(function() {                             // Execute inner code after delay (1 second)
         getWord();                                      // Call "getWord" function (to get a new word)
         newWordCounter = 3;                             // Reset newWordCounter
-
     }, delayInMs);                                      // After one second, continue
 }
 
@@ -289,6 +292,12 @@ function strArray (string) {
     console.log("Word is worth "+wordScore[1]+" points.") // Log word's associated score (for bug testing)
     updateWord(' ');                                    // Includes spaces in word by default as users cannot guess "space"  
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                  Leaderboard
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                             Individual Button Content
