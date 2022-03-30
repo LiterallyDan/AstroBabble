@@ -4,7 +4,7 @@
 ------------------------------------*/
 
 //set variable for editing 
-////////////////// <<<<<DELETE LATER>>>>>>> ////////////////////
+/////////////////////////DELETE LATER////////////////////////////
 //localStorage.setItem("Disable", "null");
 ////////////////////////////////////////////////////////////////
 
@@ -24,7 +24,7 @@ var Disable;
 var characterchoice;
 // loads the variable of the character image to this page from the customization page. this is just a test piece of code to be inserted on other pages. 
 window.onload = function (begin){
-    //local storage
+    //local storage variables
     document.getElementById("showHide").style.display = "none";
     characterchoice = localStorage.getItem("characterchoice")
     Disable = localStorage.getItem("Disable");
