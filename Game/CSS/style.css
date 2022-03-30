@@ -58,48 +58,7 @@ a:link
 	text-decoration: none; 
 }
 
-/* Styling for return home from character page */
-.btnBack {
-	position: fixed;
-	background-color: white;
-	bottom: 0;
-	left: 0;
-	padding: 5px;
-}
 
-/* Button to scroll left in characters*/
-.btnL {
-	/* Shapes it into arrow */
-	position: absolute;
-	border: solid white;
-	background-color: transparent;
-	border-width: 0 20px 20px 0;
-	display: inline-block;
-	padding: 20px;
-	/* ^ Shapes it into arrow ^ */
-	left: 0;
-	top: 50%;
-	transform: rotate(135deg); /* points arrow in correct direction */
-	-webkit-transform: rotate(135deg);
-	margin-left: 3%;
-}
-
-/* Button to scroll right in characters*/
-.btnR {
-	/* Shapes it into arrow */
-	position: absolute;
-	border: solid white;
-	background-color: transparent;
-	border-width: 0 20px 20px 0;
-	display: inline-block;
-	padding: 20px;
-	/* ^ Shapes it into arrow ^ */
-	right: 0;
-	top: 50%;
-	transform: rotate(-45deg); /* points arrow in correct direction */
-	-webkit-transform: rotate(-45deg);
-	margin-right: 3%;
-}
 
 .btn-group{
 	display: flex;
@@ -333,15 +292,18 @@ height: auto;
 	 Change Character Page
 -------------------------------*/
 .avatarRotation {
-	padding: 5%;
+	position: absolute;
 	display: flex;
-	width: 30%;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 .screen {
 	display: flex;
 	justify-content: center;
+	width: 100%;
+	height: auto;
 }
 
 .colourSelect {
@@ -371,17 +333,83 @@ height: auto;
 	display: flexbox;
 }
 
+/* Sets name up at top of page */
+.name
+{
+	top: 0;
+	padding-top: 1%;
+	font-size: 5vw;
+	text-align: center;
+	position: fixed;
+}
+
+/* Styling for return home from character page */
+.btnBack {
+	position: fixed;
+	background-color: white;
+	bottom: 0;
+	left: 0;
+	padding: 5px;
+}
+
+/* Button to scroll left in characters*/
+.btnL {
+	/* Shapes it into arrow */
+	position: absolute;
+	border: solid white;
+	background-color: transparent;
+	border-width: 0 10px 10px 0;
+	display: inline-block;
+	padding: 10px;
+	/* ^ Shapes it into arrow ^ */
+	left: 0;
+	top: 0;
+	transform: rotate(135deg); /* points arrow in correct direction */
+	-webkit-transform: rotate(135deg);
+	margin-left: 8%;
+	margin-top: 3%;
+}
+
+/* Button to scroll right in characters*/
+.btnR {
+	/* Shapes it into arrow */
+	position: absolute;
+	border: solid white;
+	background-color: transparent;
+	border-width: 0 10px 10px 0;
+	display: inline-block;
+	padding: 10px;
+	/* ^ Shapes it into arrow ^ */
+	right: 0;
+	top: 0;
+	transform: rotate(-45deg); /* points arrow in correct direction */
+	-webkit-transform: rotate(-45deg);
+	margin-right: 8%;
+	margin-top: 3%;
+}
+
 
 /* The actual images of characters */
 #avatarImage {
-    width: 70%;
+    width: 80%;
     height:auto;
+	max-width: 500px;
+	/* Makes it float center */
+	position: fixed;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 /* Title at top of Customize Character page */
-.changeTitle
-{
-
+.changeTitle {
+	font-size: 8vw;
+	font-family: 'Bungee', cursive;
+	color: white;
+	top: 0;
+	position: fixed;
 }
 
 
