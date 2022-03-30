@@ -56,7 +56,9 @@ window.onload = function (begin){
 function exitInstruct ()
 {
     console.log("Closed Help Page");
-    document.getElementById("generalInstruct").style.display = "none";   
+    document.getElementById("generalInstruct").style.display = "none";
+    //pauses any tutorial voice lines that may be playing when you leave the tutorial.
+    voiceAudio.pause();
 }
 
 //Makes it so that instructions are disabled or enabled based on what they input
@@ -139,7 +141,7 @@ function voiceLoad(){
     }
     //sets the variable voiceSource so that it's the sound file location
     let voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
-    //let SlideSource = "Images/Slides/Slide"+ slideNum + ".png";
+    //let slideSource = "Images/Tutorial/Tutorial"+ lineNum + ".png";
     //document.getElementById ("Slide").src = slideSource;
     //sets the audio source to the correct file
     document.getElementById ("voiceLines").src = voiceSource;
