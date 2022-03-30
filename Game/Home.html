@@ -65,27 +65,25 @@
         <!-- Can be disabled -->
         <div id="generalInstruct" class="helpDiv">
 
-                <!-- Title -->
-               <h> Instructions </h>
 
-               <!-- Insctructions -->
-               <div class="fullInstruct"> 
-                <button id="tutorialScrollLeft" onclick="tutorialLeft()"></button>
-                <button id="tutorialScrollRight" onclick="tutorialRight()"></button>
-                <button id="tutorialStart" onclick="tutorialRight()">Start Tutorial</button>
+
+               <!-- Audio Insctructions -->
+
+                <button id="tutorialScrollLeft" onclick="tutorialLeft()" class="leftArrow"></button>
+                <button id="tutorialScrollRight" onclick="tutorialRight()" class="rightArrow"></button>
+                <button id="tutorialStart" onclick="tutorialRight()" class="startTutorial">Start Tutorial</button>
                 <audio id="voiceLines">
                     <source src="" type="audio/wav">
                 </audio>
-                    
-               </div>
+
               
                
 
 
                     <div class="containHelp">
                     <!-- When clicked, instructions don't pop up ever again -->
-                    <a href="#" onclick="checkChange()" class="positionA">
-                      <div class="notAgain" style="min-height: 50px;">
+                    <a href="#" onclick="checkChange()">
+                      <div class="notAgain">
                         <div id="showHide" class="checkmark">
                             <img src="Images/Icons/check.png" style="width: 100%;">
                         </div>
