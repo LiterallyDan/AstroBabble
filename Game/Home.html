@@ -65,26 +65,28 @@
         <!-- Can be disabled -->
         <div id="generalInstruct" class="helpDiv">
 
-                <!-- Title -->
-               <h> Instructions </h>
 
-               <!-- Insctructions -->
-               <div class="fullInstruct"> 
-                    <p> Welcome to Astro Babble. The goal of the game is to guess as many words as possible before your oxygen
-                    runs out! You gain time when you get a word right, but you lose time if you get letters wrong, so WATCH out!
-                    Change your characters style with the little character icon, and change the settings in the settings page!
-                    Have fun and keep babbling!
-                    </p>
 
-               </div>
+               <!-- Audio Insctructions -->
+
+                <button id="tutorialScrollLeft" onclick="tutorialLeft()" class="leftArrow"></button>
+                <button id="tutorialScrollRight" onclick="tutorialRight()" class="rightArrow"></button>
+                <img src="" id="Slide">
+                <button id="tutorialStart" onclick="tutorialRight()" class="startTutorial">Start Tutorial</button>
+                <audio id="voiceLines">
+                    <source src="" type="audio/wav">
+                </audio>
+
+              
+               
 
 
                     <div class="containHelp">
                     <!-- When clicked, instructions don't pop up ever again -->
-                    <a href="#" onclick="checkChange()" class="positionA">
-                      <div class="notAgain" style="min-height: 50px;">
+                    <a href="#" onclick="checkChange()">
+                      <div class="notAgain">
                         <div id="showHide" class="checkmark">
-                            <img src="Images/Icons/check.png" style="width: 100%;">
+                           <!--<img src="Images/Icons/check.png" style="width: 100%;">-->
                         </div>
                       </div>
                     </a>
