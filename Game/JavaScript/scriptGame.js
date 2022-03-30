@@ -1,66 +1,74 @@
-const qbtn = document.getElementById('btn-q');
-const wbtn = document.getElementById('btn-w');
-const ebtn = document.getElementById('btn-e');
-const rbtn = document.getElementById('btn-r');
-const tbtn = document.getElementById('btn-t');
-const ybtn = document.getElementById('btn-y');
-const ubtn = document.getElementById('btn-u');
-const ibtn = document.getElementById('btn-i');
-const obtn = document.getElementById('btn-o');
-const pbtn = document.getElementById('btn-p');
-const abtn = document.getElementById('btn-a');
-const sbtn = document.getElementById('btn-s');
-const dbtn = document.getElementById('btn-d');
-const fbtn = document.getElementById('btn-f');
-const gbtn = document.getElementById('btn-g');
-const hbtn = document.getElementById('btn-h');
-const jbtn = document.getElementById('btn-j');
-const kbtn = document.getElementById('btn-k');
-const lbtn = document.getElementById('btn-l');
-const zbtn = document.getElementById('btn-z');
-const xbtn = document.getElementById('btn-x');
-const cbtn = document.getElementById('btn-c');
-const vbtn = document.getElementById('btn-v');
-const bbtn = document.getElementById('btn-b');
-const nbtn = document.getElementById('btn-n');
-const mbtn = document.getElementById('btn-m');
-const wordBox = document.getElementById('screen');
-const newbtn = document.getElementById('newWord-btn');
-const timeID = document.getElementById('timer');
-const oxygen = document.getElementById('oxygen');
+const qbtn = document.getElementById('btn-q');          // Every button on the keyboard
+const wbtn = document.getElementById('btn-w');          // v
+const ebtn = document.getElementById('btn-e');          // v
+const rbtn = document.getElementById('btn-r');          // v
+const tbtn = document.getElementById('btn-t');          // v
+const ybtn = document.getElementById('btn-y');          // v
+const ubtn = document.getElementById('btn-u');          // v
+const ibtn = document.getElementById('btn-i');          // v
+const obtn = document.getElementById('btn-o');          // v
+const pbtn = document.getElementById('btn-p');          // v
+const abtn = document.getElementById('btn-a');          // v
+const sbtn = document.getElementById('btn-s');          // v
+const dbtn = document.getElementById('btn-d');          // v
+const fbtn = document.getElementById('btn-f');          // v
+const gbtn = document.getElementById('btn-g');          // v
+const hbtn = document.getElementById('btn-h');          // v
+const jbtn = document.getElementById('btn-j');          // v
+const kbtn = document.getElementById('btn-k');          // v
+const lbtn = document.getElementById('btn-l');          // v
+const zbtn = document.getElementById('btn-z');          // v
+const xbtn = document.getElementById('btn-x');          // v
+const cbtn = document.getElementById('btn-c');          // v
+const vbtn = document.getElementById('btn-v');          // v
+const bbtn = document.getElementById('btn-b');          // v
+const nbtn = document.getElementById('btn-n');          // v
+const mbtn = document.getElementById('btn-m');          // v
+const wordBox = document.getElementById('screen');      // The "screen" display for the word being guessed
+const newbtn = document.getElementById('newWord-btn');  // The button for calling a new word if the user can't guess the current one
+const timeID = document.getElementById('timer');        // The timer div @ the top of the document
+const oxygen = document.getElementById('oxygen');       // The oxygen bar (or "HP" bar)
 let currentChar = null;                                 // Variable *that can change* containing the most recent button selection
-let progress;
-let word = null;
-let score = 0;
-let key = [];
-let wordScore = [0, 0];
-let newWordCounter = 3;
-let characterchoice;
+let progress;                                           // Variable for containing the player's progress (word completion)
+let word = null;                                        // Initialise present word to "null"
+let score = 0;                                          // Initialise current score to 0
+let key = [];                                           // Initialise the "answer key" (every valid letter)
+let wordScore = [0, 0];                                 // Variable responsible for storing the user's progress toward the finished word
+let newWordCounter = 3;                                 // Variable responsible for how many times the player can get a new word
+let characterchoice;                                    // Variable for the user's chosen character model
+let time = 120;                                         // Initialise specified amount of time for game (how much "oxygen" is in the bar)
+let health = 100;                                       // Initialise health (bar fullness) to 100(%)
+let increment = 100/time;                               // Initialise increment for hurt / heal functions to perform accurately
 
+/*
+    Function that runs when the page is loaded.
+    > Responsible for starting the game
+*/
 window.onload = function() {
-    getWord();
-    updateBar();
-    timeID.innerHTML = "Time remaining: " + time;
+    getWord();                                          // Call the "getWord" function (pull word from API)
+    updateBar();                                        // Call the "updateBar" function (update the oxygen bar)
+    timeID.innerHTML = "Time remaining: " + time;       // Initialise current time remining
 
-    characterchoice = localStorage.getItem("characterchoice")
-    //if you've never played sets values to default
-    if (characterchoice == undefined){
-        characterchoice = "Images/Characters/DefaultBasic.png"
+    characterchoice = localStorage.getItem("characterchoice")   // Initialise current user character model choice
+
+    if (characterchoice == undefined){                          // If user has not played before:
+        characterchoice = "Images/Characters/DefaultBasic.png"  // ... uses default character model
     }
-    document.getElementById("characterimage").src = characterchoice
+    document.getElementById("characterimage").src = characterchoice // Sets current character model to intended character model
 } 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                  Oxygen Bar Code
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-let time = 120;
-let health = 100;
-let increment = 100/time;
 
+/*
+    Function that initialises the timer.
+    > Increments time value
+*/
 setInterval (function timer () {
-    time--;
-    if (!(time <= 0)) timeID.innerHTML = "Time remaining: " + (time);
-}, 1000);
+    time--;                                             // Decrement time variable by 1
+    if (!(time <= 0)) timeID.innerHTML = "Time remaining: " + (time);   // 
+}, 1000);                                               // Perform the above two lines for every 1000 milliseconds (1 second)
 
 setInterval (function damage() {
     health = health - increment;
@@ -89,6 +97,7 @@ function updateBar() {
     if (health <= 0) {
         oxygen.style.width="0%";
         timeID.innerHTML = "Time remaining: 0";
+
     }
 
     if (health > 100) {
@@ -106,12 +115,15 @@ function updateBar() {
 //                                             "Keyboard" Code
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function gameOver () {
+
+}
+
 async function getWord () {
     const response = await fetch("https://random-word-api.herokuapp.com/word?number=1");
     const data = await response.json();
     word = await data[0].toUpperCase();
     console.log(word);
-    progress = "";
     progress = word.split("");
     for (let i = 0; i < progress.length; i++) progress[i] = "_";
     strArray(word);
@@ -130,6 +142,8 @@ function updateWord (character) {
 
 function nextWord () {
     var delayInMs = 1000;
+    newWordCounter = 3;
+    newbtn.innerHTML = "New word " + newWordCounter + " / 3";
     document.getElementById("screen").style.backgroundColor = "var(--green)";
     setTimeout(function() {
         getWord();

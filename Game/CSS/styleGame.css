@@ -130,14 +130,16 @@ body {
     font-family: 'Bungee', cursive;
     padding: 10px 15px;
     margin: 2px;
-    border: none;
     border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /*  Hover effects for the buttons    */
 .btn:hover {
-    background-color: var(--blue);
-    outline: 2px solid var(--dark);
+    background: rgba( 47, 46, 103, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 
 /*  Allow for hidden divs   */
