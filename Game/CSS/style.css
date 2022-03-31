@@ -23,7 +23,11 @@
 
 /* Background Image */
 body{
-	background-image: url("../Images/Other/Background.png");
+	background: url("../Images/Other/Background.png") no-repeat;
+	height: 100vh;
+	background-size: cover;
+	align-content: center;
+
 	overflow: hidden;   /*  Remove pesky scrollbars */
 }
 .backgroundHome
