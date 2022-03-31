@@ -16,6 +16,9 @@
     --green: #50ca68;   
 }
 
+*{
+	font-family: 'Bungee';
+}
 /* ------------------------------
 			Home Page
 -------------------------------*/
@@ -26,35 +29,12 @@ body{
 	background: url("../Images/Other/Background.png") no-repeat;
 	height: 100vh;
 	background-size: cover;
-	align-content: center;
-
 	overflow: hidden;   /*  Remove pesky scrollbars */
 }
-.backgroundHome
-{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-/* Holds everything but floating character */
-.holder
-{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	overflow: hidden;
-}
-
 /* Floating character div on homescreen */
 .characterHome
 {
 	width: 400px;
-	position: absolute;
 	text-align: center;
 	animation: upDown 5s infinite ease-in-out; /* animation for character */
 	top: 20%; 
@@ -79,81 +59,10 @@ a:link
 	text-decoration: none; 
 }
 
-
-
-.btn-group{
-	display: flex;
-}
-.btn-group button{
-	padding: 2px;
-	margin: 25px;
-}
-
-*{
-	font-family: 'Bungee';
-}
-
-.btn-group{
-display:flex;
-flex-direction: column;
-}
-
-nav{
-	left: 600px;
-	background:none;
-	padding: 10px;
-	align-items: center;
-
-}
-ul{
-
-	display:flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items:center;
-	text-align: right;
-	padding-left: 0;
-	list-style: none;
-
-}
-li{
-	margin: 20px;
-	text-decoration: none;
-	font-size: 40px;
-	border-radius: 25%;
-}
-
-li:hover{
-  background-color: #F26A4B;
-}
-
-li a:hover{
-  color: antiquevar();
-}
-.backbutton a img{
-  width: 300px;
-  height: auto;
-  transition: 2s;
-  position: absolute;
-  bottom: 20px;
-
-}
-.backbutton a img:hover{
-width: 335px;
-height: auto;
-}
-.settings{
-  font-size: 60px;
-  color: purple;
-  margin: 0%;
-}
-
 /* Start Button */
 .startButton
 {
-	font-family: 'Bungee', cursive;
 	position: absolute;
-	margin: auto;
 	max-width: 400px;
 	min-width: 200px;
 	line-height: 1.5;
@@ -170,7 +79,6 @@ height: auto;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );   /*  Blurry glass effect */
-    -webkit-backdrop-filter: blur( 4px );   /* ^ */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
@@ -195,13 +103,10 @@ height: auto;
 /* Home "Astro Babble" title text*/
 .titleHome
 {
-	position: absolute;
 	text-align: center;
-	font-family: 'Bungee', cursive;
 	font-size: 8vw;
 	color: var(--bg);
 	width: 100%;
-	z-index: 3;
 	margin: 0 0 0 0;
 	line-height: 1.4;
 }
@@ -218,13 +123,15 @@ height: auto;
 {
 	position: fixed;
 	bottom: 1%;
-	left: 0%;
 	width: 100px;
 	padding-left:1%;
 	transition: ease-in-out 0.2s;
 }
 .settingsIcon:hover{
 	transform:scale(1.1,1.1);
+}
+#cog {
+	width: 100%;
 }
 
 .charactersIcon
@@ -242,44 +149,134 @@ height: auto;
 #characterimage {
 	width: 90%;
 }
-
-/* Fixes for smaller screen sizes */
-@media screen and (max-width: 950px)
-{
-	.characterHome
-	{
-		width: 300px;
-	}
-
-	.titleHome
-	{
-		font-size: 13vw;
-		line-height: 1.1;
-	}
-
-	.settingsIcon
-	{
-		width: 10%;
-	}
-	.characterHome
-	{
-	width: 400px;
-	
-	}
+#myCharacter {
+	width: 100%;
 }
-@media screen and (max-width: 450px)
 
-{
-	.characterHome
-	{
-	width: 300px;
-	
-	}
-	.charactersIcon
-	{
-	width: 100px;
-	}
+
+
+
+
+/* ------------------------------
+			Help Page
+-------------------------------*/
+
+/* General Div for all of help pop-up */
+.helpDiv {
+	position: absolute;
+	/* Centers everything */
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	/* ------------------ */
+	margin: auto;
+	width: 90%;
+	height: 90%;
+	background-color: #F26A4B;
+	outline: 1vw solid black;
+	z-index: 3; /* Alawys at front if it's being displayed */
+	border-radius: 50px;
+	text-align: center;
+	font-size: 6vw;
+	line-height: 1.2; /* Fixes font issues */
+	display: none; /* so that it isn't showing straight away */
 }
+
+/* Container for help div elements */
+.containHelp
+{
+	position: relative;
+	width: 5%;
+	margin: auto; 
+	display: flex; /* keeps items organized */
+	justify-content: center; /* Aligns everything in the middle */
+}
+
+/* Position the link for checkmark */
+.positionA
+{
+	position: relative;
+	display: inline-block;
+}
+
+/* Checkmark for show/don't show box */
+.checkmark
+{
+	width: 100%;
+	line-height: 0;
+}
+/* Check box for not showing help again */
+.notAgain {
+	background-color: white;
+	outline: 0.3vw solid black;
+	width: 50px;
+	height: 50px;
+	margin-top: 15%;
+	opacity: 1;
+}
+/* Do Not Show Again text */
+.notAgainText {
+	position: relative;
+	font-size: 20px;
+	opacity: 1;
+}
+
+/* Exit "X" from instructions page */
+.exitInstruct {
+	position: absolute;
+	width: 8vw;
+	max-width: 50px;
+	background-image: url("../Images/Icons/exit.png");
+	right: 5%;
+	bottom: 0;
+}
+
+/* Start tutorial button */
+.startTutorial
+{
+	position: fixed;
+	bottom: 50%;
+	width: 24%;
+    left: 50%;
+    margin-left: -12%; /* centers start button */
+	outline: 3px solid black;
+	background-color: var();
+}
+
+/* Hover state for start button */
+.startTutorial:hover
+{
+	background-color: #024E73;
+}
+
+/* Arrow buttons*/
+.arrowBtn
+{
+  /* Reference for arrow style */
+  position: absolute;
+  border: solid black;
+  background-color: transparent;
+  border-width: 0 20px 20px 0;
+  display: inline-block;
+  padding: 20px;
+  left: 0;
+  top: 50%;
+  transform: rotate(135deg); /* points arrow in correct direction */
+  -webkit-transform: rotate(135deg);
+  margin-left: 3%; /* pushes from edge of  */
+}
+
+/* changes arrow color on hover */
+.arrowBtn:hover
+{
+	border: solid #024E73;
+	/* Fix shape swapping problems*/
+	border-width: 0 20px 20px 0;
+	display: inline-block;
+	padding: 20px;
+}
+
 
 
 
@@ -298,8 +295,6 @@ height: auto;
 .screen {
 	display: flex;
 	justify-content: center;
-	width: 100%;
-	height: auto;
 }
 
 .colourSelect {
@@ -436,174 +431,123 @@ height: auto;
 }
 
 
-/* ------------------------------
-			Game Page
--------------------------------*/
 
-.health{
-    background-color: rgb(0, 0, 0);
-    padding:2%;
-    width: 96%;
-    border-radius: 20%;
-}
-.lifebackground{
-    background-color: rgb(68, 68, 68);
-    width: 100%;
-    overflow: hidden;
-}
-#life {
-    background-color:green;
-    padding-top: 2%;
-    padding-left: 0%;
-    padding-right: 0%;
-    width: 100%;
-}
+
 
 /* ------------------------------
-			Help Page
+			Settings Page
 -------------------------------*/
 
-/* General Div for all of help pop-up */
-.helpDiv {
-	position: absolute;
-	/* Centers everything */
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	/* ------------------ */
-	margin: auto;
-	width: 90%;
-	height: 90%;
-	background-color: #F26A4B;
-	outline: 1vw solid black;
-	z-index: 3; /* Alawys at front if it's being displayed */
-	border-radius: 50px;
-	text-align: center;
-	font-family: 'Bungee', cursive;
-	font-size: 6vw;
-	line-height: 1.2; /* Fixes font issues */
-	display: none; /* so that it isn't showing straight away */
+.btn-group{
+	display: flex;
+}
+.btn-group button{
+	padding: 2px;
+	margin: 25px;
 }
 
-/* Container for help div elements */
-.containHelp
-{
-	position: relative;
-	width: 5%;
-	margin: auto; 
-	display: flex; /* keeps items organized */
-	justify-content: center; /* Aligns everything in the middle */
-}
-/* Check box for not showing help again */
-.notAgain {
-	background-color: white;
-	outline: 0.3vw solid black;
-	width: 50px;
-	height: 50px;
-	margin-top: 15%;
-	opacity: 1;
+
+
+.btn-group{
+display:flex;
+flex-direction: column;
 }
 
-/* Position the link for checkmark */
-.positionA
-{
-	position: relative;
-	display: inline-block;
+nav{
+	left: 600px;
+	background:none;
+	padding: 10px;
+	align-items: center;
+
+}
+ul{
+
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items:center;
+	text-align: right;
+	padding-left: 0;
+	list-style: none;
+
+}
+li{
+	margin: 20px;
+	text-decoration: none;
+	font-size: 40px;
+	border-radius: 25%;
 }
 
-/* Checkmark for show/don't show box */
-.checkmark
-{
-	width: 100%;
-	line-height: 0;
+li:hover{
+  background-color: #F26A4B;
 }
 
-/* Do Not Show Again text */
-.notAgainText {
-	position: relative;
-	font-size: 20px;
-	opacity: 1;
+li a:hover{
+  color: antiquevar();
 }
-
-/* Exit "X" from instructions page */
-.exitInstruct {
-	position: absolute;
-	width: 8vw;
-	max-width: 50px;
-	background-image: url("../Images/Icons/exit.png");
-	right: 5%;
-	bottom: 0;
-}
-
-/* Start tutorial button */
-.startTutorial
-{
-	position: fixed;
-	bottom: 50%;
-	width: 24%;
-    left: 50%;
-    margin-left: -12%; /* centers start button */
-	outline: 3px solid black;
-	background-color: var();
-}
-
-/* Hover state for start button */
-.startTutorial:hover
-{
-	background-color: #024E73;
-}
-
-/* Right arrow button */
-.rightArrow
-{
-  position: absolute; 
-  border: solid black; 
-  background-color: transparent; 
-  border-width: 0 20px 20px 0;
-  display: inline-block; 
-  padding: 20px;
-  right: 0;
-  top: 50%;
-  transform: rotate(-45deg); /* points arrow in correct direction */
-  -webkit-transform: rotate(-45deg);
-  margin-right: 3%;
-}
-
-/* changes arrow color on hover */
-.rightArrow:hover
-{
-	border: solid #024E73;
-	/* Fix shape swapping problems*/
-	border-width: 0 20px 20px 0;
-	display: inline-block;
-	padding: 20px;
-}
-
-/* Left arrow button */
-.leftArrow
-{
-  /* Reference for arrow style */
+.backbutton a img{
+  width: 300px;
+  height: auto;
+  transition: 2s;
   position: absolute;
-  border: solid black;
-  background-color: transparent;
-  border-width: 0 20px 20px 0;
-  display: inline-block;
-  padding: 20px;
-  left: 0;
-  top: 50%;
-  transform: rotate(135deg); /* points arrow in correct direction */
-  -webkit-transform: rotate(135deg);
-  margin-left: 3%; /* pushes from edge of  */
+  bottom: 20px;
+
+}
+.backbutton a img:hover{
+width: 335px;
+height: auto;
+}
+.settings{
+  font-size: 60px;
+  color: purple;
+  margin: 0%;
 }
 
-/* changes arrow color on hover */
-.leftArrow:hover
+
+
+
+
+/* ------------------------------
+			Media Queries 
+-------------------------------*/
+
+
+
+/* Fixes for smaller screen sizes */
+@media screen and (max-width: 950px)
 {
-	border: solid #024E73;
-	/* Fix shape swapping problems*/
-	border-width: 0 20px 20px 0;
-	display: inline-block;
-	padding: 20px;
+	.characterHome
+	{
+		width: 300px;
+	}
+
+	.titleHome
+	{
+		font-size: 13vw;
+		line-height: 1.1;
+	}
+
+	.settingsIcon
+	{
+		width: 10%;
+	}
+	.characterHome
+	{
+	width: 400px;
+	
+	}
+}
+@media screen and (max-width: 450px)
+
+{
+	.characterHome
+	{
+	width: 300px;
+	
+	}
+	.charactersIcon
+	{
+	width: 100px;
+	}
 }
 
