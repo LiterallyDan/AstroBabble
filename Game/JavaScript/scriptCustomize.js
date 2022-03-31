@@ -138,5 +138,4 @@ function CharFinal(){
     localStorage.setItem("avatarchoice", avatarchoice);
     localStorage.setItem("colourchoice", colourchoice);
 
-
 }
