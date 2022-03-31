@@ -20,8 +20,8 @@
 			Home Page
 -------------------------------*/
 
-/* Background Image */
 
+/* Background Image */
 body{
 	background-image: url("../Images/Other/Background.png");
 	overflow: hidden;   /*  Remove pesky scrollbars */
@@ -52,12 +52,12 @@ body{
 	width: 400px;
 	position: absolute;
 	text-align: center;
-	animation: upDown 5s infinite ease-in-out;
-	top: 20%;
+	animation: upDown 5s infinite ease-in-out; /* animation for character */
+	top: 20%; 
 	position:absolute; 
 	left:0; 
 	right:0; 
-	margin-left:auto; 
+	margin-left:auto; /* centers */
 	margin-right:auto;
 }
 
@@ -462,22 +462,24 @@ height: auto;
 /* General Div for all of help pop-up */
 .helpDiv {
 	position: absolute;
+	/* Centers everything */
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
+	/* ------------------ */
 	margin: auto;
 	width: 90%;
 	height: 90%;
 	background-color: #F26A4B;
 	outline: 1vw solid black;
-	z-index: 3;
+	z-index: 3; /* Alawys at front if it's being displayed */
 	border-radius: 50px;
 	text-align: center;
 	font-family: 'Bungee', cursive;
 	font-size: 6vw;
-	line-height: 1.2;
-	display: none;
+	line-height: 1.2; /* Fixes font issues */
+	display: none; /* so that it isn't showing straight away */
 }
 
 /* Container for help div elements */
@@ -485,13 +487,13 @@ height: auto;
 {
 	position: relative;
 	width: 5%;
-	margin: auto;
-	display: flex;
-	justify-content: center;
+	margin: auto; 
+	display: flex; /* keeps items organized */
+	justify-content: center; /* Aligns everything in the middle */
 }
 /* Check box for not showing help again */
 .notAgain {
-	background-color: var();
+	background-color: white;
 	outline: 0.3vw solid black;
 	width: 50px;
 	height: 50px;
@@ -577,6 +579,7 @@ height: auto;
 /* Left arrow button */
 .leftArrow
 {
+  /* Reference for arrow style */
   position: absolute;
   border: solid black;
   background-color: transparent;
@@ -587,7 +590,7 @@ height: auto;
   top: 50%;
   transform: rotate(135deg); /* points arrow in correct direction */
   -webkit-transform: rotate(135deg);
-  margin-left: 3%;
+  margin-left: 3%; /* pushes from edge of  */
 }
 
 /* changes arrow color on hover */
