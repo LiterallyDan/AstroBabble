@@ -8,17 +8,6 @@
 //localStorage.setItem("Disable", "null");
 ////////////////////////////////////////////////////////////////
 
-//Changes setting cog to darker color
-function changeSettings()
-{
-    document.getElementById("myImage").src = "Images/Icons/settingsCog2.png";
-}
-//Resets settings cog to original color
-function resetSettings()
-{
-    document.getElementById("myImage").src = "Images/Icons/settingsCog.png";
-}
-
 //Variables
 var Disable;
 var characterchoice;
