@@ -152,6 +152,7 @@ height: auto;
 	margin: auto;
 	max-width: 400px;
 	min-width: 200px;
+	line-height: 1.5;
 	width: 40%;
 	top: 85%;
 	left:50%;
@@ -298,15 +299,18 @@ height: auto;
 }
 
 .colourSelect {
+	position: fixed;
 	width: 20%;
-    float: right;
+    float: center;
     height: auto;
     justify-content: center;
     align-items: center;
     display: flex;
     align-content: stretch;
     flex-wrap: wrap;
-    flex-direction: column-reverse;
+    flex-direction: row;
+	bottom: 0;
+	min-width: 100px;
 }
 .name{
 	justify-content: center;
@@ -317,11 +321,16 @@ height: auto;
 	justify-content: center;
 	align-items: center;
 	display: flex;
+	margin: 0;
+	line-height: 1;
+	color: white;
 }
 .clrbtn {
-	width: 50%;
+	width: 30%;
 	padding: 10%;
 	display: flexbox;
+	border-radius: 50px;
+	min-width: 100px;
 }
 
 /* Sets name up at top of page */
@@ -337,24 +346,42 @@ height: auto;
 /* Styling for return home from character page */
 .btnBack {
 	position: fixed;
-	background-color: var();
+	background-color: var(--bg);
 	bottom: 0;
 	left: 0;
 	padding: 5px;
+	margin: 5px;
+	border-radius: 50px;
+	background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    -webkit-backdrop-filter: blur( 4px );   /* ^ */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.btnBack:hover
+{
+	transition-duration: 0.1s;  /*  Smooth colour change animations */
+    transition-timing-function: ease;   /*  Ease into change    */
+	color: var(--bg);
+	background: rgba( 47, 46, 103, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 
 /* Button to scroll left in characters*/
 .btnL {
 	/* Shapes it into arrow */
-	position: absolute;
-	border: solid var();
+	position: fixed;
+	border: solid white;
 	background-color: transparent;
-	border-width: 0 10px 10px 0;
+	border-width: 0 15px 15px 0;
 	display: inline-block;
-	padding: 10px;
+	padding: 15px;
 	/* ^ Shapes it into arrow ^ */
 	left: 0;
-	top: 0;
+	top: 50%;
 	transform: rotate(135deg); /* points arrow in correct direction */
 	-webkit-transform: rotate(135deg);
 	margin-left: 8%;
@@ -364,15 +391,15 @@ height: auto;
 /* Button to scroll right in characters*/
 .btnR {
 	/* Shapes it into arrow */
-	position: absolute;
-	border: solid var();
+	position: fixed;
+	border: solid white;
 	background-color: transparent;
-	border-width: 0 10px 10px 0;
+	border-width: 0 15px 15px 0;
 	display: inline-block;
-	padding: 10px;
+	padding: 15px;
 	/* ^ Shapes it into arrow ^ */
 	right: 0;
-	top: 0;
+	top: 50%;
 	transform: rotate(-45deg); /* points arrow in correct direction */
 	-webkit-transform: rotate(-45deg);
 	margin-right: 8%;
@@ -401,6 +428,7 @@ height: auto;
 	color: var();
 	top: 0;
 	position: fixed;
+	padding-top: 1%;
 }
 
 
