@@ -19,23 +19,33 @@
     </head>
 
     <body>
+        <!-- This holds everything for the entire screen -->
         <div class="screen">
+            <!-- Button to return to Home Screen -->
             <a href="Home.html" class="link"><button class = "btnBack" id="return"> Home </button></a>
+            
             <div class="avatarRotation">
+
                 <div id="avatarimg">
-                <button onclick="Left();CharFinal();" class="btnL" id = "arrowLeft" value="0"></button>
-                <img class = "images" id="avatarImage" src="">
-                <button onclick="Right();CharFinal();" class="btnR" id = "arrowRight" value="0"></button>
+                    <!-- Left Arrow button -->
+                    <button onclick="Left();CharFinal();" class="btnL" id = "arrowLeft" value="0"></button>
+                    <!-- Avatar Image -->
+                    <img class = "images" id="avatarImage" src=""> <!-- Source Changes depending on what character is picked. -->
+                    <!-- Right Arrow button -->
+                    <button onclick="Right();CharFinal();" class="btnR" id = "arrowRight" value="0"></button>
                 </div>
+                <!-- Div to hold the character name -->
                 <div class="changeTitle">
+                    <!-- title of the character name. Depending on which one is picked, the inner html will change. -->
                     <p id="charName"></p>
                 </div>
             </div>
+            <!-- These buttons are used to pick the colour pallette for the character -->
             <div class="colourSelect">
-                <button onclick="Basic();CharFinal();" class="clrbtn" id="basic" value="0"></button>
-                <button onclick="Alt1();CharFinal();" class="clrbtn" id="alt1" value="1"></button>
-                <button onclick="Alt2();CharFinal();" class="clrbtn" id="alt2" value="2"></button>
-                <button onclick="Alt3();CharFinal();" class="clrbtn" id="alt3" value="3"></button>
+                <button onclick="Basic();CharFinal();" class="clrbtn" id="basic"></button>
+                <button onclick="Alt1();CharFinal();" class="clrbtn" id="alt1"></button>
+                <button onclick="Alt2();CharFinal();" class="clrbtn" id="alt2"></button>
+                <button onclick="Alt3();CharFinal();" class="clrbtn" id="alt3"></button>
             </div>
         </div>
     </body>

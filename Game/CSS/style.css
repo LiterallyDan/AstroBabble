@@ -19,6 +19,7 @@
 *{
 	font-family: 'Bungee';
 }
+
 /* ------------------------------
 			Home Page
 -------------------------------*/
@@ -45,7 +46,7 @@ body{
 	margin-right:auto;
 }
 
-/* Animation for Character */ 
+/* Animation for Character to move up and down again */ 
 @keyframes upDown
 {
 	0% {top: 25%;}
@@ -54,13 +55,19 @@ body{
 	75% {top: 30%;}
 	100% {top: 25%;}
 }
+
+/*the floating character image itself*/
+#characterimage {
+	width: 90%;
+}
+/*all links will have no ugly purple underlines*/
 a:link 
 { 
 	text-decoration: none; 
 }
 
-/* Start Button */
-.startButton
+/* Play Button for the game*/
+.playButton
 {
 	position: absolute;
 	max-width: 400px;
@@ -82,8 +89,8 @@ a:link
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-/* Hover state for start game button */
-.startButton:hover
+/* Hover state for Play game button */
+.playButton:hover
 {
 	transition-duration: 0.1s;  /*  Smooth colour change animations */
     transition-timing-function: ease;   /*  Ease into change    */
@@ -94,11 +101,6 @@ a:link
     -webkit-backdrop-filter: blur( 4px );
 }
 
-/* To remove underscore from link */
-.startButton, a:link
-{
-	text-decoration: none;
-}
 
 /* Home "Astro Babble" title text*/
 .titleHome
@@ -127,13 +129,18 @@ a:link
 	padding-left:1%;
 	transition: ease-in-out 0.2s;
 }
+/* Setting button hover behaviour*/
 .settingsIcon:hover{
+	/*Grows by a scale of 1.1*/
 	transform:scale(1.1,1.1);
 }
+/* Cog Image */
 #cog {
 	width: 100%;
 }
 
+
+/*The div around the character customization button*/
 .charactersIcon
 {
 	position: fixed;
@@ -143,12 +150,12 @@ a:link
 	padding-right:1%;
 	transition: ease-in-out 0.2s;
 }
+/*hover behaviour for the charactericon div*/
 .charactersIcon:hover{
 	transform:scale(1.1,1.1);
 }
-#characterimage {
-	width: 90%;
-}
+
+/*character customization button image*/
 #myCharacter {
 	width: 100%;
 }
@@ -438,30 +445,17 @@ a:link
 			Settings Page
 -------------------------------*/
 
-.btn-group{
-	display: flex;
-}
 .btn-group button{
 	padding: 2px;
 	margin: 25px;
 }
-
-
-
-.btn-group{
-display:flex;
-flex-direction: column;
-}
-
 nav{
 	left: 600px;
 	background:none;
 	padding: 10px;
 	align-items: center;
-
 }
 ul{
-
 	display:flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -469,25 +463,17 @@ ul{
 	text-align: right;
 	padding-left: 0;
 	list-style: none;
-
 }
 li{
 	margin: 20px;
-	text-decoration: none;
 	font-size: 40px;
 	border-radius: 25%;
 }
-
 li:hover{
   background-color: #F26A4B;
 }
-
-li a:hover{
-  color: antiquevar();
-}
 .backbutton a img{
   width: 300px;
-  height: auto;
   transition: 2s;
   position: absolute;
   bottom: 20px;
