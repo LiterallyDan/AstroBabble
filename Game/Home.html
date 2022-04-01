@@ -17,13 +17,17 @@
     </head>
     <!-- The entire Home page -->
     <body> 
-
+        <a class="musicPlayer" onclick="menuMusic()"> 
+            <img id="speaker" src="Images/Icons/SpeakerIcon.png">
+        </a> 
+        <audio id="music">
+            <source src="Sound/bensound-scifi.mp3" type="audio/mp3">
+        </audio>
         <!-- This is where the floating player character appears on screen-->
         <div class="characterHome">
             <img src="" id = "characterimage"> <!-- the reason the source is blank is because the javascript sets the source to different images depending on the one picked in character customization-->
         </div>
 
-        
         <!-- Game Title, displays at top of screen -->
         <h1 class="titleHome"> Astro Babble </h1>
         <!-- Play Button, centered on the screen--> 
@@ -35,7 +39,9 @@
         <!-- Change Characters Button, located in the bottom right -->
         <a href="CharacterChange.html" class="charactersIcon"> 
             <img id="myCharacter" src="Images/Icons/characterIcon.png">
-        </a>    
+        </a> 
+
+        
 
 
         <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------

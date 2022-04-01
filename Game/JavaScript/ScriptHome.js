@@ -137,7 +137,26 @@ function voiceLoad(){
     //plays sound. 
     voiceAudio.play();
     
- }    
+ } 
+ let mute = true
+ var musicAudio = document.getElementById("music");
+ function menuMusic(){
+    if (mute == false) {
+        mute = true
+        console.log("muted")
+        musicAudio.pause()
+    }
+    else if (mute == true){
+        mute = false
+        console.log("unmuted")
+        musicAudio.volume = 0.5;
+        musicAudio.play();
+    }
+    
+ }
+   
+
+ 
 
  //plays button sound
  function playSound()
