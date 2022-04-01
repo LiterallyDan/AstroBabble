@@ -175,6 +175,11 @@ function voiceLoad(){
     buttonNoise.play();
  }
 
-
+  /* Return to homepage sound */
+  function playHome()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
+    buttonNoise.play();
+ }
 
  
