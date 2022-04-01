@@ -44,7 +44,7 @@ let numCorrect = 0;                                     // Correct word counter 
 let highScore1 = localStorage.getItem('highscore1') || 0; // Local storage variable for 1st place
 let highScore2 = localStorage.getItem('highscore2') || 0; // Local storage variable for 2nd place
 let highScore3 = localStorage.getItem('highscore3') || 0; // Local storage variable for 3rd place
-let awesome                                   // ???
+let awesome = false;                                    // ???
 
 
 /*
@@ -146,8 +146,9 @@ function newWord () {
         newWordCounter--;                               // ... decrement number of times "newWord" can be called
         newbtn.innerHTML = "New word " + newWordCounter + " / 3";   // ... update button's displayed text to show remaining uses
     } 
-
+    playHome();                                         // Plays sound when button is clicked
     if (newWordCounter == 0) newbtn.classList.add("hide");  // If new word button cannot be used anymore, hides it
+
 }
 
 /*
@@ -155,15 +156,17 @@ function newWord () {
     > Logs the button pressed
 */
 function charPressed (button) {
+
     if (!button.classList.contains("unusable")          
     && wordScore[0] != wordScore [1] 
     && time > 0) {                                      // If pressed letter is usable and the time has not run out and the word has not been completed:
+        playButton();                                   // Plays sound for button press
         currentChar = button.innerText;                 // Set the currently selected button variable to the currently selected button's value
         //console.log(currentChar + " pressed");          // Log the pressed button (for bug testing)
         button.classList.add("unusable");               // Set current button to unusable
         isValid(button);                                // Call "isValid" function to see if the letter is in the word
     }
-    playButton()
+                                         //Plays sound when button is pressed
 }
 
 /*
@@ -191,8 +194,7 @@ function isValid (button) {
             nextWord();                                 // ... call "nextWord" function (to generate a new word)
             newbtn.classList.remove("unusable", "hide"); // ... reveal new word button (if it has been used 3 times prior)
             numCorrect++;
-            if (numCorrect == 10) awesome = true; // After 10 correct words set awesome to true
-            localStorage.setItem("awesome", awesome); //grabs the awesome variable, only done if you pass level 10   
+            if (numCorrect == 10) awesome = true;       // After 10 correct words set awesome to true
         }
 
     } else {
@@ -242,7 +244,6 @@ async function getWord () {
     clearBtns();                                        // Call "clearBtns" function (reset all buttons)
     document.getElementById("screen").style.color = "var(--dark)";  // Reset the text colour to off-black
     document.getElementById("screen").style.backgroundColor = "var(--red)"; // Reset screen colour to red
-    playButton();                                       // Plays noise
 }
 
 /*
@@ -470,8 +471,16 @@ playAgain.addEventListener('click', () => { newGame() });
      buttonNoise.play();
  }
 
+ /* Sound on button click */
  function playButton()
  {
      var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
      buttonNoise.play();
+ }
+
+ /* Return to homepage sound */
+  function playHome()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
+    buttonNoise.play();
  }
