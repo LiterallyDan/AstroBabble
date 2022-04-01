@@ -139,10 +139,9 @@ function voiceLoad(){
     
  }    
 
- //plays button sound
+ //Bubble sound effect for buttons
  function playSound()
  {
-    console.log("Played");
     var buttonNoise = new Audio('Sound/buttonExpand.mp3');
     buttonNoise.play();
  }
