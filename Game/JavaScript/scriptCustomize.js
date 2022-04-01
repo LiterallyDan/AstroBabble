@@ -130,3 +130,23 @@ function CharFinal(){
     localStorage.setItem("avatarchoice", avatarchoice);
     localStorage.setItem("colourchoice", colourchoice);
 }
+
+ //Change color sound effect
+ function playColor()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/swapColor.mp3');
+    buttonNoise.play();
+ }
+
+  //Bubble sound effect for buttons
+ function playSound()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
+    buttonNoise.play();
+ }
+
+ function homeClick()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
+    buttonNoise.play();
+ }
