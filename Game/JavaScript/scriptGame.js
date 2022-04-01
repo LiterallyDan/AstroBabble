@@ -163,6 +163,7 @@ function charPressed (button) {
         button.classList.add("unusable");               // Set current button to unusable
         isValid(button);                                // Call "isValid" function to see if the letter is in the word
     }
+    playButton()
 }
 
 /*
@@ -240,6 +241,7 @@ async function getWord () {
     clearBtns();                                        // Call "clearBtns" function (reset all buttons)
     document.getElementById("screen").style.color = "var(--dark)";  // Reset the text colour to off-black
     document.getElementById("screen").style.backgroundColor = "var(--red)"; // Reset screen colour to red
+    playButton();                                       // Plays noise
 }
 
 /*
@@ -464,5 +466,11 @@ playAgain.addEventListener('click', () => { newGame() });
  function playIncorrect()
  {
      var buttonNoise = new Audio('Sound/Buttons/losingSound.mp3');
+     buttonNoise.play();
+ }
+
+ function playButton()
+ {
+     var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
      buttonNoise.play();
  }
