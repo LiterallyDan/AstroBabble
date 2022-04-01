@@ -158,12 +158,14 @@ function CharFinal(){
     buttonNoise.play();
  }
 
+ //home sound sound effect
  function homeClick()
  {
     var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
     buttonNoise.play();
  }
 
+ //Golden Color sound fx
   function colorSwap()
  {
     var buttonNoise = new Audio('Sound/Buttons/colorChange.mp3');
