@@ -159,15 +159,12 @@ function voiceLoad(){
  }
    
 
- 
-
  //Bubble sound effect for buttons
  function playSound()
  {
     var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
     buttonNoise.play();
  }
-
 
 
  
