@@ -139,5 +139,11 @@ function voiceLoad(){
     
  }    
 
-
+ //plays button sound
+ function playSound()
+ {
+    console.log("Played");
+    var buttonNoise = new Audio('Sound/buttonExpand.mp3');
+    buttonNoise.play();
+ }
 

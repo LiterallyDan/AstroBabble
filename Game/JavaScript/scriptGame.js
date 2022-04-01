@@ -28,6 +28,7 @@ const wordBox = document.getElementById('screen');      // The "screen" display 
 const newbtn = document.getElementById('newWord-btn');  // The button for calling a new word if the user can't guess the current one
 const timeID = document.getElementById('timer');        // The timer div @ the top of the document
 const oxygen = document.getElementById('oxygen');       // The oxygen bar (or "HP" bar)
+const playAgain = document.getElementById('btn-play');  // Button to initiate "play again"
 let currentChar = null;                                 // Variable *that can change* containing the most recent button selection
 let progress;                                           // Variable for containing the player's progress (word completion)
 let word = null;                                        // Initialise present word to "null"
@@ -40,7 +41,11 @@ let time = 120;                                         // Initialise specified 
 let health = 100;                                       // Initialise health (bar fullness) to 100(%)
 let increment = 100/time;                               // Initialise increment for hurt / heal functions to perform accurately
 let numCorrect = 0;                                     // Correct word counter variable (for awesome = true)
+let highScore1 = localStorage.getItem('highscore1') || 0; // Local storage variable for 1st place
+let highScore2 = localStorage.getItem('highscore2') || 0; // Local storage variable for 2nd place
+let highScore3 = localStorage.getItem('highscore3') || 0; // Local storage variable for 3rd place
 let awesome = false;                                    // ???
+
 
 /*
     Function that runs when the page is loaded.
@@ -200,18 +205,23 @@ function isValid (button) {
 
 
 /*
-    
+    Function responsible for ending the game and moving on.
+    > Calls the leaderboard.
 */
 function gameOver () {
-    for (let i = 0; i < word.length; i++) {
-        if (progress[i] == '_') progress[i] = word [i];
+    for (let i = 0; i < word.length; i++) {             // For every character in word:
+        if (progress[i] == '_') progress[i] = word [i]; // ... If there is an underscore, replace with correct letter
     }
-    console.log("Out of oxygen!");
-    document.getElementById("screen").style.backgroundColor = "#f54242";
-    document.getElementById("screen").style.color = "var(--bg)";
+    document.getElementById("screen").style.backgroundColor = "#f54242"; // Pastel red "error" fill
+    document.getElementById("screen").style.color = "var(--bg)"; // White text to off-white
     wordBox.innerText = progress.join(" ");             // Updates progress on display so user can see
-    newbtn.classList.add("hide");
+    newbtn.classList.add("hide");                       // Hide new word button
 
+    setTimeout(function() {                             // Execute inner code after delay (1 second)
+        showLBoard();                                   // Show the leaderboard
+    }, 1000);                                           // ^ After one second
+
+    health = 100;                                       // Stops game from immediately ending after starting again
 }
 
 /*
@@ -247,7 +257,6 @@ function updateWord (character) {
     > Provides visual indication regarding success
 */
 function nextWord () {
-    var delayInMs = 1000;                               // Variable initialised to delay after completing a word (1 second)
     newWordCounter = 3;                                 // Reset the newWordCounter variable
     newbtn.innerHTML = "New word " + newWordCounter + " / 3"; // Update newWord button to display correct count
     document.getElementById("screen").style.backgroundColor = "var(--green)"; // Set the screen to bright green (thus displaying "success")
@@ -255,7 +264,7 @@ function nextWord () {
     setTimeout(function() {                             // Execute inner code after delay (1 second)
         getWord();                                      // Call "getWord" function (to get a new word)
         newWordCounter = 3;                             // Reset newWordCounter
-    }, delayInMs);                                      // After one second, continue
+    }, 1000);                                           // After one second, continue
 }
 
 /*
@@ -282,7 +291,7 @@ function strArray (string) {
         for (let j = 0; j < key.length; j++) {          // Iterate through key again:
             if (key[j] == input[i]) {                   // If current character is in array, break
                 break;
-            } else if (j == key.length-1 && key[j] != input[i] && input[i].match(/[a-z]/i)) {
+            } else if (j == key.length-1 && key[j] != input[i]) {
                 key[i] = input[i];                      // If current character not in array, add it to the answer key
                 wordScore[1]++;                         // Increment word's score by 1
             }
@@ -297,6 +306,82 @@ function strArray (string) {
 //                                                  Leaderboard
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/*
+    Function responsible for showing the leaderboard.
+    > Hides the keyboard, score, and oxygen
+*/
+function showLBoard() {
+    updateLBoard();
+    document.getElementById("keyboard").classList.add("hide"); // Hide the keyboard
+    document.getElementById("scoreOxygen").classList.add("hide"); // Hide the score and oxygen
+    document.getElementById("leaderboard").classList.remove("hide"); // Show the leaderboard
+}
+
+/*
+    Function responsible for hiding the leaderboard.
+    > Shows the keyboard, score, and oxygen
+*/
+function hideLBoard() {
+    document.getElementById("keyboard").classList.remove("hide"); // Show the keyboard
+    document.getElementById("scoreOxygen").classList.remove("hide"); // Show the score and oxygen
+    document.getElementById("leaderboard").classList.add("hide"); // Hide the leaderboard
+}
+
+/*
+    Function responsible for updating the leaderboard.
+    > Updates and shifts the scores
+
+    Local storage usage learned from: 
+    https://stackoverflow.com/questions/16245536/setting-a-variable-in-local-storage
+*/
+function updateLBoard() {
+    highScore1 = localStorage.getItem('highscore1') || 0; // Load 1st score, if null, set to 0
+    highScore2 = localStorage.getItem('highscore2') || 0; // Load 2nd score, if null, set to 0
+    highScore3 = localStorage.getItem('highscore3') || 0; // Load 3rd score, if null, set to 0
+
+    if (score > highScore3 && score < highScore2) {     // If score is higher than third score but lower than second
+        localStorage.setItem('highscore3', score);      // ... Set 3rd score to current score
+    } else if (score > highScore2 && score < highScore1) { // If score is higher than second score but lower than first
+        localStorage.setItem('highscore3', highScore2); // ... Set 3rd score to 2nd
+        localStorage.setItem('highscore2', score);      // ... Set the 2nd score to current score
+    } else if (score > highScore1) {                    // If score is higher than highest score
+        localStorage.setItem('highscore3', highScore2); // ... Set 3rd score to 2nd
+        localStorage.setItem('highscore2', highScore1); // ... Set the 2nd score to 1st
+        localStorage.setItem('highscore1', score);      // ... Set the 1st score to current score
+    }
+
+    document.getElementById("1st").innerText = "1st Highest - " + localStorage.getItem('highscore1'); // Display highest score
+    document.getElementById("2nd").innerText = "2nd Highest - " + localStorage.getItem('highscore2'); // Display 2nd highest score
+    document.getElementById("3rd").innerText = "3rd Highest - " + localStorage.getItem('highscore3'); // Display 3rd highest score
+    document.getElementById("score").innerText = "Your score: " + score; // Display most recent score
+}
+
+/*
+    Function that starts a new game.
+    > Resets variables and clears "things"
+*/
+function newGame (){
+    currentChar = null;                                 // Reset the current character
+    word = null;                                        // Reset the current word
+    score = 0;                                          // Reset score
+    key = [];                                           // Reset answer key
+    wordScore = [0, 0];                                 // Reset word progress / scoring
+    newWordCounter = 3;                                 // Reset new word counter
+    time = 120;                                         // Reset time
+    health = 100;                                       // Reset health
+    numCorrect = 0;                                     // Reset number of correct characters
+
+    clearBtns();                                        // Call "clearBtns" function (reset all buttons)
+    document.getElementById("screen").style.color = "var(--dark)";  // Reset the text colour to off-black
+    document.getElementById("screen").style.backgroundColor = "var(--red)"; // Reset screen colour to red
+    document.getElementById("score").innerHTML = "Score: " + score; // ... update score on screen
+    wordBox.innerText = "Loading . . .";                // Reset "current" word
+
+    hideLBoard();
+    getWord();                                          // Call the "getWord" function (pull word from API)
+    updateBar();                                        // Call the "updateBar" function (update the oxygen bar)
+    timeID.innerHTML = "Time remaining: " + time;       // Initialise current time remining
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                             Individual Button Content
@@ -364,3 +449,4 @@ bbtn.addEventListener('click', () => { charPressed(bbtn);} )
 nbtn.addEventListener('click', () => { charPressed(nbtn);} )
 mbtn.addEventListener('click', () => { charPressed(mbtn);} )
 newbtn.addEventListener('click', () => { newWord() } );
+playAgain.addEventListener('click', () => { newGame() });
