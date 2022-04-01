@@ -117,6 +117,7 @@ function updateBar() {
     if (health <= 0) {                                  // If game over:
         oxygen.style.width="0%";                        // ... Lock health bar at 0%
         timeID.innerHTML = "Time remaining: 0";         // ... Lock timer at 0 seconds
+        playIncorrect()                                 // You lose audio
         gameOver();                                     // ... call gameOver function (end the game)
     }
 
@@ -264,7 +265,8 @@ function nextWord () {
     setTimeout(function() {                             // Execute inner code after delay (1 second)
         getWord();                                      // Call "getWord" function (to get a new word)
         newWordCounter = 3;                             // Reset newWordCounter
-    }, 1000);                                           // After one second, continue
+    }, 1000);                                           // After one second, continue   
+    playCorrect();                                      // Correct noise
 }
 
 /*
@@ -450,3 +452,17 @@ nbtn.addEventListener('click', () => { charPressed(nbtn);} )
 mbtn.addEventListener('click', () => { charPressed(mbtn);} )
 newbtn.addEventListener('click', () => { newWord() } );
 playAgain.addEventListener('click', () => { newGame() });
+
+/* If you get the correct word */
+ function playCorrect()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/correctWord.mp3');
+    buttonNoise.play();
+ }
+
+ /* If you get incorrect word */
+ function playIncorrect()
+ {
+     var buttonNoise = new Audio('Sound/Buttons/losingSound.mp3');
+     buttonNoise.play();
+ }
