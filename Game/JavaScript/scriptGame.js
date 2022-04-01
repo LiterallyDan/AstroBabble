@@ -44,7 +44,7 @@ let numCorrect = 0;                                     // Correct word counter 
 let highScore1 = localStorage.getItem('highscore1') || 0; // Local storage variable for 1st place
 let highScore2 = localStorage.getItem('highscore2') || 0; // Local storage variable for 2nd place
 let highScore3 = localStorage.getItem('highscore3') || 0; // Local storage variable for 3rd place
-let awesome = false;                                    // ???
+let awesome                                   // ???
 
 
 /*
@@ -190,7 +190,8 @@ function isValid (button) {
             nextWord();                                 // ... call "nextWord" function (to generate a new word)
             newbtn.classList.remove("unusable", "hide"); // ... reveal new word button (if it has been used 3 times prior)
             numCorrect++;
-            if (numCorrect == 10) awesome = true;       // After 10 correct words set awesome to true
+            if (numCorrect == 10) awesome = true; // After 10 correct words set awesome to true
+            localStorage.setItem("awesome", awesome); //grabs the awesome variable, only done if you pass level 10   
         }
 
     } else {
@@ -466,3 +467,4 @@ playAgain.addEventListener('click', () => { newGame() });
      var buttonNoise = new Audio('Sound/Buttons/losingSound.mp3');
      buttonNoise.play();
  }
+ 
