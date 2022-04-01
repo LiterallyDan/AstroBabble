@@ -155,15 +155,17 @@ function newWord () {
     > Logs the button pressed
 */
 function charPressed (button) {
+
     if (!button.classList.contains("unusable")          
     && wordScore[0] != wordScore [1] 
     && time > 0) {                                      // If pressed letter is usable and the time has not run out and the word has not been completed:
+        playButton();                                   // Plays sound for button press
         currentChar = button.innerText;                 // Set the currently selected button variable to the currently selected button's value
         //console.log(currentChar + " pressed");          // Log the pressed button (for bug testing)
         button.classList.add("unusable");               // Set current button to unusable
         isValid(button);                                // Call "isValid" function to see if the letter is in the word
     }
-    playButton()
+                                         //Plays sound when button is pressed
 }
 
 /*
@@ -242,7 +244,6 @@ async function getWord () {
     clearBtns();                                        // Call "clearBtns" function (reset all buttons)
     document.getElementById("screen").style.color = "var(--dark)";  // Reset the text colour to off-black
     document.getElementById("screen").style.backgroundColor = "var(--red)"; // Reset screen colour to red
-    playButton();                                       // Plays noise
 }
 
 /*
@@ -470,8 +471,19 @@ playAgain.addEventListener('click', () => { newGame() });
      buttonNoise.play();
  }
 
+ /* Sound on button click */
  function playButton()
  {
      var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
      buttonNoise.play();
  }
+<<<<<<< Updated upstream
+=======
+
+ /* Return to homepage sound */
+  function playHome()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
+    buttonNoise.play();
+ }
+>>>>>>> Stashed changes
