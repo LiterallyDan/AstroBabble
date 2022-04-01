@@ -88,6 +88,7 @@ a:link
     backdrop-filter: blur( 4px );   /*  Blurry glass effect */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+/*Music button style settings*/
 #speaker {
 	width: 5%;
 	position: absolute;
