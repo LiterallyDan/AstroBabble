@@ -23,9 +23,7 @@ html {
 body {
     background-image: url("../Images/Other/Background.png"); /* Set background to Cole's art    */
     background: url("../Images/Other/Background.png") no-repeat;
-	height: 100vh;
 	background-size: cover;
-    background-position: center;
 	align-content: center;
     padding: 0; /*  Remove all padding  */
     margin: 0;  /*  Remove all margins  */
@@ -92,8 +90,11 @@ body {
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );   /*  Blurry glass effect */
-    -webkit-backdrop-filter: blur( 4px );   /* ^ */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#leaderboard {
+    margin-bottom: 50vh;
 }
 
 /*  Formatting for the screen ID    */
@@ -149,7 +150,6 @@ body {
     background: rgba( 47, 46, 103, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
 }
 
 /*  Allow for hidden divs   */
@@ -175,4 +175,23 @@ body {
 
 .bottom-btns {
     padding-top: 30px;
+}
+p {
+    font-family: 'Orbitron', sans-serif;
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+}
+
+.leaderboardContainer {
+    background-color: var(--dark);
+    color:var(--bg);
+    font-family: 'Bungee', cursive;
+    padding: 10px 10px;
+    margin: 2px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba( 19, 29, 38, 0.9 );
 }

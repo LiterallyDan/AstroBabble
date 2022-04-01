@@ -18,7 +18,7 @@
         <img src="" id = "characterimage">
     </div>
     
-    <div class = "bar-score">
+    <div class = "bar-score" id = "scoreOxygen">
         <div class = "score">
             <p id = "score">Score: 0</p>
         </div>
@@ -36,10 +36,8 @@
         </div>
     </div>
 
-    <div class = "container">                               <!-- Flexible container holding the entire block -->
-        <div id = "screen" class = "word">
-            <p></p>
-        </div>
+    <div class = "container" id = "keyboard">               <!-- Flexible container holding the entire block -->
+        <div id = "screen" class = "word">Loading . . .</div>
         <div id = "characters" class="btn-grid">            <!-- Div containing the buttons themselves, arranged in a grid -->
             <button id="btn-q" class="btn">Q</button>
             <button id="btn-w" class="btn">W</button>
@@ -73,6 +71,18 @@
             <button id="newWord-btn" class="btn">New Word 3 / 3</button>
             <a href="Home.html" class="link"><button class="btn" id="menu-btn">Main Menu</button></a>
         </div>
+    </div>
+
+    <div class = "container hide" id = "leaderboard">
+        <div class = "leaderboardContainer">
+            <p id = "score">Your Score: 0</p>
+            <h1>Leaderboard</h1>
+            <p id = "1st">Player 1 - Score: 3</p>
+            <p id = "2nd">Player 1 - Score: 2</p>
+            <p id = "3rd">Player 1 - Score: 1</p>
+        </div>
+        <button id = "btn-play" class="btn">Play Again</button>
+        <a href="Home.html" class="link"><button class="btn" id="menu-btn">Main Menu</button></a>
     </div>
 </body>
 </html>
