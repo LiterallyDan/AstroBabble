@@ -44,7 +44,7 @@ let numCorrect = 0;                                     // Correct word counter 
 let highScore1 = localStorage.getItem('highscore1') || 0; // Local storage variable for 1st place
 let highScore2 = localStorage.getItem('highscore2') || 0; // Local storage variable for 2nd place
 let highScore3 = localStorage.getItem('highscore3') || 0; // Local storage variable for 3rd place
-let awesome                                   // ???
+let awesome = false;                                    // ???
 
 
 /*
@@ -146,8 +146,9 @@ function newWord () {
         newWordCounter--;                               // ... decrement number of times "newWord" can be called
         newbtn.innerHTML = "New word " + newWordCounter + " / 3";   // ... update button's displayed text to show remaining uses
     } 
-
+    playHome();                                         // Plays sound when button is clicked
     if (newWordCounter == 0) newbtn.classList.add("hide");  // If new word button cannot be used anymore, hides it
+
 }
 
 /*
@@ -193,8 +194,7 @@ function isValid (button) {
             nextWord();                                 // ... call "nextWord" function (to generate a new word)
             newbtn.classList.remove("unusable", "hide"); // ... reveal new word button (if it has been used 3 times prior)
             numCorrect++;
-            if (numCorrect == 10) awesome = true; // After 10 correct words set awesome to true
-            localStorage.setItem("awesome", awesome); //grabs the awesome variable, only done if you pass level 10   
+            if (numCorrect == 10) awesome = true;       // After 10 correct words set awesome to true
         }
 
     } else {
@@ -477,8 +477,6 @@ playAgain.addEventListener('click', () => { newGame() });
      var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
      buttonNoise.play();
  }
-<<<<<<< Updated upstream
-=======
 
  /* Return to homepage sound */
   function playHome()
@@ -486,4 +484,3 @@ playAgain.addEventListener('click', () => { newGame() });
     var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
     buttonNoise.play();
  }
->>>>>>> Stashed changes
