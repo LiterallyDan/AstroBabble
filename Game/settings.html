@@ -23,15 +23,17 @@
         <div class="btn-group"> 
             <nav>
                 <ul>
+                    <!-- Different buttons for all settings pages -->
                     <h1 class="settings">Settings</h1>
-                    <li><a href="#">Leaderboard</a></li>
-                    <li><a href="settingsAccessibility.html">Accessibility</a></li>
-                    <li><a href="Home.html" onclick="tutorialRestart()">Tutorial</a></li>
-                    <li><a href="" onclick="Reset()">Reset Game</a></li>
+                    <li><a href="#" onmouseover="playSound()">Leaderboard</a></li>
+                    <li><a href="settings_accessibility.html" onmouseover="playSound()">Accessibility</a></li>
+                    <li><a href="Home.html" onclick="tutorialRestart()" onmouseover="playSound()">Tutorial</a></li>
+                    <li><a href="" onclick="Reset()" onmouseover="playSound()">Reset Game</a></li>
                 </ul>
             </nav>
+            <!-- Return to homepage button -->
             <div class = "backbutton">
-                <a href="Home.html"><img src="Images/Icons/backarrow.png"></a>
+                <a href="Home.html" onmousedown="playHome()"><img src="Images/Icons/backarrow.png"></a>
             </div>
         </div>
     </body>

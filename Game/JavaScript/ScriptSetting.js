@@ -50,4 +50,16 @@ var neek_bar
         window.addEventListener("load", initAudioPlayer);
 
 
+//Bubble sound effect for buttons
+ function playSound()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
+    buttonNoise.play();
+ }
 
+ //Sound effect for returning to home screen
+ function playHome()
+ {
+    var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
+    buttonNoise.play();
+ }
