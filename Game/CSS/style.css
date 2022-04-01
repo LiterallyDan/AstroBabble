@@ -92,6 +92,8 @@ a:link
 #speaker {
 	width: 5%;
 	position: absolute;
+	padding-left: 1%;
+	top: 1%;
 }
 
 /* Hover state for Play game button */
