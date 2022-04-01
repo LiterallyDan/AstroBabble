@@ -138,11 +138,16 @@ function voiceLoad(){
     voiceAudio.play();
     
  } 
+ //function for music playing on the homescreen
+ //music is muted by default, as such mute is true to begin with. 
  let mute = true
+ //gets an audio section from the html
  var musicAudio = document.getElementById("music");
+ //if true and muted then play music, if false and unmuted then stop music
  function menuMusic(){
     if (mute == false) {
         mute = true
+        //changes icon to look muted
         document.getElementById("speaker").src = "Images/Icons/musicIconMuted.png"
         console.log("muted")
         musicAudio.pause()
@@ -150,17 +155,17 @@ function voiceLoad(){
     else if (mute == true){
         mute = false
         console.log("unmuted")
+        //changes icon to look unmuted
         document.getElementById("speaker").src = "Images/Icons/musicIcon.png"
+        //sets volume to half
         musicAudio.volume = 0.5;
+        //sets audio to loop forevor
         musicAudio.loop = true;
+        //plays music!
         musicAudio.play();
     }
     
  }
-   
-
- 
-
  //Bubble sound effect for buttons
  function playSound()
  {

@@ -305,6 +305,7 @@ top: 50%;
 /* ------------------------------
 	 Change Character Page
 -------------------------------*/
+/*div for avatar images*/
 .avatarRotation {
 	position: absolute;
 	display: flex;
@@ -313,11 +314,12 @@ top: 50%;
 	align-items: center;
 	text-align: center;
 }
+/*entire screen*/
 .screen {
 	display: flex;
 	justify-content: center;
 }
-
+/*defines how the colour options look on screen*/
 .colourSelect {
 	position: fixed;
 	width: 20%;
@@ -332,11 +334,13 @@ top: 50%;
 	bottom: 0;
 	min-width: 100px;
 }
+/*the name is centered on the screen*/
 .name{
 	justify-content: center;
 	align-items: center;
 	display: flex;
 }
+/*the character name is centered within the .name div*/
 #charName {
 	justify-content: center;
 	align-items: center;
@@ -345,6 +349,7 @@ top: 50%;
 	line-height: 1;
 	color: white;
 }
+/* the colour button styling*/
 .clrbtn {
 	width: 30%;
 	padding: 10%;

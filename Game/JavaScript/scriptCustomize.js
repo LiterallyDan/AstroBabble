@@ -25,7 +25,7 @@ window.onload = function (begin){
     else {
     avatarchoice = localStorage.getItem("avatarchoice");
     }
-    //load the charfinal function
+    //load the charfinal function, which get the actual character image to load in
     CharFinal();
 }
 //the right arrow button tells the avatar choice variable to go up by one
@@ -67,7 +67,9 @@ function CharFinal(){
     //if the variable is 0 then load this character, and set the button colours to the following options
     if(avatarchoice == 0){
         avatar = "Default";
+        //decides the character name to display
         document.getElementById("charName").innerHTML = "The Recruit";
+        //the following lines are simply deciding the colours of the buttons and making them match the character styles.
         document.getElementById("basic").style.background = "whitesmoke";
         document.getElementById("alt1").style.background = "darkorchid";
         document.getElementById("alt2").style.background = "orangered";
@@ -75,15 +77,19 @@ function CharFinal(){
     }
     //if the variable is 1 then load this character, and set the button colours to the following options
     if(avatarchoice == 1){
+        //decides the character name to display
         avatar = "Cat";
         document.getElementById("charName").innerHTML = "Captain Cuddles";
+        //the following lines are simply deciding the colours of the buttons and making them match the character styles.
         document.getElementById("basic").style.background = "darkcyan";
         document.getElementById("alt1").style.background = "seagreen";
         document.getElementById("alt2").style.background = "mediumslateblue";
     }
     //if the variable is 2 then load this character, and set the button colours to the following options
     if(avatarchoice == 2){
+        //decides the character name to display
         avatar = "Fish";
+        //the following lines are simply deciding the colours of the buttons and making them match the character styles.
         document.getElementById("charName").innerHTML = "Gillian Gobb";
         document.getElementById("basic").style.background = "darkcyan";
         document.getElementById("alt1").style.background = "olive";
@@ -91,7 +97,9 @@ function CharFinal(){
     }
     //if the variable is 3 then load this character, and set the button colours to the following options
     if(avatarchoice == 3){
+        //decides the character name to display
         avatar = "Skull";
+        //the following lines are simply deciding the colours of the buttons and making them match the character styles.
         document.getElementById("charName").innerHTML = "Spooks";
         document.getElementById("basic").style.background = "orangered";
         document.getElementById("alt1").style.background = "aqua";
@@ -99,7 +107,9 @@ function CharFinal(){
     }
     //if the variable is 4 then load this character, and set the button colours to the following options
     if(avatarchoice == 4){
+        //decides the character name to display
         avatar = "Sparkle";
+        //the following lines are simply deciding the colours of the buttons and making them match the character styles.
         document.getElementById("charName").innerHTML = "McSparkles";
         document.getElementById("basic").style.background = "var(--blue)";
         document.getElementById("alt1").style.background = "darkviolet";
@@ -107,7 +117,9 @@ function CharFinal(){
     }
     //if the variable is 5 then load this character, and set the button colours to the following options
     if(avatarchoice == 5){
+        //decides the character name to display
         avatar = "Trooper";
+        //the following lines are simply deciding the colours of the buttons and making them match the character styles.
         document.getElementById("charName").innerHTML = "Stormtrooper";
         document.getElementById("basic").style.background = "white";
         document.getElementById("alt1").style.background = "red";
@@ -115,9 +127,8 @@ function CharFinal(){
     }
 
     //if you've reached level 10 the awesome variable will be set to true and you will unlock the gold style for the default space explorer
-    //if you are yet to beat level 10 then you will not be able to use the gold style. 
+    //if you are yet to beat level 10 then you will not be able to use the gold style.
     if (awesome != true || avatarchoice != 0){
-        console.log("hello")
         document.getElementById("alt3").disabled = true;
         document.getElementById("alt3").style.opacity = "0%";
     }
@@ -125,8 +136,10 @@ function CharFinal(){
     characterchoice = "Images/Characters/" + avatar + colourchoice +".png"
     //this sets the image source to the above mentioned variable
     document.getElementById("avatarImage").src = characterchoice
-    //this transfers the variable of the character choice from this page to any other that wants to use it. 
+    //this transfers the variable of the character choice and other from this page to any other that wants to use it. 
     localStorage.setItem("characterchoice", characterchoice);
+    //these two variables are used on this page so that when a player returns to the character customizer it returns and starts on the charcter and style they left off with or the one they are currently using
+    // to put it simply, it remembers your choice.
     localStorage.setItem("avatarchoice", avatarchoice);
     localStorage.setItem("colourchoice", colourchoice);
 }
