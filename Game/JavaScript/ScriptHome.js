@@ -143,13 +143,16 @@ function voiceLoad(){
  function menuMusic(){
     if (mute == false) {
         mute = true
+        document.getElementById("speaker").src = "Images/Icons/musicIconMuted.png"
         console.log("muted")
         musicAudio.pause()
     }
     else if (mute == true){
         mute = false
         console.log("unmuted")
+        document.getElementById("speaker").src = "Images/Icons/musicIcon.png"
         musicAudio.volume = 0.5;
+        musicAudio.loop = true;
         musicAudio.play();
     }
     
