@@ -88,6 +88,9 @@ a:link
     backdrop-filter: blur( 4px );   /*  Blurry glass effect */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+#speaker {
+	width: 10%;
+}
 
 /* Hover state for Play game button */
 .playButton:hover
@@ -258,17 +261,28 @@ a:link
 }
 
 /* Arrow buttons*/
-.arrowBtn
+.arrowBtn{
+
+position: absolute;
+border: solid black;
+background-color: transparent;
+border-width: 0 20px 20px 0;
+display: inline-block;
+padding: 20px;
+top: 50%;
+}
+#tutorialScrollRight
 {
   /* Reference for arrow style */
-  position: absolute;
-  border: solid black;
-  background-color: transparent;
-  border-width: 0 20px 20px 0;
-  display: inline-block;
-  padding: 20px;
+  right: 0;
+  transform: rotate(-45deg); /* points arrow in correct direction */
+  -webkit-transform: rotate(-45deg);
+  margin-right: 3%; /* pushes from edge of  */
+}
+#tutorialScrollLeft
+{
+  /* Reference for arrow style */
   left: 0;
-  top: 50%;
   transform: rotate(135deg); /* points arrow in correct direction */
   -webkit-transform: rotate(135deg);
   margin-left: 3%; /* pushes from edge of  */
@@ -364,9 +378,10 @@ a:link
     -webkit-backdrop-filter: blur( 4px );   /* ^ */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-
+/* hover behaviour for the home button*/
 .btnBack:hover
 {
+	background-color:olive;
 	transition-duration: 0.1s;  /*  Smooth colour change animations */
     transition-timing-function: ease;   /*  Ease into change    */
 	color: var(--bg);
@@ -377,7 +392,7 @@ a:link
 }
 
 /* Button to scroll left in characters*/
-.btnL {
+#arrowLeft {
 	/* Shapes it into arrow */
 	position: fixed;
 	border: solid white;
@@ -395,7 +410,7 @@ a:link
 }
 
 /* Button to scroll right in characters*/
-.btnR {
+#arrowRight {
 	/* Shapes it into arrow */
 	position: fixed;
 	border: solid white;

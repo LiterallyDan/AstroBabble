@@ -67,7 +67,7 @@ function CharFinal(){
     //if the variable is 0 then load this character, and set the button colours to the following options
     if(avatarchoice == 0){
         avatar = "Default";
-        document.getElementById("charName").innerHTML = "Space Cadet";
+        document.getElementById("charName").innerHTML = "The Recruit";
         document.getElementById("basic").style.background = "whitesmoke";
         document.getElementById("alt1").style.background = "darkorchid";
         document.getElementById("alt2").style.background = "orangered";
@@ -79,35 +79,31 @@ function CharFinal(){
         document.getElementById("charName").innerHTML = "Captain Cuddles";
         document.getElementById("basic").style.background = "darkcyan";
         document.getElementById("alt1").style.background = "seagreen";
-        document.getElementById("alt2").style.background = "plum";
-        document.getElementById("alt3").style.background = "lightgrey";
+        document.getElementById("alt2").style.background = "mediumslateblue";
     }
     //if the variable is 2 then load this character, and set the button colours to the following options
     if(avatarchoice == 2){
         avatar = "Fish";
         document.getElementById("charName").innerHTML = "Gillian Gobb";
         document.getElementById("basic").style.background = "darkcyan";
-        document.getElementById("alt1").style.background = "seagreen";
+        document.getElementById("alt1").style.background = "olive";
         document.getElementById("alt2").style.background = "plum";
-        document.getElementById("alt3").style.background = "lightgrey";
     }
     //if the variable is 3 then load this character, and set the button colours to the following options
     if(avatarchoice == 3){
         avatar = "Skull";
         document.getElementById("charName").innerHTML = "Spooks";
-        document.getElementById("basic").style.background = "darkcyan";
+        document.getElementById("basic").style.background = "orangered";
         document.getElementById("alt1").style.background = "aqua";
-        document.getElementById("alt2").style.background = "purple";
-        document.getElementById("alt3").style.background = "lightgrey";
+        document.getElementById("alt2").style.background = "mediumslateblue";
     }
     //if the variable is 4 then load this character, and set the button colours to the following options
     if(avatarchoice == 4){
         avatar = "Sparkle";
         document.getElementById("charName").innerHTML = "McSparkles";
-        document.getElementById("basic").style.background = "darkcyan";
-        document.getElementById("alt1").style.background = "aqua";
-        document.getElementById("alt2").style.background = "purple";
-        document.getElementById("alt3").style.background = "lightgrey";
+        document.getElementById("basic").style.background = "var(--blue)";
+        document.getElementById("alt1").style.background = "darkviolet";
+        document.getElementById("alt2").style.background = "greenyellow";
     }
     //if the variable is 5 then load this character, and set the button colours to the following options
     if(avatarchoice == 5){
@@ -116,10 +112,9 @@ function CharFinal(){
         document.getElementById("basic").style.background = "white";
         document.getElementById("alt1").style.background = "red";
         document.getElementById("alt2").style.background = "black";
-        document.getElementById("alt3").style.background = "lightgrey";
     }
 
-    //if you've reached level 10 this will be set to true and you will unlock the gold style for the default space explorer
+    //if you've reached level 10 the awesome variable will be set to true and you will unlock the gold style for the default space explorer
     //if you are yet to beat level 10 then you will not be able to use the gold style. 
     if (awesome != true || avatarchoice != 0){
         console.log("hello")
@@ -130,12 +125,8 @@ function CharFinal(){
     characterchoice = "Images/Characters/" + avatar + colourchoice +".png"
     //this sets the image source to the above mentioned variable
     document.getElementById("avatarImage").src = characterchoice
-    //can be removed, good for testing purposes
-    console.log (characterchoice);
-    console.log (avatarchoice);
     //this transfers the variable of the character choice from this page to any other that wants to use it. 
     localStorage.setItem("characterchoice", characterchoice);
     localStorage.setItem("avatarchoice", avatarchoice);
     localStorage.setItem("colourchoice", colourchoice);
-
 }
