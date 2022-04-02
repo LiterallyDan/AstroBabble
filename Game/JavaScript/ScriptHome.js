@@ -130,8 +130,8 @@ function voiceLoad(){
     }
     //sets the variable voiceSource so that it's the sound file location
     let voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
-    //let slideSource = "Images/Tutorial/Tutorial"+ lineNum + ".png";
-    //document.getElementById ("Slide").src = slideSource;
+    let slideSource = "Images/Tutorial/Tutorial"+ lineNum + ".png";
+    document.getElementById ("Slide").src = slideSource;
     //sets the audio source to the correct file
     document.getElementById ("voiceLines").src = voiceSource;
     //plays sound. 
