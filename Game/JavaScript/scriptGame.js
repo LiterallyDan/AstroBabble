@@ -74,7 +74,7 @@ window.onload = function() {
     > Increments time value
 */
 setInterval (function timer () {
-    time--;                                             // Decrement time variable by 1
+    if (running) time--;                                // Decrement time variable by 1
     if (!(time <= 0)) timeID.innerHTML = "Time remaining: " + (time);   // If time's not up: updates the time every second
 }, 1000);                                               // Perform the above two lines for every 1000 milliseconds (1 second)
 

@@ -83,10 +83,14 @@ a:link
 	padding: 15px;  /*  15px of padding */
     text-align: center; /*  Align text for everything in the center of the container */
     border-radius: 30px;    /*  Curve borders by 30px   */
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    
+	transition-duration: 0.1s;  /*  Smooth colour change animations */
+    transition-timing-function: ease;   /*  Ease into change    */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+	background: rgba( 47, 46, 103, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 /*Music button style settings*/
 #speaker {
@@ -99,13 +103,10 @@ a:link
 /* Hover state for Play game button */
 .playButton:hover
 {
-	transition-duration: 0.1s;  /*  Smooth colour change animations */
-    transition-timing-function: ease;   /*  Ease into change    */
-	color: var(--bg);
-	background: rgba( 47, 46, 103, 0.50 );
+	background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+
 }
 
 
