@@ -44,6 +44,7 @@ let numCorrect = 0;                                     // Correct word counter 
 let highScore1 = localStorage.getItem('highscore1') || 0; // Local storage variable for 1st place
 let highScore2 = localStorage.getItem('highscore2') || 0; // Local storage variable for 2nd place
 let highScore3 = localStorage.getItem('highscore3') || 0; // Local storage variable for 3rd place
+let running = true;                                     // "Running" variable to stop unnecessary background damage at leaderboard
 let awesome = false;                                    // ???
 
 
@@ -82,9 +83,11 @@ setInterval (function timer () {
     > Decreases health by health * increment every second
 */
 setInterval (function damage() {
-    health = health - increment;                        // Decrement health by increment
-    oxygen.style.width = health + "%";                  // Immediately decrease amount of visible health
-    updateBar();                                        // Call "updateBar" function (update health bar's colour)
+    if (running ) {
+        health = health - increment;                    // Decrement health by increment
+        oxygen.style.width = health + "%";              // Immediately decrease amount of visible health
+        updateBar();                                    // Call "updateBar" function (update health bar's colour)
+    }
 }, 1000);
 
 /*
@@ -207,13 +210,13 @@ function isValid (button) {
 //                                             Game Code
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 /*
     Function responsible for ending the game and moving on.
     > Calls the leaderboard.
 */
 function gameOver () {
+    running = false;                                    // Disable damage features
+
     for (let i = 0; i < word.length; i++) {             // For every character in word:
         if (progress[i] == '_') progress[i] = word [i]; // ... If there is an underscore, replace with correct letter
     }
@@ -356,10 +359,10 @@ function updateLBoard() {
         localStorage.setItem('highscore1', score);      // ... Set the 1st score to current score
     }
 
-    document.getElementById("1st").innerText = "1st Highest - " + localStorage.getItem('highscore1'); // Display highest score
-    document.getElementById("2nd").innerText = "2nd Highest - " + localStorage.getItem('highscore2'); // Display 2nd highest score
-    document.getElementById("3rd").innerText = "3rd Highest - " + localStorage.getItem('highscore3'); // Display 3rd highest score
-    document.getElementById("score").innerText = "Your score: " + score; // Display most recent score
+    document.getElementById("1st").innerText = "1st Highest : " + localStorage.getItem('highscore1'); // Display highest score
+    document.getElementById("2nd").innerText = "2nd Highest : " + localStorage.getItem('highscore2'); // Display 2nd highest score
+    document.getElementById("3rd").innerText = "3rd Highest : " + localStorage.getItem('highscore3'); // Display 3rd highest score
+    document.getElementById("final-score").innerHTML = "Your score: " + score; // Display most recent score
 }
 
 /*
@@ -376,6 +379,7 @@ function newGame (){
     time = 120;                                         // Reset time
     health = 100;                                       // Reset health
     numCorrect = 0;                                     // Reset number of correct characters
+    running = true;
 
     clearBtns();                                        // Call "clearBtns" function (reset all buttons)
     document.getElementById("screen").style.color = "var(--dark)";  // Reset the text colour to off-black
