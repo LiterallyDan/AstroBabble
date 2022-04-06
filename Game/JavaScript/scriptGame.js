@@ -344,16 +344,19 @@ function hideLBoard() {
     https://stackoverflow.com/questions/16245536/setting-a-variable-in-local-storage
 */
 function updateLBoard() {
-    highScore1 = localStorage.getItem('highscore1') || 0; // Load 1st score, if null, set to 0
-    highScore2 = localStorage.getItem('highscore2') || 0; // Load 2nd score, if null, set to 0
-    highScore3 = localStorage.getItem('highscore3') || 0; // Load 3rd score, if null, set to 0
+    highScore1 = localStorage.getItem('highscore1');     // Retrieve previous value of highest score
+    highScore2 = localStorage.getItem('highscore2');     // Retrieve previous value of second highest score
+    highScore3 = localStorage.getItem('highscore3');     // Retrieve previous value of third highest score
+    localStorage.setItem('highscore1', localStorage.getItem('highscore1') || 0); // Load 1st score, if null, set to 0
+    localStorage.setItem('highscore2', localStorage.getItem('highscore2') || 0); // Load 2nd score, if null, set to 0
+    localStorage.setItem('highscore3', localStorage.getItem('highscore3') || 0); // Load 3rd score, if null, set to 0
 
-    if (score > highScore3 && score < highScore2) {     // If score is higher than third score but lower than second
+    if (score > highScore3 && score < highScore2 || score == highScore3) {     // If score is higher than third score but lower than second
         localStorage.setItem('highscore3', score);      // ... Set 3rd score to current score
-    } else if (score > highScore2 && score < highScore1) { // If score is higher than second score but lower than first
+    } else if (score > highScore2 && score < highScore1 || score == highScore2) { // If score is higher than second score but lower than first
         localStorage.setItem('highscore3', highScore2); // ... Set 3rd score to 2nd
         localStorage.setItem('highscore2', score);      // ... Set the 2nd score to current score
-    } else if (score > highScore1) {                    // If score is higher than highest score
+    } else if (score > highScore1 || score == highScore1) {                    // If score is higher than highest score
         localStorage.setItem('highscore3', highScore2); // ... Set 3rd score to 2nd
         localStorage.setItem('highscore2', highScore1); // ... Set the 2nd score to 1st
         localStorage.setItem('highscore1', score);      // ... Set the 1st score to current score
