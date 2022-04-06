@@ -75,13 +75,13 @@ function checkChange()
 
 //the right arrow button tells the avatar choice variable to go up by one
 //lineNum is 0 from the beginning this means it will start at the first slide each time!
-let lineNum = 0
+let lineNum = 0;
 var voiceAudio = document.getElementById("voiceLines");
-let voiceSource
-let voiceLines
+let voiceSource;
+let voiceLines;
 function tutorialRight (){
     //adds one to lineNum
-    lineNum++
+    lineNum++;
     //pauses the current sound in preperation for the new one.
     voiceAudio.pause();
     //loads the function below
@@ -92,7 +92,7 @@ function tutorialRight (){
     //the left arrow button tells the avatar choice variable to go down by one
 function tutorialLeft (){
     //removes one from lineNum
-    lineNum--
+    lineNum--;
     //pauses the current sound in preperation for the new one.
     voiceAudio.pause();
     //loads the function below
@@ -104,11 +104,11 @@ function voiceLoad(){
     
     //if the variable is less than 0 cycle back up to 17
     if(lineNum < 0){
-        lineNum = 17
+        lineNum = 17;
     }
     //if the variable is more than 17 cycle back down ot 0, pretty much once you've gone through all the tutorial slides go to back to the start tutorial screen.
     if(lineNum > 17){
-        lineNum = 0
+        lineNum = 0;
     }
     //If you are a a default starting position (0) then display a start button rather than the arrow ones
     if(lineNum == 0){
@@ -116,7 +116,7 @@ function voiceLoad(){
         document.getElementById("tutorialScrollLeft").disabled = true;
         document.getElementById("tutorialScrollLeft").style.display = "none";
         document.getElementById("tutorialScrollRight").style.display = "none";
-        document.getElementById("tutorialStart").style.display="block";
+        document.getElementById("tutorialStart").style.display="none";
         document.getElementById("tutorialStart").disabled = false;
     }
     // for every other case show the arrow buttons and not the start button.
@@ -140,23 +140,23 @@ function voiceLoad(){
  } 
  //function for music playing on the homescreen
  //music is muted by default, as such mute is true to begin with. 
- let mute = true
+ let mute = true;
  //gets an audio section from the html
  var musicAudio = document.getElementById("music");
  //if true and muted then play music, if false and unmuted then stop music
  function menuMusic(){
     if (mute == false) {
-        mute = true
+        mute = true;
         //changes icon to look muted
-        document.getElementById("speaker").src = "Images/Icons/musicIconMuted.png"
-        console.log("muted")
-        musicAudio.pause()
+        document.getElementById("speaker").src = "Images/Icons/musicIconMuted.png";
+        console.log("muted");
+        musicAudio.pause();
     }
     else if (mute == true){
-        mute = false
-        console.log("unmuted")
+        mute = false;
+        console.log("unmuted");
         //changes icon to look unmuted
-        document.getElementById("speaker").src = "Images/Icons/musicIcon.png"
+        document.getElementById("speaker").src = "Images/Icons/musicIcon.png";
         //sets volume to half
         musicAudio.volume = 0.5;
         //sets audio to loop forevor
