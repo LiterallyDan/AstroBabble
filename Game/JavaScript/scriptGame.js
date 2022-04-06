@@ -106,9 +106,9 @@ function heal (){
     > Decreases health by 5*increment (5%)
 */
 function hurt () {
-    health = health - 5*increment;                      // Decrease health by 5%
+    health = health - 10*increment;                      // Decrease health by 5%
     oxygen.style.width = health + "%";                  // Immediately update health bar
-    time = time - 5;                                    // Decrement time by 5 seconds
+    time = time - 10;                                    // Decrement time by 5 seconds
     updateBar();                                        // Call "updateBar" function (update health bar's colour)
 }   
 
