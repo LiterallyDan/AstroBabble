@@ -7,6 +7,7 @@ let awesome
 window.onload = function (begin){
     //this section loads in the previous choice of avatar and colour so that it's the same as where you left off, unless you haven't picked before in which case, it sets the values to their defaults
     awesome = localStorage.getItem("awesome");
+    console.log(awesome)
     colourchoice = localStorage.getItem("colourchoice");
     avatarchoice = localStorage.getItem("avatarchoice");
     //if you've never played sets values to default
@@ -125,17 +126,26 @@ function CharFinal(){
         document.getElementById("alt1").style.background = "red";
         document.getElementById("alt2").style.background = "black";
     }
-
-    //if you've reached level 10 the awesome variable will be set to true and you will unlock the gold style for the default space explorer
     //if you are yet to beat level 10 then you will not be able to use the gold style.
-    if (awesome != true || avatarchoice != 0){
+    if (awesome != "true" || avatarchoice != 0) {
+        //disables the gold button
         document.getElementById("alt3").disabled = true;
+        //sets the gold button opacity to 0% 
         document.getElementById("alt3").style.opacity = "0%";
     }
+        
+    //if you've reached level 10 the awesome variable will be set to true and you will unlock the gold style for the default space explorer
+    if (awesome == "true" && avatarchoice == 0 ) {
+        //enables the gold button
+        document.getElementById("alt3").disabled = false;
+        //sets the gold button opacity to 100%
+        document.getElementById("alt3").style.opacity = "100%";
+    }
+
     // this combines all the above variables to create the image file location so that it can load the correct images. 
-    characterchoice = "Images/Characters/" + avatar + colourchoice +".png"
+    characterchoice = "Images/Characters/" + avatar + colourchoice +".png";
     //this sets the image source to the above mentioned variable
-    document.getElementById("avatarImage").src = characterchoice
+    document.getElementById("avatarImage").src = characterchoice;
     //this transfers the variable of the character choice and other from this page to any other that wants to use it. 
     localStorage.setItem("characterchoice", characterchoice);
     //these two variables are used on this page so that when a player returns to the character customizer it returns and starts on the charcter and style they left off with or the one they are currently using

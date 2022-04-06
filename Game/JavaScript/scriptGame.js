@@ -45,7 +45,7 @@ let highScore1 = localStorage.getItem('highscore1') || 0; // Local storage varia
 let highScore2 = localStorage.getItem('highscore2') || 0; // Local storage variable for 2nd place
 let highScore3 = localStorage.getItem('highscore3') || 0; // Local storage variable for 3rd place
 let running = true;                                     // "Running" variable to stop unnecessary background damage at leaderboard
-let awesome = false;                                    // ???
+let awesome;                                    // ???
 
 
 /*
@@ -196,9 +196,13 @@ function isValid (button) {
             for (let i = 0; i < wordScore[1]; i++) heal();  // For every character in word, heal the user.
             nextWord();                                 // ... call "nextWord" function (to generate a new word)
             newbtn.classList.remove("unusable", "hide"); // ... reveal new word button (if it has been used 3 times prior)
-            numCorrect++;
-            if (numCorrect == 10) awesome = true;       // After 10 correct words set awesome to true
+            numCorrect++; // add one to the amount of words correct.
+            if (numCorrect == 10) {
+                awesome = "true";    // After 10 correct words set awesome to true
+                localStorage.setItem("awesome", awesome); // stores the awesome variable to be loaded on the character customization page.
+            }
         }
+             
 
     } else {
         button.classList.add("incorrect");              // Set the button's appearance to "incorrect"
