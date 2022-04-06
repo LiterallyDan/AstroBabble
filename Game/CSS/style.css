@@ -83,6 +83,7 @@ a:link
 	padding: 15px;  /*  15px of padding */
     text-align: center; /*  Align text for everything in the center of the container */
     border-radius: 30px;    /*  Curve borders by 30px   */
+    
 	transition-duration: 0.1s;  /*  Smooth colour change animations */
     transition-timing-function: ease;   /*  Ease into change    */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -184,20 +185,17 @@ a:link
 	top: 0;
 	bottom: 0;
 	/* ------------------ */
-	height: fit-content;
-	margin: 5vh 5vw;
+	margin: auto;
+	width: 90%;
+	height: 90%;
+	background-color: var(--bg);
+	outline: 1vw solid black;
 	z-index: 3; /* Alawys at front if it's being displayed */
 	border-radius: 50px;
 	text-align: center;
 	font-size: 6vw;
 	line-height: 1.2; /* Fixes font issues */
 	display: none; /* so that it isn't showing straight away */
-
-	background: rgba( 255, 255, 255, 0.25 );
-	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-	backdrop-filter: blur( 4px );
-	border-radius: 10px;
-	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* Container for help div elements */
@@ -305,12 +303,7 @@ top: 50%;
 }
 
 /* The images that go along with the voice lines */
-#Slide {
-	max-height: 60vh;
-	margin-top: 5vh;
-	object-fit: contain;
-	border-radius: 30px;
-}
+
 
 
 /* ------------------------------
@@ -395,7 +388,7 @@ top: 50%;
 /* Styling for return home from character page */
 .btnBack {
 	position: fixed;
-	width: 10%;
+	width: 8%;
 	background-color: var(--bg);
 	bottom: 0;
 	left: 0;
@@ -411,12 +404,14 @@ top: 50%;
 /* hover behaviour for the home button*/
 .btnBack:hover
 {
-	background-color: olive;
+	background-color:olive;
 	transition-duration: 0.1s;  /*  Smooth colour change animations */
     transition-timing-function: ease;   /*  Ease into change    */
 	color: var(--bg);
 	background: rgba( 47, 46, 103, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 
 /* Button to scroll left in characters*/
@@ -520,8 +515,11 @@ li{
 	font-size: 40px;
 	border-radius: 25%;
 }
+li a{
+	color: white;
+}
 li:hover{
-  background-color: #F26A4B;
+  background-color:#F26A4B;
 }
 .backbutton a img{
   width: 200px;
@@ -536,8 +534,12 @@ height: auto;
 }
 .settings{
   font-size: 60px;
-  color: purple;
+  color: rgb(255, 255, 255);
   margin: 0%;
+}
+
+.btn-group nav ul h1 li a{
+	color: solid white;
 }
 
 
