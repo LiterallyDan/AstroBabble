@@ -318,11 +318,13 @@ top: 50%;
 	align-items: center;
 	text-align: center;
 }
+
 /*entire screen*/
 .screen {
 	display: flex;
 	justify-content: center;
 }
+
 /*defines how the colour options look on screen*/
 .colourSelect {
 	position: fixed;
@@ -338,6 +340,17 @@ top: 50%;
 	bottom: 0;
 	min-width: 100px;
 }
+
+/* Hover state for color selection buttons */
+.colorSelect:hover
+{
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    -webkit-backdrop-filter: blur( 4px );   /* ^ */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
 /*the name is centered on the screen*/
 .name{
 	justify-content: center;
@@ -461,9 +474,17 @@ top: 50%;
 	padding-top: 1%;
 }
 
+/* Hover arrow */
+#arrowRight:hover
+{
+	border-color: var(--red);
+}
 
-
-
+/* Hover arrow */
+#arrowLeft:hover
+{
+	border-color: var(--red);
+}
 
 /* ------------------------------
 			Settings Page
