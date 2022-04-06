@@ -185,9 +185,8 @@ a:link
 	top: 0;
 	bottom: 0;
 	/* ------------------ */
-	margin: auto;
-	width: 90%;
-	height: 90%;
+	height: fit-content;
+	margin: 5vh 5vw;
 	z-index: 3; /* Alawys at front if it's being displayed */
 	border-radius: 50px;
 	text-align: center;
@@ -307,7 +306,12 @@ top: 50%;
 }
 
 /* The images that go along with the voice lines */
-
+#Slide {
+	max-height: 60vh;
+	margin-top: 5vh;
+	object-fit: contain;
+	border-radius: 30px;
+}
 
 
 /* ------------------------------
