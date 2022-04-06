@@ -3,10 +3,6 @@
            Home Page JS
 ------------------------------------*/
 
-//set variable for editing 
-/////////////////////////DELETE LATER////////////////////////////
-//localStorage.setItem("Disable", "null");
-////////////////////////////////////////////////////////////////
 
 //Variables
 var Disable;
