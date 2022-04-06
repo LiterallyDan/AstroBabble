@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon source -->
+        <link rel="icon" type="image/x-icon" href="Images/Other/Favicon.png">
+        <!-- CSS Style Sheet source -->
+        <link rel="stylesheet" href="Css/style.css">
+        <!-- JS Script Source -->
+        <script src="JavaScript/scriptSetting.js"></script>
+        <script src="JavaScript/scriptGame.js"></script>
+
+        <!-- Displayed Title in Browser -->
+        <title>Astro Babble</title>
+        <!-- Fonts Links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    </head>
+<!-- Sets Background Image to this Source -->
+    <body>
+        <div class="btn-group"> 
+            <nav>
+                <ul>
+                    <!-- Different buttons for all settings pages -->
+                    <h1 class="settings">Settings</h1>
+                    
+                    <li><a href="settingsLeaderboard.html" onmouseover="playSound()">Leaderboard</a></li>
+                    <li><a href="Home.html" onclick="tutorialRestart()" onmouseover="playSound()">Tutorial</a></li>
+                    <li><a href="" onclick="Reset()" onmouseover="playSound()">Reset Game</a></li>
+                </ul>
+            </nav>
+            <!-- Return to homepage button -->
+            <div class = "backbutton">
+                <a href="Home.html" onmousedown="playHome()"><img src="Images/Icons/backarrow.png"></a>
+            </div>
+        </div>
+    </body>
+</html>
