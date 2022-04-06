@@ -171,3 +171,4 @@ function CharFinal(){
     var buttonNoise = new Audio('Sound/Buttons/colorChange.mp3');
     buttonNoise.play();
  }
+
