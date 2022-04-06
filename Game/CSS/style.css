@@ -392,7 +392,7 @@ top: 50%;
 /* Styling for return home from character page */
 .btnBack {
 	position: fixed;
-	width: 8%;
+	width: 10%;
 	background-color: var(--bg);
 	bottom: 0;
 	left: 0;
