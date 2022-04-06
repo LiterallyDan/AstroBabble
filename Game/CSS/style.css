@@ -188,14 +188,18 @@ a:link
 	margin: auto;
 	width: 90%;
 	height: 90%;
-	background-color: var(--bg);
-	outline: 1vw solid black;
 	z-index: 3; /* Alawys at front if it's being displayed */
 	border-radius: 50px;
 	text-align: center;
 	font-size: 6vw;
 	line-height: 1.2; /* Fixes font issues */
 	display: none; /* so that it isn't showing straight away */
+
+	background: rgba( 255, 255, 255, 0.25 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* Container for help div elements */
@@ -388,6 +392,7 @@ top: 50%;
 /* Styling for return home from character page */
 .btnBack {
 	position: fixed;
+	width: 8%;
 	background-color: var(--bg);
 	bottom: 0;
 	left: 0;
@@ -403,14 +408,12 @@ top: 50%;
 /* hover behaviour for the home button*/
 .btnBack:hover
 {
-	background-color:olive;
+	background-color: olive;
 	transition-duration: 0.1s;  /*  Smooth colour change animations */
     transition-timing-function: ease;   /*  Ease into change    */
 	color: var(--bg);
 	background: rgba( 47, 46, 103, 0.50 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
 }
 
 /* Button to scroll left in characters*/
