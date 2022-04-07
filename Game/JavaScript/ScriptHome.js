@@ -38,14 +38,10 @@ window.onload = function (begin){
         characterchoice = "Images/Characters/DefaultBasic.png";
     }
     document.getElementById("characterimage").src = characterchoice;
-    console.log(characterchoice);
 
     //Enables instructions if they haven't disabled them
-    console.log (Disable)
     if (Disable != "off")
     { 
-        console.log ("Enabled");
-        console.log("Instructions still load");
         document.getElementById("generalInstruct").style.display = "block";
     }
 }
@@ -53,7 +49,6 @@ window.onload = function (begin){
 //closes the instructions/help page 
 function exitInstruct ()
 {
-    console.log("Closed Help Page");
     document.getElementById("generalInstruct").style.display = "none";
     //pauses any tutorial voice lines that may be playing when you leave the tutorial.
     voiceAudio.pause();
@@ -66,14 +61,12 @@ function checkChange()
       if (document.getElementById("showHide").style.display == "none")
       {
           //When checkmark is on, page won't load again
-         console.log("Instructions disabled");
          document.getElementById("showHide").style.display = "block";
          localStorage.setItem('Disable', 'off');
       } 
       else 
       {
          // when checkmark is off, page will load again next time Home is opened
-         console.log("Instructions re-enabled");
          document.getElementById("showHide").style.display = "none";
          localStorage.setItem('Disable', 'null');
       }
@@ -146,12 +139,10 @@ function voiceLoad(){
         mute = true;
         //changes icon to look muted
         document.getElementById("speaker").src = "Images/Icons/musicIconMuted.png";
-        console.log("muted");
         musicAudio.pause();
     }
     else if (mute == true){
         mute = false;
-        console.log("unmuted");
         //changes icon to look unmuted
         document.getElementById("speaker").src = "Images/Icons/musicIcon.png";
         //sets volume to half

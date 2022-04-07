@@ -8,7 +8,6 @@ let buttonNoise;
 window.onload = function (begin){
     //this section loads in the previous choice of avatar and colour so that it's the same as where you left off, unless you haven't picked before in which case, it sets the values to their defaults
     awesome = localStorage.getItem("awesome");
-    console.log(awesome);
     colourchoice = localStorage.getItem("colourchoice");
     avatarchoice = localStorage.getItem("avatarchoice");
     //if you've never played sets values to default
