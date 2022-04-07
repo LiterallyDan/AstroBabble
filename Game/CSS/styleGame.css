@@ -187,7 +187,7 @@ h1 {
 .leaderboardContainer {
     background-color: var(--dark);
     color:var(--bg);
-    font-family: 'Bungee', cursive;
+    font-family: 'Orbitron', sans-serif;    /*  Specify font to be our secondary font   */
     padding: 10px 10px;
     margin: 2px;
     margin-bottom: 20px;
