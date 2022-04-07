@@ -167,10 +167,6 @@ a:link
 	width: 100%;
 }
 
-
-
-
-
 /* ------------------------------
 			Help Page
 -------------------------------*/
@@ -373,13 +369,6 @@ top: 50%;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-
-/*the name is centered on the screen*/
-.name{
-	justify-content: center;
-	align-items: center;
-	display: flex;
-}
 /*the character name is centered within the .name div*/
 #charName {
 	justify-content: center;
@@ -406,18 +395,23 @@ top: 50%;
 	font-size: 5vw;
 	text-align: center;
 	position: fixed;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 100%;
 }
 
 /* Styling for return home from character page */
 .btnBack {
 	position: fixed;
-	width: 10%;
+	font-size: 2vw;
 	background-color: var(--bg);
 	bottom: 0;
 	left: 0;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 50px;
+	line-height: 1;
+	padding: 15px;
+	margin: 15px;
+	border-radius: 20px;
 	background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );   /*  Blurry glass effect */
@@ -584,10 +578,16 @@ height: auto;
 	{
 		width: 10%;
 	}
+
 	.characterHome
 	{
 	width: 400px;
+	}
 	
+	#charName
+	{
+		padding-top: 15%;
+		font-size: 10vw;
 	}
 }
 @media screen and (max-width: 450px)
@@ -601,6 +601,12 @@ height: auto;
 	.charactersIcon
 	{
 	width: 100px;
+	}
+
+	#charName
+	{
+		padding-top: 50%;
+		font-size: 10vw;
 	}
 }
 
