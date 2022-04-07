@@ -1,0 +1,590 @@
+/* Style Sheet */
+
+/*  Storage for colour variables for easy changing  */
+:root {
+    --bg: #FAF9F6;
+    --dark: #131D26;
+    --blue: #024E73;
+    --grey: #F2F2F2;
+    --drkgrey: #969EAB;
+    --red: #F26A4B;
+
+    /* Health Colours */
+    --hpred:#f55840;
+    --hpylw:#f2f542;
+    --hpaqua:#40ddf5;
+    --green: #50ca68;   
+}
+
+*{
+	font-family: 'Bungee';
+}
+
+/* ------------------------------
+			Home Page
+-------------------------------*/
+
+
+/* Background Image */
+body{
+	background: url("../Images/Other/Background.png") no-repeat;
+	height: 100vh;
+	background-size: cover;
+	overflow: hidden;   /*  Remove pesky scrollbars */
+}
+/* Floating character div on homescreen */
+.characterHome
+{
+	width: 400px;
+	text-align: center;
+	animation: upDown 5s infinite ease-in-out; /* animation for character */
+	top: 20%; 
+	position:absolute; 
+	left:0; 
+	right:0; 
+	margin-left:auto; /* centers */
+	margin-right:auto;
+}
+
+/* Animation for Character to move up and down again */ 
+@keyframes upDown
+{
+	0% {top: 25%;}
+	25% {top: 30%;}
+	50% {top: 25%;}
+	75% {top: 30%;}
+	100% {top: 25%;}
+}
+
+/*the floating character image itself*/
+#characterimage {
+	width: 90%;
+}
+/*all links will have no ugly purple underlines*/
+a:link 
+{ 
+	text-decoration: none; 
+}
+
+/* Play Button for the game*/
+.playButton
+{
+	position: absolute;
+	max-width: 400px;
+	min-width: 200px;
+	line-height: 1.5;
+	width: 40%;
+	top: 85%;
+	left:50%;
+	right:50%;
+	transform: translate(-50%, -50%);
+	color: var(--bg);
+	font-size: 50px;
+	padding: 15px;  /*  15px of padding */
+    text-align: center; /*  Align text for everything in the center of the container */
+    border-radius: 30px;    /*  Curve borders by 30px   */
+	transition-duration: 0.1s;  /*  Smooth colour change animations */
+    transition-timing-function: ease;   /*  Ease into change    */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+	background: rgba( 47, 46, 103, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+/*Music button style settings*/
+#speaker {
+	width: 5%;
+	position: absolute;
+	padding-left: 1%;
+	top: 1%;
+}
+
+/* Hover state for Play game button */
+.playButton:hover
+{
+	background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+
+}
+
+
+/* Home "Astro Babble" title text*/
+.titleHome
+{
+	text-align: center;
+	font-size: 8vw;
+	color: var(--bg);
+	width: 100%;
+	margin: 0 0 0 0;
+	line-height: 1.4;
+}
+
+/* Main font */
+.p1
+{
+	font-family: 'Bungee', cursive;
+	font-size: 100%;
+}
+
+/* Settings button */
+.settingsIcon
+{
+	position: fixed;
+	bottom: 1%;
+	width: 100px;
+	padding-left:1%;
+	transition: ease-in-out 0.2s;
+}
+/* Setting button hover behaviour*/
+.settingsIcon:hover{
+	/*Grows by a scale of 1.1*/
+	transform:scale(1.1,1.1);
+}
+/* Cog Image */
+#cog {
+	width: 100%;
+}
+
+
+/*The div around the character customization button*/
+.charactersIcon
+{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 150px;
+	padding-right:1%;
+	transition: ease-in-out 0.2s;
+}
+/*hover behaviour for the charactericon div*/
+.charactersIcon:hover{
+	transform:scale(1.1,1.1);
+}
+
+/*character customization button image*/
+#myCharacter {
+	width: 100%;
+}
+
+
+
+
+
+/* ------------------------------
+			Help Page
+-------------------------------*/
+
+/* General Div for all of help pop-up */
+.helpDiv {
+	position: absolute;
+	/* Centers everything */
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	/* ------------------ */
+	height: fit-content;
+	margin: 5vh 5vw;
+	z-index: 3; /* Alawys at front if it's being displayed */
+	border-radius: 50px;
+	text-align: center;
+	font-size: 6vw;
+	line-height: 1.2; /* Fixes font issues */
+	display: none; /* so that it isn't showing straight away */
+
+	background: rgba( 255, 255, 255, 0.25 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+/* Container for help div elements */
+.containHelp
+{
+	position: relative;
+	width: 5%;
+	margin: auto; 
+	display: flex; /* keeps items organized */
+	justify-content: center; /* Aligns everything in the middle */
+}
+
+/* Position the link for checkmark */
+.positionA
+{
+	position: relative;
+	display: inline-block;
+}
+
+/* Checkmark for show/don't show box */
+.checkmark
+{
+	width: 100%;
+	line-height: 0;
+}
+/* Check box for not showing help again */
+.notAgain {
+	background-color: var(--bg);
+	outline: 0.3vw solid black;
+	width: 50px;
+	height: 50px;
+	margin-top: 15%;
+	opacity: 1;
+}
+/* Do Not Show Again text */
+.notAgainText {
+	position: relative;
+	font-size: 20px;
+	opacity: 1;
+}
+
+/* Exit "X" from instructions page */
+.exitInstruct {
+	position: absolute;
+	width: 8vw;
+	max-width: 50px;
+	background-image: url("../Images/Icons/exit.png");
+	right: 5%;
+	bottom: 0;
+}
+
+/* Start tutorial button */
+.startTutorial
+{
+	position: fixed;
+	bottom: 50%;
+	width: 24%;
+    left: 50%;
+    margin-left: -12%; /* centers start button */
+	outline: 3px solid black;
+	background-color: var();
+}
+
+/* Hover state for start button */
+.startTutorial:hover
+{
+	background-color: #024E73;
+}
+
+/* Arrow buttons*/
+.arrowBtn{
+position: absolute;
+border: solid black;
+background-color: transparent;
+border-width: 0 20px 20px 0;
+display: inline-block;
+padding: 20px;
+top: 50%;
+}
+#tutorialScrollRight
+{
+  /* Reference for arrow style */
+  right: 0;
+  transform: rotate(-45deg); /* points arrow in correct direction */
+  -webkit-transform: rotate(-45deg);
+  margin-right: 3%; /* pushes from edge of  */
+}
+#tutorialScrollLeft
+{
+  /* Reference for arrow style */
+  left: 0;
+  transform: rotate(135deg); /* points arrow in correct direction */
+  -webkit-transform: rotate(135deg);
+  margin-left: 3%; /* pushes from edge of  */
+}
+
+/* changes arrow color on hover */
+.arrowBtn:hover
+{
+	border: solid #024E73;
+	/* Fix shape swapping problems*/
+	border-width: 0 20px 20px 0;
+	display: inline-block;
+	padding: 20px;
+}
+
+/* The images that go along with the voice lines */
+#Slide {
+	max-height: 60vh;
+	margin-top: 5vh;
+	object-fit: contain;
+	border-radius: 30px;
+}
+
+
+/* ------------------------------
+	 Change Character Page
+-------------------------------*/
+/*div for avatar images*/
+.avatarRotation {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/*entire screen*/
+.screen {
+	display: flex;
+	justify-content: center;
+}
+
+/*defines how the colour options look on screen*/
+.colourSelect {
+	position: fixed;
+	width: 20%;
+    float: center;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
+	bottom: 0;
+	min-width: 100px;
+}
+
+/* Hover state for color selection buttons */
+.colorSelect:hover
+{
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    -webkit-backdrop-filter: blur( 4px );   /* ^ */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+/*the name is centered on the screen*/
+.name{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+/*the character name is centered within the .name div*/
+#charName {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin: 0;
+	line-height: 1;
+	color: white;
+}
+/* the colour button styling*/
+.clrbtn {
+	width: 30%;
+	padding: 10%;
+	display: flexbox;
+	border-radius: 50px;
+	min-width: 100px;
+}
+
+/* Sets name up at top of page */
+.name
+{
+	top: 0;
+	padding-top: 1%;
+	font-size: 5vw;
+	text-align: center;
+	position: fixed;
+}
+
+/* Styling for return home from character page */
+.btnBack {
+	position: fixed;
+	width: 10%;
+	background-color: var(--bg);
+	bottom: 0;
+	left: 0;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 50px;
+	background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    -webkit-backdrop-filter: blur( 4px );   /* ^ */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+/* hover behaviour for the home button*/
+.btnBack:hover
+{
+	background-color: olive;
+	transition-duration: 0.1s;  /*  Smooth colour change animations */
+    transition-timing-function: ease;   /*  Ease into change    */
+	color: var(--bg);
+	background: rgba( 47, 46, 103, 0.50 );
+    backdrop-filter: blur( 4px );
+}
+
+/* Button to scroll left in characters*/
+#arrowLeft {
+	/* Shapes it into arrow */
+	position: fixed;
+	border: solid white;
+	background-color: transparent;
+	border-width: 0 15px 15px 0;
+	display: inline-block;
+	padding: 15px;
+	/* ^ Shapes it into arrow ^ */
+	left: 0;
+	top: 50%;
+	transform: rotate(135deg); /* points arrow in correct direction */
+	-webkit-transform: rotate(135deg);
+	margin-left: 8%;
+	margin-top: 3%;
+}
+
+/* Button to scroll right in characters*/
+#arrowRight {
+	/* Shapes it into arrow */
+	position: fixed;
+	border: solid white;
+	background-color: transparent;
+	border-width: 0 15px 15px 0;
+	display: inline-block;
+	padding: 15px;
+	/* ^ Shapes it into arrow ^ */
+	right: 0;
+	top: 50%;
+	transform: rotate(-45deg); /* points arrow in correct direction */
+	-webkit-transform: rotate(-45deg);
+	margin-right: 8%;
+	margin-top: 3%;
+}
+
+
+/* The actual images of characters */
+#avatarImage {
+    width: 80%;
+    height:auto;
+	max-width: 500px;
+	/* Makes it float center */
+	position: fixed;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* Title at top of Customize Character page */
+.changeTitle {
+	font-size: 8vw;
+	font-family: 'Bungee', cursive;
+	color: var();
+	top: 0;
+	position: fixed;
+	padding-top: 1%;
+}
+
+/* Hover arrow */
+#arrowRight:hover
+{
+	border-color: var(--red);
+}
+
+/* Hover arrow */
+#arrowLeft:hover
+{
+	border-color: var(--red);
+}
+
+/* ------------------------------
+			Settings Page
+-------------------------------*/
+
+.btn-group button{
+	padding: 2px;
+	margin: 25px;
+}
+nav{
+	left: 600px;
+	background:none;
+	padding: 10px;
+	align-items: center;
+}
+ul{
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items:center;
+	text-align: right;
+	padding-left: 0;
+	list-style: none;
+}
+li{
+	margin: 20px;
+	font-size: 40px;
+	border-radius: 25%;
+}
+li:hover{
+  background-color: #F26A4B;
+}
+.backbutton a img{
+  width: 200px;
+  transition: 2s;
+  position: absolute;
+  bottom: 20px;
+
+}
+.backbutton a img:hover{
+width: 220px;
+height: auto;
+}
+.settings{
+  font-size: 60px;
+  color: purple;
+  margin: 0%;
+}
+
+
+
+
+
+/* ------------------------------
+			Media Queries 
+-------------------------------*/
+
+
+
+/* Fixes for smaller screen sizes */
+@media screen and (max-width: 950px)
+{
+	.characterHome
+	{
+		width: 300px;
+	}
+
+	.titleHome
+	{
+		font-size: 13vw;
+		line-height: 1.1;
+	}
+
+	.settingsIcon
+	{
+		width: 10%;
+	}
+	.characterHome
+	{
+	width: 400px;
+	
+	}
+}
+@media screen and (max-width: 450px)
+
+{
+	.characterHome
+	{
+	width: 300px;
+	
+	}
+	.charactersIcon
+	{
+	width: 100px;
+	}
+}
+
