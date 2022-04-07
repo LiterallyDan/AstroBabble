@@ -398,6 +398,9 @@ function newGame (){
     getWord();                                          // Call the "getWord" function (pull word from API)
     updateBar();                                        // Call the "updateBar" function (update the oxygen bar)
     timeID.innerHTML = "Time remaining: " + time;       // Initialise current time remining
+
+    newbtn.classList.remove('hide');                    // Reveal new word button
+    newbtn.innerHTML = "New word " + newWordCounter + " / 3";   // ... update button's displayed text to show remaining uses
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
