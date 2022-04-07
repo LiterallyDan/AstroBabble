@@ -5,8 +5,21 @@
 
 
 //Variables
-var Disable;
-var characterchoice;
+//lineNum is 0 from the beginning this means it will start at the first slide each time!
+let lineNum = 0;
+let voiceAudio = document.getElementById("voiceLines");
+let voiceSource;
+let voiceLines;
+let Disable;
+let characterchoice;
+let slideSource;
+let buttonNoise;
+//music is muted by default, as such mute is true to begin with. 
+let mute = true;
+//gets an audio section from the html
+var musicAudio = document.getElementById("music");
+
+
 // loads the variable of the character image to this page from the customization page. this is just a test piece of code to be inserted on other pages. 
 window.onload = function (begin){
     //local storage variables
@@ -70,11 +83,6 @@ function checkChange()
 
 
 //the right arrow button tells the avatar choice variable to go up by one
-//lineNum is 0 from the beginning this means it will start at the first slide each time!
-let lineNum = 0;
-var voiceAudio = document.getElementById("voiceLines");
-let voiceSource;
-let voiceLines;
 function tutorialRight (){
     //adds one to lineNum
     lineNum++;
@@ -82,8 +90,6 @@ function tutorialRight (){
     voiceAudio.pause();
     //loads the function below
     voiceLoad();
-    
-
     }
     //the left arrow button tells the avatar choice variable to go down by one
 function tutorialLeft (){
@@ -93,7 +99,6 @@ function tutorialLeft (){
     voiceAudio.pause();
     //loads the function below
     voiceLoad();
-    
     }
     //this is the function the plays the sound and decides what buttons to use
 function voiceLoad(){
@@ -125,8 +130,8 @@ function voiceLoad(){
         document.getElementById("tutorialStart").disabled = true;
     }
     //sets the variable voiceSource so that it's the sound file location
-    let voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
-    let slideSource = "Images/Tutorial/Tutorial"+ lineNum + ".png";
+    voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
+    slideSource = "Images/Tutorial/Tutorial"+ lineNum + ".png";
     document.getElementById ("Slide").src = slideSource;
     //sets the audio source to the correct file
     document.getElementById ("voiceLines").src = voiceSource;
@@ -135,10 +140,6 @@ function voiceLoad(){
     
  } 
  //function for music playing on the homescreen
- //music is muted by default, as such mute is true to begin with. 
- let mute = true;
- //gets an audio section from the html
- var musicAudio = document.getElementById("music");
  //if true and muted then play music, if false and unmuted then stop music
  function menuMusic(){
     if (mute == false) {
@@ -167,14 +168,14 @@ function voiceLoad(){
  //Bubble sound effect for buttons
  function playSound()
  {
-    var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
+    buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
     buttonNoise.play();
  }
 
   /* Return to homepage sound */
   function playHome()
  {
-    var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
+    buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
     buttonNoise.play();
  }
 

@@ -1,99 +1,94 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- viewport -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Favicon source -->
-        <link rel="icon" type="image/x-icon" href="Images/Other/Favicon.png">
-        <!-- CSS Style Sheet source -->
-        <link rel="stylesheet" href="Css/style.css">
-        <!-- JS Script Source -->
-        <script defer src="JavaScript/ScriptHome.js"></script>
-        <!-- Displayed Title in Browser -->
-        <title>Astro Babble</title>
-        <!-- Fonts Links -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    </head>
-    <!-- The entire Home page -->
-    <body> 
-        <a class="musicPlayer" onclick="menuMusic()"> 
-            <img id="speaker" src="Images/Icons/musicIconMuted.png">
-        </a> 
-        <audio id="music">
-            <source src="Sound/bensound-scifi.mp3" type="audio/mp3">
-        </audio>
-        <!-- This is where the floating player character appears on screen-->
-        <div class="characterHome">
-            <img src="" id = "characterimage"> <!-- the reason the source is blank is because the javascript sets the source to different images depending on the one picked in character customization-->
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon source -->
+    <link rel="icon" type="image/x-icon" href="Images/Other/Favicon.png">
+    <!-- CSS Style Sheet source -->
+    <link rel="stylesheet" href="Css/style.css">
+    <!-- JS Script Source -->
+    <script defer src="JavaScript/ScriptHome.js"></script>
+    <!-- Displayed Title in Browser -->
+    <title>Astro Babble</title>
+    <!-- Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+<!-- The entire Home page -->
+<body> 
+    <a class="musicPlayer" onclick="menuMusic()"> 
+        <img id="speaker" src="Images/Icons/musicIconMuted.png">
+    </a> 
+    <audio id="music">
+        <source src="Sound/bensound-scifi.mp3" type="audio/mp3">
+    </audio>
+    <!-- This is where the floating player character appears on screen-->
+    <div class="characterHome">
+        <img src="" id = "characterimage"> <!-- the reason the source is blank is because the javascript sets the source to different images depending on the one picked in character customization-->
+    </div>
 
-        <!-- Game Title, displays at top of screen -->
-        <h1 class="titleHome"> Astro Babble </h1>
-        <!-- Play Button, centered on the screen--> 
-        <a href="Game.html" onmousedown="playSound()"> <div class="playButton"> Play </div> </a>
-        <!-- Settings Button, a little cog wheel in the bottom left-->
-        <a href="Settings.html" class="settingsIcon" onmousedown="playSound()"> 
-            <img id="cog" src="Images/Icons/settingsCog.png">
-        </a>
-        <!-- Change Characters Button, located in the bottom right -->
-        <a href="CharacterChange.html" class="charactersIcon" onmousedown="playSound()"> 
-            <img id="myCharacter" src="Images/Icons/characterIcon.png">
-        </a> 
+    <!-- Game Title, displays at top of screen -->
+    <h1 class="titleHome"> Astro Babble </h1>
+    <!-- Play Button, centered on the screen--> 
+    <a href="Game.html" onmousedown="playSound()"> <div class="playButton"> Play </div> </a>
+    <!-- Settings Button, a little cog wheel in the bottom left-->
+    <a href="Settings.html" class="settingsIcon" onmousedown="playSound()"> 
+        <img id="cog" src="Images/Icons/settingsCog.png">
+    </a>
+    <!-- Change Characters Button, located in the bottom right -->
+    <a href="CharacterChange.html" class="charactersIcon" onmousedown="playSound()"> 
+        <img id="myCharacter" src="Images/Icons/characterIcon.png">
+    </a> 
 
         
 
 
-        <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            Tutorial Pop Up, this page will appear on the first game load and until you decide to disable it. after that it can be reenabled throught the settings or a game reset. 
-        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        Tutorial Pop Up, this page will appear on the first game load and until you decide to disable it. after that it can be reenabled throught the settings or a game reset. 
+     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 
-        <!-- Can be disabled -->
-        <div id="generalInstruct" class="helpDiv">
-            <!-- Left Arrow Button used to move to move backward through the voice lines and slides in the tutorial -->
-            <button id="tutorialScrollLeft" onclick="tutorialLeft()" class="arrowBtn"></button>
-            <!-- Right Arrow Button used to move to move forward through the voice lines and slides in the tutorial -->
-            <button id="tutorialScrollRight" onclick="tutorialRight()" class="arrowBtn"></button>
-            <!-- This will be where the images are shown that correspond with the voice lines -->
-
-            <img src="Images/Tutorial/Tutorial0.png" id="Slide" style="width: 90%;">
-
-            <!-- A start tutorial button will appear when you first load into the game, that way the user must click it 
-                to move into the tutorial after that the arrow buttons will appear and the start button will dissapear.-->
-            <button id="tutorialStart" onclick="tutorialRight()" class="startTutorial">Start Tutorial</button>
-            <!-- Audio Insctructions and voice lines -->
-            <audio id="voiceLines">
-                <source src="" type="audio/wav">
-            </audio>
+    <!-- Can be disabled -->
+    <div id="generalInstruct" class="helpDiv">
+        <!-- Left Arrow Button used to move to move backward through the voice lines and slides in the tutorial -->
+        <button id="tutorialScrollLeft" onclick="tutorialLeft()" class="arrowBtn"></button>
+        <!-- Right Arrow Button used to move to move forward through the voice lines and slides in the tutorial -->
+        <button id="tutorialScrollRight" onclick="tutorialRight()" class="arrowBtn"></button>
+        <!-- This will be where the images are shown that correspond with the voice lines -->
+        <img src="Images/Tutorial/Tutorial0.png" id="Slide" style="width: 90%;">
+        <!-- A start tutorial button will appear when you first load into the game, that way the user must click it 
+            to move into the tutorial after that the arrow buttons will appear and the start button will dissapear.-->
+        <button id="tutorialStart" onclick="tutorialRight()" class="startTutorial">Start Tutorial</button>
+        <!-- Audio Insctructions and voice lines -->
+        <audio id="voiceLines">
+            <source src="" type="audio/wav">
+        </audio>
                     
-            <div class="containHelp">
-                <!-- When clicked, instructions don't pop up ever again -->
-                <a href="#" onclick="checkChange()">
-                <div class="notAgain">
-                    <div id="showHide" class="checkmark">
-                        <img src="Images/Icons/check.png" style="width: 100%;">
-                    </div>
+        <div class="containHelp">
+            <!-- When clicked, instructions don't pop up ever again -->
+            <a href="#" onclick="checkChange()">
+            <div class="notAgain">
+                <div id="showHide" class="checkmark">
+                    <img src="Images/Icons/check.png" style="width: 100%;">
                 </div>
-                </a>
-            </div> 
-            <!-- Don't show again text -->
-            <div class="notAgainText">
-                <p> DO NOT SHOW AGAIN </p>
-            </div>
-
-            <!-- Closes instructions div -->
-            <a href="#" onclick="exitInstruct();playHome()">
-            <div id="generalInstruct" class="exitInstruct">
-                <img src="Images/Icons/exit.png" style="width: 100%;">
             </div>
             </a>
+        </div> 
+        <!-- Don't show again text -->
+        <div class="notAgainText">
+            <p> DO NOT SHOW AGAIN </p>
         </div>
-    </body>
-
-
+        <!-- Closes instructions div -->
+        <a href="#" onclick="exitInstruct();playHome()">
+        <div id="generalInstruct" class="exitInstruct">
+            <img src="Images/Icons/exit.png" style="width: 100%;">
+        </div>
+        </a>
+    </div>
+</body>
 </html>
 

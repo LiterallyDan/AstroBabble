@@ -1,13 +1,14 @@
-let colourchoice
-let avatar
-let characterchoice
-let avatarchoice
-let awesome
+let colourchoice;
+let avatar;
+let characterchoice;
+let avatarchoice;
+let awesome;
+let buttonNoise;
 // tells it to run the charfinal function upon loading the page which gets it to display the basic character right away
 window.onload = function (begin){
     //this section loads in the previous choice of avatar and colour so that it's the same as where you left off, unless you haven't picked before in which case, it sets the values to their defaults
     awesome = localStorage.getItem("awesome");
-    console.log(awesome)
+    console.log(awesome);
     colourchoice = localStorage.getItem("colourchoice");
     avatarchoice = localStorage.getItem("avatarchoice");
     //if you've never played sets values to default
@@ -20,24 +21,24 @@ window.onload = function (begin){
     }
      //if you've never played sets values to default
     if (avatarchoice == null){
-    avatarchoice = 0;
+        avatarchoice = 0;
     }
     //if the variables called do have info, meaning you've played before, do this:
     else {
-    avatarchoice = localStorage.getItem("avatarchoice");
+        avatarchoice = localStorage.getItem("avatarchoice");
     }
     //load the charfinal function, which get the actual character image to load in
     CharFinal();
 }
 //the right arrow button tells the avatar choice variable to go up by one
 function Right (){
-avatarchoice++
-colourchoice = "Basic";
+    avatarchoice++;
+    colourchoice = "Basic";
 }
 //the left arrow button tells the avatar choice variable to go down by one
 function Left (){
-avatarchoice--
-colourchoice = "Basic";
+    avatarchoice--;
+    colourchoice = "Basic";
 }
 //this function activates when the basic colour button is clicked
 function Basic(){
@@ -59,11 +60,11 @@ function Alt3(){
 function CharFinal(){
     //if the variable is less than 0 cycle back up to 3
     if(avatarchoice < 0){
-        avatarchoice = 5
+        avatarchoice = 5;
     }
     //if the variable is more than 3 cycle back down ot 0
     if(avatarchoice > 5){
-        avatarchoice = 0
+        avatarchoice = 0;
     }
     //if the variable is 0 then load this character, and set the button colours to the following options
     if(avatarchoice == 0){
@@ -155,30 +156,23 @@ function CharFinal(){
 }
 
  //Change color sound effect
- function playColor()
- {
-    var buttonNoise = new Audio('Sound/Buttons/swapColor.mp3');
+ function playColor(){
+    buttonNoise = new Audio('Sound/Buttons/swapColor.mp3');
     buttonNoise.play();
  }
-
   //Bubble sound effect for buttons
- function playSound()
- {
-    var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
+ function playSound(){
+    buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
     buttonNoise.play();
  }
-
  //home sound sound effect
- function homeClick()
- {
-    var buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
+ function homeClick(){
+    buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
     buttonNoise.play();
  }
-
  //Golden Color sound fx
-  function colorSwap()
- {
-    var buttonNoise = new Audio('Sound/Buttons/colorChange.mp3');
+  function colorSwap(){
+    buttonNoise = new Audio('Sound/Buttons/colorChange.mp3');
     buttonNoise.play();
  }
 
