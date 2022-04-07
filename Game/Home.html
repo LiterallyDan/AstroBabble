@@ -21,14 +21,15 @@
 <!-- The entire Home page -->
 <body> 
     <a class="musicPlayer" onclick="menuMusic()"> 
-        <img id="speaker" src="Images/Icons/musicIconMuted.png">
+        <img id="speaker" src="Images/Icons/musicIconMuted.png" alt="A joined eighth music note that starts out muted with an 'x' across it but when clicked it removes the x to show only the music note">
     </a> 
     <audio id="music">
         <source src="Sound/bensound-scifi.mp3" type="audio/mp3">
     </audio>
     <!-- This is where the floating player character appears on screen-->
     <div class="characterHome">
-        <img src="" id = "characterimage"> <!-- the reason the source is blank is because the javascript sets the source to different images depending on the one picked in character customization-->
+        <!-- the reason the source is blank is because the javascript sets the source to different images depending on the one picked in character customization-->
+        <img src="" id = "characterimage" alt="The player character is displayed here, they are cute little astronaut that is are wearing spacesuit. They smile wide as they float up and down on the screen"> 
     </div>
 
     <!-- Game Title, displays at top of screen -->
@@ -37,11 +38,11 @@
     <a href="Game.html" onmousedown="playSound()"> <div class="playButton"> Play </div> </a>
     <!-- Settings Button, a little cog wheel in the bottom left-->
     <a href="Settings.html" class="settingsIcon" onmousedown="playSound()"> 
-        <img id="cog" src="Images/Icons/settingsCog.png">
+        <img id="cog" src="Images/Icons/settingsCog.png" alt="An off-white Settings Cog">
     </a>
     <!-- Change Characters Button, located in the bottom right -->
     <a href="CharacterChange.html" class="charactersIcon" onmousedown="playSound()"> 
-        <img id="myCharacter" src="Images/Icons/characterIcon.png">
+        <img id="myCharacter" src="Images/Icons/characterIcon.png" alt="A simple icon of 3 basic astronaut characters, the one in the front is green, the one on the right is red, and on the left purple">
     </a> 
 
     

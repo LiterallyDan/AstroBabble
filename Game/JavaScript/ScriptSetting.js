@@ -1,9 +1,15 @@
 //Resets all local storage values and removes them
 window.onload = function setleaderboard(){
+    highscore1 = localStorage.getItem('highscore1');
+    highscore2 = localStorage.getItem('highscore2');
+    highscore3 = localStorage.getItem('highscore3');
     if (document.getElementById("page").innerHTML != "Settings"){ // this makes the following code only run on the leaderboard page and not the settings page
-        document.getElementById("1st").innerText = "1st Highest : " + localStorage.getItem('highscore1'); // Display highest score
-        document.getElementById("2nd").innerText = "2nd Highest : " + localStorage.getItem('highscore2'); // Display 2nd highest score
-        document.getElementById("3rd").innerText = "3rd Highest : " + localStorage.getItem('highscore3'); // Display 3rd highest score
+        if (highscore1 == null || highscore2 == null || highscore3 == null){
+            highscore1 = 0, highscore2 = 0, highscore3 = 0;
+        }
+        document.getElementById("1st").innerText = "1st Highest : " + highscore1; // Display highest score
+        document.getElementById("2nd").innerText = "2nd Highest : " + highscore2; // Display 2nd highest score
+        document.getElementById("3rd").innerText = "3rd Highest : " + highscore3; // Display 3rd highest score
     }
 }
 function Reset (){
