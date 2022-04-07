@@ -112,7 +112,7 @@ function voiceLoad(){
         document.getElementById("tutorialScrollLeft").disabled = true;
         document.getElementById("tutorialScrollLeft").style.display = "none";
         document.getElementById("tutorialScrollRight").style.display = "none";
-        document.getElementById("tutorialStart").style.display="none";
+        document.getElementById("tutorialStart").style.display="inline";
         document.getElementById("tutorialStart").disabled = false;
     }
     // for every other case show the arrow buttons and not the start button.
