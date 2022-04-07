@@ -517,6 +517,7 @@ top: 50%;
 }
 .btn-group button{
 	transition-duration: 0.2s;
+	text-align: center;
     background-color: var(--dark);
     color:var(--bg);
     font-family: 'Bungee', cursive;
@@ -548,6 +549,7 @@ li{
     padding: 10px 15px;
     margin: 10px;
     border-radius: 10px;
+	text-align: center;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 li:hover{
@@ -575,6 +577,7 @@ li:hover{
 
 a { 
 	color: var(--bg);
+
 }
 
 
@@ -613,6 +616,13 @@ a {
 	{
 		padding-top: 15%;
 		font-size: 10vw;
+	}
+
+	#page {
+		font-size: 40px;
+	}
+	a {
+		font-size: 30px;
 	}
 }
 @media screen and (max-width: 450px)
