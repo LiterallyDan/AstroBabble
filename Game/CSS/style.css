@@ -270,12 +270,15 @@ a:link
 	padding-bottom: 40px;
     text-align: center; /*  Align text for everything in the center of the container */
     border-radius: 30px;    /*  Curve borders by 30px   */
+    background-color: var(--dark);
+    color:var(--bg);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* Hover state for start button */
 .startTutorial:hover
 {
-	background: rgba( 255, 255, 255, 0.25 );
+	background: rgba( 47, 46, 103, 0.9 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );   /*  Blurry glass effect */
 }
@@ -283,7 +286,8 @@ a:link
 /* Arrow buttons*/
 .arrowBtn{
 position: absolute;
-border: solid black;
+transition: 0.1s;
+border: solid white;
 background-color: transparent;
 border-width: 0 20px 20px 0;
 display: inline-block;
@@ -310,7 +314,7 @@ top: 50%;
 /* changes arrow color on hover */
 .arrowBtn:hover
 {
-	border: solid #024E73;
+	border: solid #8f909e;
 	/* Fix shape swapping problems*/
 	border-width: 0 20px 20px 0;
 	display: inline-block;
