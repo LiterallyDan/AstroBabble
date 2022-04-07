@@ -163,8 +163,6 @@ function voiceLoad(){
     }
     
  }
-   
-
  //Bubble sound effect for buttons
  function playSound()
  {
