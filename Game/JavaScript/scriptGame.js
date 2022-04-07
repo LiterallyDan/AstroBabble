@@ -45,7 +45,7 @@ let highScore1 = localStorage.getItem('highscore1') || 0; // Local storage varia
 let highScore2 = localStorage.getItem('highscore2') || 0; // Local storage variable for 2nd place
 let highScore3 = localStorage.getItem('highscore3') || 0; // Local storage variable for 3rd place
 let running = true;                                     // "Running" variable to stop unnecessary background damage at leaderboard
-let awesome;                                    // ???
+let awesome;                                            // ???
 
 
 /*
