@@ -244,7 +244,7 @@ async function getWord () {
     const response = await fetch("https://random-word-api.herokuapp.com/word?number=1&swear=0");    // Calls API for a random word that is non-profane
     const data = await response.json();                 // Wait for the word from the API
     word = await data[0].toUpperCase();                 // Word variable = the API's word but ALL CAPS
-    console.log(word);                                  // Log the generated word (for bug testing)
+    //console.log(word);                                  // Log the generated word (for bug testing)
     progress = word.split("");                          // Progress variable initialised to a split array version of the new word
     for (let i = 0; i < progress.length; i++) progress[i] = "_"; // Initialise every character in new word to underscores
     strArray(word);                                     // Call "strArray" function (create an answer ke for the word)
@@ -311,7 +311,7 @@ function strArray (string) {
         }
     }
     //console.log(key);                                   // Log the word's answer key (for bug testing)
-    console.log("Word is worth "+wordScore[1]+" points.") // Log word's associated score (for bug testing)
+    //console.log("Word is worth "+wordScore[1]+" points.") // Log word's associated score (for bug testing)
     updateWord(' ');                                    // Includes spaces in word by default as users cannot guess "space"  
 }
 

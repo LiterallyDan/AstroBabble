@@ -19,16 +19,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    <!-- div for the player character to be displayed in -->
     <div class="character">
-        <img src="" id = "characterimage">
+        <img src="" id = "characterimage" alt="">
     </div>
-    
+    <!-- This is where the score is displayed -->
     <div class = "bar-score" id = "scoreOxygen">
         <div class = "score">
+            <!-- Score is 0 as a default -->
             <p id = "score">Score: 0</p>
         </div>
-    
+        <!-- Oxygen Bar displays here -->
         <div class="oxygenBar">
             <div class="oxygenBG">
                 <div id="oxygen">
@@ -38,13 +39,15 @@
         </div>
     
         <div>
+            <!-- Timer displays here -->
             <p id = "timer"></p>
         </div>
     </div>
 
-    <div class = "container" id = "keyboard">               <!-- Flexible container holding the entire block -->
+    <div class = "container" id = "keyboard">  <!-- Flexible container holding the entire block -->
+        <!-- This is where the word displays as you are guessing, as a default, or between words, it says loading... -->
         <div id = "screen" class = "word">Loading . . .</div>
-        <div id = "characters" class="btn-grid">            <!-- Div containing the buttons themselves, arranged in a grid -->
+        <div id = "characters" class="btn-grid">  <!-- Div containing the buttons themselves, arranged in a grid -->
             <button id="btn-q" class="btn">Q</button>
             <button id="btn-w" class="btn">W</button>
             <button id="btn-e" class="btn">E</button>
@@ -73,21 +76,27 @@
             <button id="btn-m" class="btn">M</button>
         </div>
 
-        <div class ="bottom-btns">                                <!-- Placeholder for options during / after gameplay (can be hidden) -->
+        <div class ="bottom-btns">  <!-- Placeholder for options during / after gameplay (can be hidden) -->
+            <!-- New Word button, as a default it displays 3/3 remaining -->
             <button id="newWord-btn" class="btn">New Word 3 / 3</button>
+            <!-- When clicked, this button plays a sound and returns the player to the Home page. Note: this version shows up during regular gameplay, whereas the other one displays on the leaderboard -->
             <a href="Home.html" class="link" onmousedown="playHome()"><button class="btn" id="menu-btn">Main Menu</button></a>
         </div>
     </div>
-
+    <!-- Leaderboard -->
     <div class = "container hide" id = "leaderboard">
         <div class = "leaderboardContainer">
+            <!-- Displays the last score you got-->
             <p id = "final-score">Your Score: 0</p>
             <h1>Leaderboard</h1>
+            <!-- Default placeholder values to display on the leaderboard -->
             <p id = "1st">Player 1 - Score: 3</p>
-            <p id = "2nd">Player 1 - Score: 2</p>
-            <p id = "3rd">Player 1 - Score: 1</p>
+            <p id = "2nd">Player 2 - Score: 2</p>
+            <p id = "3rd">Player 3 - Score: 1</p>
         </div>
+        <!-- Play again button that restarts the game and reloads the page -->
         <button id = "btn-play" class="btn">Play Again</button>
+        <!-- When clicked, this button plays a sound and returns the player to the Home page. This displays on the leaderboard only -->
         <a href="Home.html" class="link" onmousedown="playHome()"><button class="btn" id="menu-btn">Main Menu</button></a>
     </div>
 </body>
