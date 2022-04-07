@@ -397,6 +397,7 @@ top: 50%;
 	color: var(--bg);
 	background: rgba( 47, 46, 103, 0.50 );
     backdrop-filter: blur( 4px );
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* hover behaviour for the home button*/
@@ -409,7 +410,6 @@ top: 50%;
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );   /*  Blurry glass effect */
     -webkit-backdrop-filter: blur( 4px );   /* ^ */
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* Button to scroll left in characters*/
