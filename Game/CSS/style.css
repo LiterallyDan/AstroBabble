@@ -191,7 +191,7 @@ a:link
 	text-align: center;
 	font-size: 6vw;
 	line-height: 1.2; /* Fixes font issues */
-	display: none; /* so that it isn't showing straight away */
+	display: none;
 
 	background: rgba( 255, 255, 255, 0.25 );
 	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -254,17 +254,17 @@ a:link
 {
 	position: fixed;
 	bottom: 50%;
-	width: 24%;
-    left: 50%;
-    margin-left: -12%; /* centers start button */
+	left: 20%;
+	right: 20%;
+
 	transition-duration: 0.1s;  /*  Smooth colour change animations */
     transition-timing-function: ease;   /*  Ease into change    */
 	color: var(--bg);
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-	background: rgba( 47, 46, 103, 0.75 );
+	background: rgba( 47, 46, 103, 0.50 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
-    font-size: 50px;
+    font-size: 30px;
 	padding: 15px;  /*  15px of padding */
     text-align: center; /*  Align text for everything in the center of the container */
     border-radius: 30px;    /*  Curve borders by 30px   */
@@ -320,7 +320,6 @@ top: 50%;
 	max-height: 60vh;
 	margin-top: 5vh;
 	object-fit: contain;
-	border-radius: 30px;
 }
 
 
