@@ -266,6 +266,8 @@ a:link
     backdrop-filter: blur( 4px );
     font-size: 30px;
 	padding: 15px;  /*  15px of padding */
+	padding-top: 40px;
+	padding-bottom: 40px;
     text-align: center; /*  Align text for everything in the center of the container */
     border-radius: 30px;    /*  Curve borders by 30px   */
 }
