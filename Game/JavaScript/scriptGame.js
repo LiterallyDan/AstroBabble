@@ -348,9 +348,9 @@ function hideLBoard() {
     https://stackoverflow.com/questions/16245536/setting-a-variable-in-local-storage
 */
 function updateLBoard() {
-    highScore1 = localStorage.getItem('highscore1');     // Retrieve previous value of highest score
-    highScore2 = localStorage.getItem('highscore2');     // Retrieve previous value of second highest score
-    highScore3 = localStorage.getItem('highscore3');     // Retrieve previous value of third highest score
+    highScore1 = localStorage.getItem('highscore1') || 0;     // Retrieve previous value of highest score
+    highScore2 = localStorage.getItem('highscore2') || 0;     // Retrieve previous value of second highest score
+    highScore3 = localStorage.getItem('highscore3') || 0;     // Retrieve previous value of third highest score
     localStorage.setItem('highscore1', localStorage.getItem('highscore1') || 0); // Load 1st score, if null, set to 0
     localStorage.setItem('highscore2', localStorage.getItem('highscore2') || 0); // Load 2nd score, if null, set to 0
     localStorage.setItem('highscore3', localStorage.getItem('highscore3') || 0); // Load 3rd score, if null, set to 0
