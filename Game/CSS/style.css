@@ -255,7 +255,6 @@ a:link
 
 	transition-duration: 0.1s;  /*  Smooth colour change animations */
     transition-timing-function: ease;   /*  Ease into change    */
-	color: var(--bg);
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 	background: rgba( 47, 46, 103, 0.50 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -505,10 +504,26 @@ top: 50%;
 /* ------------------------------
 			Settings Page
 -------------------------------*/
-
+.btn-group {
+	margin-right: 10vw;
+	margin-left: 10vw;
+    padding: 15px;  /*  15px of padding */
+    text-align: center; /*  Align text for everything in the center of the container */
+    border-radius: 30px;    /*  Curve borders by 30px   */
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
 .btn-group button{
-	padding: 2px;
-	margin: 25px;
+	transition-duration: 0.2s;
+    background-color: var(--dark);
+    color:var(--bg);
+    font-family: 'Bungee', cursive;
+    padding: 10px 15px;
+    margin: 2px;
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 nav{
 	left: 600px;
@@ -526,31 +541,41 @@ ul{
 	list-style: none;
 }
 li{
-	margin: 20px;
+	transition-duration: 0.2s;
 	font-size: 40px;
-	border-radius: 25%;
+    background-color: var(--dark);
+    color:var(--bg);
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 li:hover{
-  background-color: #F26A4B;
+	padding: 10px 15px;
+	background: rgba( 47, 46, 103, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+	border-radius: 10px;
 }
 .backbutton a img{
-  width: 200px;
-  transition: 2s;
+  width: 150px;
+  transition: 0.2s;
   position: absolute;
   bottom: 20px;
-
 }
 .backbutton a img:hover{
-width: 220px;
-height: auto;
+	width: 140px;
+	height: auto;
 }
 #page{
   font-size: 60px;
-  color: purple;
+  color: var(--bg);
   margin: 0%;
 }
 
-
+a { 
+	color: var(--bg);
+}
 
 
 
