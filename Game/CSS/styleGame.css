@@ -94,6 +94,7 @@ body {
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+/* Leaderboard positioning */
 #leaderboard {
     margin-bottom: 50vh;
 }
@@ -133,6 +134,7 @@ from https://ricardometring.com/infinite-animation-in-css#:~:text=To%20create%20
 	100% {top: 25%;}
 }
 
+/* grid containing buttons */
 .btn-grid {
     padding-top: 15px;
     display:flex;
@@ -170,31 +172,40 @@ from https://ricardometring.com/infinite-animation-in-css#:~:text=To%20create%20
     color: var(--drkgrey);
 }
 
+/* Incorrect button colouring */
 .btn.incorrect {
     background-color: var(--red);
     color: var(--bg);
 }
 
+/* Correct button colouring */
 .btn.correct {
     background-color: var(--green);
     color: var(--bg);
 }
 
+/* Bottom button positioning */
 .bottom-btns {
     padding-top: 30px;
 }
+
+/* P font choice */
 p {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* Header font choice */
 h1 {
     font-family: 'Bungee', cursive;
     font-size: 25pt;
 }
+
+/* Incorrect button colouring */
 .playerscore{
     font-size: 20pt;
 }
 
+/* Formatting of leaderboard container */
 .leaderboardContainer {
     background-color: var(--dark);
     color:var(--bg);
