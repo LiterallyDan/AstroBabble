@@ -407,7 +407,7 @@ top: 50%;
 	background-color: var(--bg);
 	bottom: 0;
 	left: 0;
-	line-height: 1;
+	line-height: 1.5;
 	padding: 15px;
 	margin: 15px;
 	border-radius: 20px;
@@ -658,6 +658,11 @@ a {
 	.charactersIcon
 	{
 	width: 16%;
+	}
+
+	.btnBack
+	{
+		font-size: 4vw;
 	}
 }
 /* Fixes for mobile phones and small tablets screen sizes */
