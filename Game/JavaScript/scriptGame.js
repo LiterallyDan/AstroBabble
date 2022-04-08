@@ -478,6 +478,7 @@ mbtn.addEventListener('click', () => { charPressed(mbtn);} )
 newbtn.addEventListener('click', () => { newWord() } );
 playAgain.addEventListener('click', () => { newGame() });
 
+// Button pressed - sound effect HD - youtube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=lTFl8HNH_A0 
 /* If you get the correct word */
  function playCorrect()
  {
@@ -485,6 +486,7 @@ playAgain.addEventListener('click', () => { newGame() });
     buttonNoise.play();
  }
 
+// Videogame lose sound effect HD | no copyright - youtube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=bceGNIg-rqI 
  /* If you get incorrect word */
  function playIncorrect()
  {
@@ -492,13 +494,14 @@ playAgain.addEventListener('click', () => { newGame() });
      buttonNoise.play();
  }
 
- /* Sound on button click */
+ /* Sound on button click (our sound) */ 
  function playButton()
  {
      var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
      buttonNoise.play();
  }
 
+ //Mouse Click Sound Effect - YouTube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=i0DON3AjhW4 
  /* Return to homepage sound */
   function playHome()
  {
