@@ -34,7 +34,7 @@ function tutorialRestart(){
     buttonNoise.play();
  }
 
- //Mouse Click Sound Effect - YouTube. (n.d.). Retrieved April 8, 2022, from https://www.youtube.com/watch?v=i0DON3AjhW4 
+ //Mouse Click Sound Effect - YouTube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=i0DON3AjhW4 
  //Sound effect for returning to home screen
  function playHome()
  {
