@@ -100,9 +100,9 @@ setInterval (function damage() {
     > Increases health by 10*increment (10%)
 */
 function heal (){
-    health = health + 10*increment;                     // Increase health by 10%
+    health = health + 7*increment;                     // Increase health by 10%
     oxygen.style.width = health + "%";                  // Immediately update health bar
-    time = time + 10;                                   // Increment time by 10 seconds
+    time = time + 7;                                   // Increment time by 10 seconds
     updateBar();                                        // Call "updateBar" function (update health bar's colour)
 }
 
@@ -111,9 +111,9 @@ function heal (){
     > Decreases health by 5*increment (5%)
 */
 function hurt () {
-    health = health - 10*increment;                      // Decrease health by 5%
+    health = health - 5*increment;                      // Decrease health by 5%
     oxygen.style.width = health + "%";                  // Immediately update health bar
-    time = time - 10;                                    // Decrement time by 5 seconds
+    time = time - 5;                                    // Decrement time by 5 seconds
     updateBar();                                        // Call "updateBar" function (update health bar's colour)
 }   
 
