@@ -27,7 +27,7 @@
 /* Background Image */
 body{
 	
-	background: url("../Images/Other/Background.png") no-repeat;
+	background: url("../Images/Other/Background.png") no-repeat;/*  Changes background image */
 	background-color: rgb(15,8,59);  /*  Changes background colour */
 	height: 100vh;
 	background-size: cover;

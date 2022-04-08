@@ -118,7 +118,9 @@ function CharFinal(){
         document.getElementById("alt1").style.background = "darkviolet";
         document.getElementById("alt2").style.background = "greenyellow";
     }
-    //if the variable is 5 then load this character, and set the button colours to the following options
+    //if the variable is 5 then load this character, and set the button colours to the following options NOTE: This is a stormtrooper, obviously this does not belong to us and is just a fun addition
+    //Reference
+    //Lucasfilm Ltd. ; 20th Century Fox. (2013). Star wars original trilogy. [San Francisco] : Beverly Hills, Calif. :Lucasfilm ; Twentieth Century Fox Home Entertainment,
     if(avatarchoice == 5){
         //decides the character name to display
         avatar = "Trooper";
@@ -149,7 +151,7 @@ function CharFinal(){
     //this sets the image source to the above mentioned variable
     document.getElementById("avatarImage").src = characterchoice;
     //this transfers the variable of the character choice and other from this page to any other that wants to use it. 
-    
+
     /*Reference for the following 6 lines
     Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     localStorage.setItem("characterchoice", characterchoice);
