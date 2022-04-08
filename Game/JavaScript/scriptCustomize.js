@@ -7,6 +7,8 @@ let buttonNoise;
 // tells it to run the charfinal function upon loading the page which gets it to display the basic character right away
 window.onload = function (begin){
     //this section loads in the previous choice of avatar and colour so that it's the same as where you left off, unless you haven't picked before in which case, it sets the values to their defaults
+    /*Reference
+    Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     awesome = localStorage.getItem("awesome");
     colourchoice = localStorage.getItem("colourchoice");
     avatarchoice = localStorage.getItem("avatarchoice");
@@ -147,6 +149,9 @@ function CharFinal(){
     //this sets the image source to the above mentioned variable
     document.getElementById("avatarImage").src = characterchoice;
     //this transfers the variable of the character choice and other from this page to any other that wants to use it. 
+    
+    /*Reference for the following 6 lines
+    Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     localStorage.setItem("characterchoice", characterchoice);
     //these two variables are used on this page so that when a player returns to the character customizer it returns and starts on the charcter and style they left off with or the one they are currently using
     // to put it simply, it remembers your choice.

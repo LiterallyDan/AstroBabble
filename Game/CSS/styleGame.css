@@ -109,6 +109,9 @@ body {
 }
 
 /*  Formatting for character image  */
+/*Reference*/
+/*Metring, R. (2019, April 8). Infinite Animation in CSS - how it works + loop example. Metring. Retrieved April 7, 2022, 
+from https://ricardometring.com/infinite-animation-in-css#:~:text=To%20create%20infinite%20animations%20in%20CSS%2C%20we%20will,code%20for%20an%20example%20of%20a%20loading%20animation*/
 #characterimage {
     animation: upDown 5s infinite ease-in-out;  /*  */
     position:relative;
@@ -116,7 +119,10 @@ body {
 	max-width: 30%;
     margin-bottom: 95vh;
 }
-
+/*Animation Css, dictates how it moves up and down and in what intervals*/
+/*Reference*/
+/*Metring, R. (2019, April 8). Infinite Animation in CSS - how it works + loop example. Metring. Retrieved April 7, 2022, 
+from https://ricardometring.com/infinite-animation-in-css#:~:text=To%20create%20infinite%20animations%20in%20CSS%2C%20we%20will,code%20for%20an%20example%20of%20a%20loading%20animation*/
 @keyframes upDown
 {
 	0% {top: 25%;}

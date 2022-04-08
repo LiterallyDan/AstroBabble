@@ -1,5 +1,7 @@
 //Resets all local storage values and removes them
 window.onload = function setleaderboard(){
+    /*Reference
+    Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     highscore1 = localStorage.getItem('highscore1');
     highscore2 = localStorage.getItem('highscore2');
     highscore3 = localStorage.getItem('highscore3');
@@ -13,10 +15,14 @@ window.onload = function setleaderboard(){
     }
 }
 function Reset (){
+    /*Reference
+    Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     localStorage.clear();
 }
 //lets the tutorial reload again
 function tutorialRestart(){
+    /*Reference
+    Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     localStorage.removeItem("Disable");
 }
 //Bubble sound effect for buttons

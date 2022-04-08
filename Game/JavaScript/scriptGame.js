@@ -56,7 +56,8 @@ window.onload = function() {
     getWord();                                          // Call the "getWord" function (pull word from API)
     updateBar();                                        // Call the "updateBar" function (update the oxygen bar)
     timeID.innerHTML = "Time remaining: " + time;       // Initialise current time remining
-
+    /*Reference
+    Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     characterchoice = localStorage.getItem("characterchoice")   // Initialise current user character model choice
 
     if (characterchoice == undefined){                          // If user has not played before:
@@ -73,6 +74,8 @@ window.onload = function() {
     Function that initialises the timer.
     > Increments time value
 */
+/*Reference
+Refsnes Data. (n.d.). Window setinterval(). W3Schools. Retrieved April 7, 2022, from https://www.w3schools.com/jsref/met_win_setinterval.asp */
 setInterval (function timer () {
     if (running) time--;                                // Decrement time variable by 1
     if (!(time <= 0)) timeID.innerHTML = "Time remaining: " + (time);   // If time's not up: updates the time every second
@@ -82,6 +85,8 @@ setInterval (function timer () {
     Function that deals damage to the user over time.
     > Decreases health by health * increment every second
 */
+/*Reference
+Refsnes Data. (n.d.). Window setinterval(). W3Schools. Retrieved April 7, 2022, from https://www.w3schools.com/jsref/met_win_setinterval.asp */
 setInterval (function damage() {
     if (running ) {
         health = health - increment;                    // Decrement health by increment
@@ -199,6 +204,8 @@ function isValid (button) {
             numCorrect++; // add one to the amount of words correct.
             if (numCorrect == 10) {
                 awesome = "true";    // After 10 correct words set awesome to true
+                /*Reference
+                Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
                 localStorage.setItem("awesome", awesome); // stores the awesome variable to be loaded on the character customization page.
             }
         }

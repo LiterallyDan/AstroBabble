@@ -6,6 +6,8 @@
     <!-- viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon source -->
+    <!-- Reference on how to use favicons-->
+    <!-- Refsnes Data. (n.d.). HTML Favicon. W3 Schools. Retrieved April 7, 2022, from https://www.w3schools.com/html/html_favicon.asp  -->
     <link rel="icon" type="image/x-icon" href="Images/Other/Favicon.png">
     <!-- CSS Style Sheet source -->
     <link rel="stylesheet" href="Css/style.css">
@@ -20,10 +22,16 @@
 </head>
 <!-- The entire Home page -->
 <body> 
+    <!-- The actual button to play music -->
     <a class="musicPlayer" onclick="menuMusic()"> 
         <img id="speaker" src="Images/Icons/musicIconMuted.png" alt="A joined eighth music note that starts out muted with an 'x' across it but when clicked it removes the x to show only the music note">
     </a> 
+    <!--Reference
+    Refsnes Data. (n.d.). Audio pause() method. W3 Schools. Retrieved April 7, 2022, from https://www.w3schools.com/jsref/met_audio_pause.asp -->
+    <!-- the sound file location-->
     <audio id="music">
+        <!--Reference
+        Tissot, B. (n.d.). Sci Fi: Royalty Free Music. Bensound. Retrieved April 7, 2022, from https://www.bensound.com/royalty-free-music/track/sci-fi -->
         <source src="Sound/bensound-scifi.mp3" type="audio/mp3">
     </audio>
     <!-- This is where the floating player character appears on screen-->
@@ -63,6 +71,8 @@
             to move into the tutorial after that the arrow buttons will appear and the start button will dissapear.-->
         <button id="tutorialStart" onclick="tutorialRight()" class="startTutorial">Start Tutorial</button>
         <!-- Audio Insctructions and voice lines -->
+        <!--Reference
+        Refsnes Data. (n.d.). Audio pause() method. W3 Schools. Retrieved April 7, 2022, from https://www.w3schools.com/jsref/met_audio_pause.asp -->
         <audio id="voiceLines">
             <source src="" type="audio/wav">
         </audio>

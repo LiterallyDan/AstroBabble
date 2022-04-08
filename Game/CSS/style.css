@@ -24,7 +24,6 @@
 			Home Page
 -------------------------------*/
 
-
 /* Background Image */
 body{
 	background: url("../Images/Other/Background.png") no-repeat;
@@ -33,6 +32,9 @@ body{
 	overflow: hidden;   /*  Remove pesky scrollbars */
 }
 /* Floating character div on homescreen */
+/*Reference*/
+/*Metring, R. (2019, April 8). Infinite Animation in CSS - how it works + loop example. Metring. Retrieved April 7, 2022, 
+from https://ricardometring.com/infinite-animation-in-css#:~:text=To%20create%20infinite%20animations%20in%20CSS%2C%20we%20will,code%20for%20an%20example%20of%20a%20loading%20animation*/
 .characterHome
 {
 	width: 400px;
@@ -47,6 +49,9 @@ body{
 }
 
 /* Animation for Character to move up and down again */ 
+/*Reference*/
+/*Metring, R. (2019, April 8). Infinite Animation in CSS - how it works + loop example. Metring. Retrieved April 7, 2022, 
+from https://ricardometring.com/infinite-animation-in-css#:~:text=To%20create%20infinite%20animations%20in%20CSS%2C%20we%20will,code%20for%20an%20example%20of%20a%20loading%20animation*/
 @keyframes upDown
 {
 	0% {top: 25%;}
@@ -289,6 +294,9 @@ display: inline-block;
 padding: 20px;
 top: 50%;
 }
+/* styling for the right arrow button */
+/*Reference*/
+/*How to - CSS arrows. How To Create Arrows/Triangles with CSS. (n.d.). Retrieved April 7, 2022, from https://www.w3schools.com/howto/howto_css_arrows.asp */
 #tutorialScrollRight
 {
   /* Reference for arrow style */
@@ -297,6 +305,9 @@ top: 50%;
   -webkit-transform: rotate(-45deg);
   margin-right: 3%; /* pushes from edge of  */
 }
+/* styling for the left arrow button */
+/*Reference*/
+/*How to - CSS arrows. How To Create Arrows/Triangles with CSS. (n.d.). Retrieved April 7, 2022, from https://www.w3schools.com/howto/howto_css_arrows.asp */
 #tutorialScrollLeft
 {
   /* Reference for arrow style */
@@ -323,10 +334,10 @@ top: 50%;
 	object-fit: contain;
 }
 
-
 /* ------------------------------
 	 Change Character Page
 -------------------------------*/
+
 /*div for avatar images*/
 .avatarRotation {
 	position: absolute;
@@ -429,6 +440,8 @@ top: 50%;
 }
 
 /* Button to scroll left in characters*/
+/*Reference*/
+/*How to - CSS arrows. How To Create Arrows/Triangles with CSS. (n.d.). Retrieved April 7, 2022, from https://www.w3schools.com/howto/howto_css_arrows.asp */
 #arrowLeft {
 	/* Shapes it into arrow */
 	position: fixed;
@@ -447,6 +460,8 @@ top: 50%;
 }
 
 /* Button to scroll right in characters*/
+/*Reference*/
+/*How to - CSS arrows. How To Create Arrows/Triangles with CSS. (n.d.). Retrieved April 7, 2022, from https://www.w3schools.com/howto/howto_css_arrows.asp */
 #arrowRight {
 	/* Shapes it into arrow */
 	position: fixed;

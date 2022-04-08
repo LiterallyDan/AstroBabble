@@ -24,6 +24,8 @@ var musicAudio = document.getElementById("music");
 window.onload = function (begin){
     //local storage variables
     document.getElementById("showHide").style.display = "none";
+    /*Reference
+    Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     characterchoice = localStorage.getItem("characterchoice")
     Disable = localStorage.getItem("Disable");
 
@@ -60,14 +62,18 @@ function checkChange()
       document.getElementById("showHide");
       if (document.getElementById("showHide").style.display == "none")
       {
-          //When checkmark is on, page won't load again
+        //When checkmark is on, page won't load again
          document.getElementById("showHide").style.display = "block";
+        /*Reference
+        Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
          localStorage.setItem('Disable', 'off');
       } 
       else 
       {
          // when checkmark is off, page will load again next time Home is opened
          document.getElementById("showHide").style.display = "none";
+         /*Reference
+        Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
          localStorage.setItem('Disable', 'null');
       }
 }
@@ -123,6 +129,11 @@ function voiceLoad(){
         document.getElementById("tutorialStart").disabled = true;
     }
     //sets the variable voiceSource so that it's the sound file location
+    //Reference
+    //Refsnes Data. (n.d.). Audio pause() method. W3 Schools. Retrieved April 7, 2022, from https://www.w3schools.com/jsref/met_audio_pause.asp
+
+    //Reference for voice changer used in the voice lines,
+    //Voice changer .io. Voice Changer - Online & Free. (n.d.). Retrieved April 7, 2022, from https://voicechanger.io/ 
     voiceSource = "Sound/Voice/Line"+ lineNum + ".wav";
     slideSource = "Images/Tutorial/Tutorial"+ lineNum + ".png";
     document.getElementById ("Slide").src = slideSource;
@@ -134,6 +145,8 @@ function voiceLoad(){
  } 
  //function for music playing on the homescreen
  //if true and muted then play music, if false and unmuted then stop music
+ //Reference
+ //Refsnes Data. (n.d.). Audio pause() method. W3 Schools. Retrieved April 7, 2022, from https://www.w3schools.com/jsref/met_audio_pause.asp
  function menuMusic(){
     if (mute == false) {
         mute = true;
