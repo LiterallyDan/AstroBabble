@@ -25,13 +25,16 @@ function tutorialRestart(){
     Toh, W. S. (2022, March 27). W.S. Toh. Code Boxx. Retrieved April 7, 2022, from https://code-boxx.com/pass-variables-between-pages-javascript/ */
     localStorage.removeItem("Disable");
 }
-//Bubble sound effect for buttons
+
+
+//Bubble sound effect for buttons (our sound)
  function playSound()
  {
     var buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
     buttonNoise.play();
  }
 
+ //Mouse Click Sound Effect - YouTube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=i0DON3AjhW4 
  //Sound effect for returning to home screen
  function playHome()
  {

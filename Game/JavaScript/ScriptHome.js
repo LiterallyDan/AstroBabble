@@ -167,13 +167,14 @@ function voiceLoad(){
     }
     
  }
- //Bubble sound effect for buttons
+ //Bubble sound effect for buttons (our sound)
  function playSound()
  {
     buttonNoise = new Audio('Sound/Buttons/buttonExpand.mp3');
     buttonNoise.play();
  }
 
+ //Mouse Click Sound Effect - YouTube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=i0DON3AjhW4 
   /* Return to homepage sound */
   function playHome()
  {
