@@ -410,22 +410,27 @@ top: 50%;
 	line-height: 1.5;
 	padding: 15px;
 	margin: 15px;
-	border-radius: 20px;
-	background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
-    -webkit-backdrop-filter: blur( 4px );   /* ^ */
+	
+	color: var(--bg);
+	font-size: 50px;
+	padding: 30px;  /*  15px of padding */
+    text-align: center; /*  Align text for everything in the center of the container */
+    border-radius: 30px;    /*  Curve borders by 30px   */
+    
+	transition-duration: 0.1s;  /*  Smooth colour change animations */
+    transition-timing-function: ease;   /*  Ease into change    */
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+	background: rgba( 47, 46, 103, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 /* hover behaviour for the home button*/
 .btnBack:hover
 {
-	background-color: olive;
-	transition-duration: 0.1s;  /*  Smooth colour change animations */
-    transition-timing-function: ease;   /*  Ease into change    */
-	color: var(--bg);
-	background: rgba( 47, 46, 103, 0.50 );
-    backdrop-filter: blur( 4px );
+	background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );   /*  Blurry glass effect */
 }
 
 /* Button to scroll left in characters*/
