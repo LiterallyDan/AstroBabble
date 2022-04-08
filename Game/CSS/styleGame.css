@@ -36,6 +36,7 @@ body {
     align-items: center;    /*  Center-align individual items  */
     color: var(--bg);   /*  Font colour = off-white */
     overflow: hidden;   /*  Remove pesky scrollbars */
+    background-color: rgb(15,8,59);  /*  Changes background colour */
 }
 
 /*  Formatting for the score div    */
@@ -188,6 +189,10 @@ p {
 
 h1 {
     font-family: 'Bungee', cursive;
+    font-size: 25pt;
+}
+.playerscore{
+    font-size: 20pt;
 }
 
 .leaderboardContainer {

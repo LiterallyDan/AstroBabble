@@ -26,10 +26,13 @@
 
 /* Background Image */
 body{
+	
 	background: url("../Images/Other/Background.png") no-repeat;
+	background-color: rgb(15,8,59);  /*  Changes background colour */
 	height: 100vh;
 	background-size: cover;
 	overflow: hidden;   /*  Remove pesky scrollbars */
+	
 }
 /* Floating character div on homescreen */
 /*Reference*/
@@ -103,6 +106,12 @@ a:link
 	position: absolute;
 	padding-left: 1%;
 	top: 1%;
+	transition: ease-in-out 0.2s;
+}
+/* Spearker button hover behaviour*/
+#speaker:hover{
+	/*Grows by a scale of 1.1*/
+	transform:scale(1.1,1.1);
 }
 
 /* Hover state for Play game button */

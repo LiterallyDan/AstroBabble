@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon source -->
     <!-- Reference on how to use favicons-->
@@ -11,13 +12,13 @@
     <!-- CSS Style Sheet source -->
     <link rel="stylesheet" href="Css/styleGame.css">
     <!-- JS Script Source -->
-    <script src="JavaScript/scriptSetting.js"></script>
+    <script defer src="JavaScript/scriptSetting.js"></script>
     <!-- Displayed Title in Browser -->
     <title>Astro Babble</title>
     <!-- Fonts Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class = "container" id = "leaderboard">
@@ -27,9 +28,9 @@
         <div class = "leaderboardContainer">
             <h1>Leaderboard</h1>
             <!-- The 1st, 2nd and 3rd places are displayed below -->
-            <p id = "1st"></p>
-            <p id = "2nd"></p>
-            <p id = "3rd"></p>
+            <p id = "1st" class= "playerscore"></p>
+            <p id = "2nd" class= "playerscore"></p>
+            <p id = "3rd" class= "playerscore"></p>
         </div>
             <!-- This button returns you to the settings page when clicked -->
             <a href="settings.html" class="link" onmousedown= "playHome()"><button class="btn" id="menu-btn">Back</button></a>
