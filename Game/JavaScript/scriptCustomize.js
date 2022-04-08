@@ -158,7 +158,7 @@ function CharFinal(){
     localStorage.setItem("avatarchoice", avatarchoice);
     localStorage.setItem("colourchoice", colourchoice);
 }
- //Bloop pop sound effect - youtube. (n.d.). Retrieved April 8, 2022, from https://www.youtube.com/watch?v=taJkMtV_Vtk 
+ //Bloop pop sound effect - youtube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=taJkMtV_Vtk 
  //Change color sound effect
  function playColor(){
     buttonNoise = new Audio('Sound/Buttons/swapColor.mp3');
@@ -170,14 +170,14 @@ function CharFinal(){
     buttonNoise.play();
  }
 
- //Mouse Click Sound Effect - YouTube. (n.d.). Retrieved April 8, 2022, from https://www.youtube.com/watch?v=i0DON3AjhW4 
+ //Mouse Click Sound Effect - YouTube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=i0DON3AjhW4 
  //home sound sound effect
  function homeClick(){
     buttonNoise = new Audio('Sound/Buttons/homeClick.mp3');
     buttonNoise.play();
  }
 
- // Achievement sound effect - youtube. (n.d.). Retrieved April 8, 2022, from https://www.youtube.com/watch?v=DdCjg1lX-Bc
+ // Achievement sound effect - youtube. (n.d.). Retrieved April 7, 2022, from https://www.youtube.com/watch?v=DdCjg1lX-Bc
  //Golden Color sound fx
   function colorSwap(){
     buttonNoise = new Audio('Sound/Buttons/colorChange.mp3');
