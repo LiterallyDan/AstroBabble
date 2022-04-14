@@ -248,7 +248,7 @@ function gameOver () {
     > Splits the word into an array for individual character checking
 */
 async function getWord () {
-    const response = await fetch("https://random-word-api.herokuapp.com/word?number=1&swear=0");    // Calls API for a random word that is non-profane
+    const response = await fetch("https://random-word-api.herokuapp.com/word?number=1");    // Calls API for a random word that is non-profane
     const data = await response.json();                 // Wait for the word from the API
     word = await data[0].toUpperCase();                 // Word variable = the API's word but ALL CAPS
     //console.log(word);                                  // Log the generated word (for bug testing)
